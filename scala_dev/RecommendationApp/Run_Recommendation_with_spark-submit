@@ -1,0 +1,1 @@
+hadoop$ bin/spark-submit --class "MovieLensALS" --master local[*] /Users/hadoop/Documents/programs/scala/RecommendationApp/target/scala-2.10/RecommendationApp-assembly-1.0.jar --rank 5 --lambda 0.1 /user/hadoop/data/ratings.dat

@@ -1,0 +1,1 @@
+bin/spark-submit --class "org.apache.spark.examples.streaming.TwitterAlgebirdHLL" --master local[*] lib/spark-examples-1.3.1-hadoop1.0.4.jar

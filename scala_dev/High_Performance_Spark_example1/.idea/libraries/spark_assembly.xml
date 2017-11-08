@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="spark-assembly">
+    <CLASSES>
+      <root url="jar:///opt/cloudera/parcels/CDH/lib/spark/lib/spark-assembly.jar!/" />
+      <root url="jar:///opt/cloudera/parcels/CDH/lib/spark/lib/spark-assembly-1.6.0-cdh5.8.0-hadoop2.6.0-cdh5.8.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

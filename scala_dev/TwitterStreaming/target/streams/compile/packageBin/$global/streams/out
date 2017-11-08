@@ -1,0 +1,35 @@
+[0m[[0minfo[0m] [0mPackaging /Users/hadoop/Documents/programs/scala/TwitterStreaming/target/scala-2.11/twitterstreaming_2.11-1.0.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark/examples[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/TwitterStreaming/target/scala-2.11/classes/org/apache/spark/examples[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark/examples/streaming/TwitterAlgebirdHLL$$anonfun$4.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/TwitterStreaming/target/scala-2.11/classes/org/apache/spark/examples/streaming/TwitterAlgebirdHLL$$anonfun$4.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark/examples/streaming/TwitterAlgebirdHLL$$anonfun$2$$anonfun$apply$1$$anonfun$apply$2.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/TwitterStreaming/target/scala-2.11/classes/org/apache/spark/examples/streaming/TwitterAlgebirdHLL$$anonfun$2$$anonfun$apply$1$$anonfun$apply$2.class[0m
+[0m[[0mdebug[0m] [0m	org/apache[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/TwitterStreaming/target/scala-2.11/classes/org/apache[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark/examples/streaming/TwitterAlgebirdHLL$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/TwitterStreaming/target/scala-2.11/classes/org/apache/spark/examples/streaming/TwitterAlgebirdHLL$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark/examples/streaming/TwitterAlgebirdHLL$$anonfun$main$2.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/TwitterStreaming/target/scala-2.11/classes/org/apache/spark/examples/streaming/TwitterAlgebirdHLL$$anonfun$main$2.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark/examples/streaming/TwitterAlgebirdHLL.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/TwitterStreaming/target/scala-2.11/classes/org/apache/spark/examples/streaming/TwitterAlgebirdHLL.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark/examples/streaming[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/TwitterStreaming/target/scala-2.11/classes/org/apache/spark/examples/streaming[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark/examples/streaming/TwitterAlgebirdHLL$.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/TwitterStreaming/target/scala-2.11/classes/org/apache/spark/examples/streaming/TwitterAlgebirdHLL$.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/TwitterStreaming/target/scala-2.11/classes/org/apache/spark[0m
+[0m[[0mdebug[0m] [0m	org[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/TwitterStreaming/target/scala-2.11/classes/org[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark/examples/streaming/TwitterAlgebirdHLL$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/TwitterStreaming/target/scala-2.11/classes/org/apache/spark/examples/streaming/TwitterAlgebirdHLL$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark/examples/streaming/TwitterAlgebirdHLL$$anonfun$3.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/TwitterStreaming/target/scala-2.11/classes/org/apache/spark/examples/streaming/TwitterAlgebirdHLL$$anonfun$3.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark/examples/streaming/TwitterAlgebirdHLL$$anonfun$5.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/TwitterStreaming/target/scala-2.11/classes/org/apache/spark/examples/streaming/TwitterAlgebirdHLL$$anonfun$5.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark/examples/streaming/TwitterAlgebirdHLL$$anonfun$2$$anonfun$apply$1.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/TwitterStreaming/target/scala-2.11/classes/org/apache/spark/examples/streaming/TwitterAlgebirdHLL$$anonfun$2$$anonfun$apply$1.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark/examples/streaming/TwitterAlgebirdHLL$$anonfun$main$1.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/TwitterStreaming/target/scala-2.11/classes/org/apache/spark/examples/streaming/TwitterAlgebirdHLL$$anonfun$main$1.class[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m

@@ -1,0 +1,19 @@
+[0m[[0minfo[0m] [0mPackaging /Users/hadoop/Documents/programs/scala/ExampleStatefulStreaming/target/scala-2.10/examplestreaming_2.10-1.0.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	ExampleStatefulStreaming.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/ExampleStatefulStreaming/target/scala-2.10/classes/ExampleStatefulStreaming.class[0m
+[0m[[0mdebug[0m] [0m	ExampleStatefulStreaming$.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/ExampleStatefulStreaming/target/scala-2.10/classes/ExampleStatefulStreaming$.class[0m
+[0m[[0mdebug[0m] [0m	ExampleStatefulStreaming$$anonfun$4.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/ExampleStatefulStreaming/target/scala-2.10/classes/ExampleStatefulStreaming$$anonfun$4.class[0m
+[0m[[0mdebug[0m] [0m	ExampleStatefulStreaming$$anonfun$5.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/ExampleStatefulStreaming/target/scala-2.10/classes/ExampleStatefulStreaming$$anonfun$5.class[0m
+[0m[[0mdebug[0m] [0m	ExampleStatefulStreaming$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/ExampleStatefulStreaming/target/scala-2.10/classes/ExampleStatefulStreaming$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	ExampleStatefulStreaming$$anonfun$3.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/ExampleStatefulStreaming/target/scala-2.10/classes/ExampleStatefulStreaming$$anonfun$3.class[0m
+[0m[[0mdebug[0m] [0m	ExampleStatefulStreaming$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/ExampleStatefulStreaming/target/scala-2.10/classes/ExampleStatefulStreaming$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	ExampleStatefulStreaming$$anonfun$6.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/ExampleStatefulStreaming/target/scala-2.10/classes/ExampleStatefulStreaming$$anonfun$6.class[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m
