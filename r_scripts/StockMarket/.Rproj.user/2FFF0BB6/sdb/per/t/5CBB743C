@@ -1,0 +1,16 @@
+{
+    "contents" : "library(DMwR)\nlibrary(xts)\nlibrary(DBI)\nlibrary(RMySQL)\n\n# Example time series\nx1<-xts(rnorm(100), seq(as.POSIXct(\"2000-01-01\"), len=100, by=\"day\"))\n\nx2<-xts(rnorm(100), seq(as.POSIXct(\"2000-01-01 13:00\"), len=100,by=\"min\"))\n\nx3<-xts(rnorm(3), as.Date(c(\"2005-01-01\", \"2005-01-10\", \"2005-01-12\")))\n\n# connect to MySQL database:\n# drv<-dbDriver(\"MySQL\")\n# ch<-dbConnect(drv, dbname=\"stock_market\", \"root\", \"darmstadt\")\n# allQuotes<-dbGetQuery(ch, \"select * from gspc\")\n# GSPC<-xts(allQuotes[,-1], order.by=as.Date(allQuotes[,1]))\n\n# Dax Values from CSV-file\nGSPC <- read.csv(\"~/programme/data_mining/R/StockMarket/DAX.csv\", sep=\";\")\nGSPC$Date<-as.Date(GSPC$Date)\nGSPC<-xts(allQuotes[,-1], order.by=as.Date(allQuotes[,1]))\n\nhead(GSPC)\ndbDisconnect(ch)\ndbUnloadDriver(drv)\n\nT.ind<-function(quotes, tgt.margin=0.0025, n.days=10){\n  v<-apply(HLC(quotes), 1, mean)\n  r<-matrix(NA, ncol=n.days, nrow=NROW(quotes))\n  for(x in 1:n.days) r[,x]<-Next(Delt(v,k=x),x)\n  x<-apply(r, 1, function(x) sum(x[x>tgt.margin | x<tgt.margin]))\n  if(is.xts(quotes))\n    xts(x,time(quotes))\n  else\n    x\n  }\ncandleChart(last(GSPC, \"3 months\"), theme=\"white\", TA=NULL)\navgPrice<-function(p) apply(HLC(p), 1, mean)\naddAvgPrice<-newTA(FUN=avgPrice, col=1, legend=\"AvgPrice\")\naddT.ind<-newTA(FUN=T.ind, col=\"red\", legend=\"TgtRet\")\naddAvgPrice(on=1)\naddT.ind()",
+    "created" : 1369931961636.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1408357718",
+    "id" : "5CBB743C",
+    "lastKnownWriteTime" : 1369980144,
+    "path" : "~/programme/data_mining/R/StockMarket/StockMarket.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

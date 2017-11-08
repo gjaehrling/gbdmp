@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+repositories/file\:_home_hadoop_programms_java_eclipse_hana_neo-java-web-sdk-1.103.15.2_repository/enabled=true
+repositories/file\:_home_hadoop_programms_java_eclipse_hana_neo-java-web-sdk-1.103.15.2_repository/isSystem=false
+repositories/file\:_home_hadoop_programms_java_eclipse_hana_neo-java-web-sdk-1.103.15.2_repository/name=SDK Update Site for SAP HANA Cloud local runtime
+repositories/file\:_home_hadoop_programms_java_eclipse_hana_neo-java-web-sdk-1.103.15.2_repository/suffix=content.xml
+repositories/file\:_home_hadoop_programms_java_eclipse_hana_neo-java-web-sdk-1.103.15.2_repository/type=org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository
+repositories/file\:_home_hadoop_programms_java_eclipse_hana_neo-java-web-sdk-1.103.15.2_repository/uri=file\:/home/hadoop/programms/java_eclipse/hana/neo-java-web-sdk-1.103.15.2/repository/
+repositories/file\:_home_hadoop_programms_java_eclipse_hana_neo-java-web-sdk-1.103.15.2_repository/version=1.0.0

@@ -1,0 +1,16 @@
+{
+    "contents" : "# load package for Cluster Analysis\nlibrary(mclust)\nlibrary(RMySQL)\n\n# connect to database: \ncon<-dbConnect(dbDriver(\"MySQL\"), user = \"root\", password = \"darmstadt\", dbname = \"bestellungen\")\nSalesOrders<-dbGetQuery(con, paste(\"select kdnr, \n                                   (year(curdate())) - (year(geburtsdatum)) as 'alter',\n                                   ledig\n                                   from\n                                   kunde, auftrag, bestellung, artikel, kategorie\n                                   where\n                                   kunde is not NULL and\n                                   kdnr = kunde and\n                                   auftnr = auftrag and\n                                   artikel = artikelnr and \n                                   kategorie = kategorienr limit 100;\"))\nsummary(SalesOrders)\nstr(SalesOrders)\nnames(SalesOrders)\n\n# test for customer clusters\ncluster <- Mclust(Shop_Cluster[,2:5])\nplot(cluster, Shop_Cluster[,2:5], what=c(\"classification\", \"uncertainty\"))\n\n\ncluster<-kmeans(Shop_Cluster, 5)\nlibrary(cluster) \npar(mfrow=c(1,1))\nclusplot(Shop_Cluster, cluster$cluster, color=TRUE, shade=TRUE, labels=2, lines=0)\nlibrary(fpc)\nplotcluster(Shop_Cluster, cluster$cluster)",
+    "created" : 1368353407103.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "404021355",
+    "id" : "DC9BFDC5",
+    "lastKnownWriteTime" : 1368366153,
+    "path" : "~/programme/data_mining/R/ClusterAnalysis/ClusterAnalysis.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,9 @@
+{
+    "path" : "~/SVNWorkplace/SVNRepository/trunk/r_scripts/SalesOrders2",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

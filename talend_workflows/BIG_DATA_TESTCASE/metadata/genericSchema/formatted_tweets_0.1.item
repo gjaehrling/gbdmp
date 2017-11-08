@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
+  <TalendMetadata:GenericSchemaConnection xmi:id="_iz2kYajoEeWHF6IZSioNxQ" comment="connectionComment" label="connectionLabel" dataPackage="_iz3LcKjoEeWHF6IZSioNxQ" mappingTypeUsed="true" mappingTypeId="hive_id"/>
+  <TalendMetadata:GenericPackage xmi:id="_iz3LcKjoEeWHF6IZSioNxQ" dataManager="_iz2kYajoEeWHF6IZSioNxQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_iz3LcajoEeWHF6IZSioNxQ" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_iz3LcqjoEeWHF6IZSioNxQ" name="day_of_week" id="1125" label="day_of_week" length="-1" precision="-1" sourceType="STRING" talendType="id_String">
+        <initialValue xmi:id="_iz3Lc6joEeWHF6IZSioNxQ"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_iz3LdKjoEeWHF6IZSioNxQ" name="month" id="1126" label="month" length="-1" precision="-1" sourceType="STRING" talendType="id_String">
+        <initialValue xmi:id="_iz3LdajoEeWHF6IZSioNxQ"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_iz3LdqjoEeWHF6IZSioNxQ" name="day_of_month" id="1127" label="day_of_month" length="-1" precision="-1" sourceType="STRING" talendType="id_String">
+        <initialValue xmi:id="_iz3Ld6joEeWHF6IZSioNxQ"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_iz3LeKjoEeWHF6IZSioNxQ" name="time" id="1128" label="time" length="-1" precision="-1" sourceType="STRING" talendType="id_String">
+        <initialValue xmi:id="_iz3LeajoEeWHF6IZSioNxQ"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_iz3LeqjoEeWHF6IZSioNxQ" name="zone" id="1129" label="zone" length="-1" precision="-1" sourceType="STRING" talendType="id_String">
+        <initialValue xmi:id="_iz3Le6joEeWHF6IZSioNxQ"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_iz3LfKjoEeWHF6IZSioNxQ" name="year" id="1130" label="year" length="-1" precision="-1" sourceType="STRING" talendType="id_String">
+        <initialValue xmi:id="_iz3LfajoEeWHF6IZSioNxQ"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_iz3LfqjoEeWHF6IZSioNxQ" name="username" id="1131" label="username" length="-1" precision="-1" sourceType="STRING" talendType="id_String">
+        <initialValue xmi:id="_iz3Lf6joEeWHF6IZSioNxQ"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_iz3LgKjoEeWHF6IZSioNxQ" name="content" id="1132" label="content" length="-1" precision="-1" sourceType="STRING" talendType="id_String">
+        <initialValue xmi:id="_iz3LgajoEeWHF6IZSioNxQ"/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+</xmi:XMI>

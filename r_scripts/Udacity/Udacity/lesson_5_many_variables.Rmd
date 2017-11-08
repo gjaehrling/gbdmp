@@ -1,0 +1,57 @@
+Lesson 5 (many variables)
+========================================================
+
+Load data:
+```{r}
+library(ggplot2)
+pf <- read.csv("~/programme/data_mining/R/Udacity/pseudo_facebook.tsv", sep="\t", header = TRUE, row.names = 1)
+summary(pf)
+```
+
+
+Third Qualitative Variable
+```{r}
+ggplot(aes(x=gender, y=age), data=subset(pf, !is.na(gender))) +
+  geom_boxplot() +
+  stat_summary(fun.y=mean, geom='point', shape=4)
+
+ggplot(aes(x=age, y=friend_count), data=subset(pf, !is.na(gender))) +
+  geom_line(aes(color=gender), stat="summary", fun.y=median)
+```
+
+Second option for third qualitative variable:
+```{r}
+library('dplyr')
+pf.fc_gender <- filter(pf, !is.na(pf$gender))
+group_age_gender <- group_by(pf.fc_gender, age, gender)
+
+pf.fc_by_age_gender <- summarize(group_age_gender, 
+          friend_count_mean = mean(friend_count),
+          friend_count_median = median(friend_count),
+          n = n())
+head(pf.fc_by_age_gender)
+```
+
+Third option for qualitative variables:
+```{r}
+library('dplyr')
+
+pf.fc_by_age_gender <- pf %.%
+  filter(!is.na(gender)) %.%
+  group_by(age, gender) %.%
+  summarize(mean_friend_count = mean(friend_count),
+            median_friend_count = median(friend_count),
+            n = n()) %.%
+  ungroup() %.%
+  arrange(age)
+
+head(pf.fc_by_age_gender)
+```
+
+Plotting third qualitative variable:
+```{r}
+ggplot(aes(x=age, y=median_friend_count), 
+       data=pf.fc_by_age_gender) +
+  geom_line(aes(color=gender))
+```
+

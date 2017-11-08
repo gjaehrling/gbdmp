@@ -1,0 +1,16 @@
+{
+    "contents" : "library(\"arules\");\n\nMarketBasket<-read.transactions(\"SimpleTransactions.csv\", rm.duplicates=TRUE, format=\"single\", sep=\",\", cols=c(1,2))\ninspect(MarketBasket)\nsummary(MarketBasket)\n\n# Market Basket\nbasket_rules <- apriori(MarketBasket,parameter = list(sup = 0.5, conf = 0.9,target=\"rules\"));\n\n# Check the generated rules using inspect\ninspect(basket_rules)\nitemFrequencyPlot(MarketBasket)\nimage(MarketBasket)",
+    "created" : 1368292466842.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "781146800",
+    "id" : "E8AF417A",
+    "lastKnownWriteTime" : 1368293213,
+    "path" : "~/programme/data_mining/R/Transactions/Transactions.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

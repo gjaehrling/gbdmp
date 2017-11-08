@@ -1,0 +1,21 @@
+{
+    "contents" : "",
+    "created" : 1367530287763.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "586CA94D",
+    "lastKnownWriteTime" : 4443095040,
+    "path" : null,
+    "properties" : {
+        "caption" : "SalesOrders",
+        "contentUrl" : "content?title=SalesOrders&file=25496382d6ff4158be664d59565229bd.htm",
+        "displayedObservations" : "1000",
+        "displayedVariables" : 9,
+        "totalObservations" : "11598",
+        "variables" : "9"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

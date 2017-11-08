@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+firstStartup=false
+history.repositoryURL=ZmlsZTovLy9ob21lL2hhZG9vcC9Ecm9wYm94L1NWTlJlcG9zaXRvcnkvdHJ1bmsv
+history.selectCheckoutUrl=ZmlsZTovLy9ob21lL2hhZG9vcC9Ecm9wYm94L1NWTlJlcG9zaXRvcnkvdHJ1bmsvamF2YV9kZXY\=;ZmlsZTovLy9ob21lL2hhZG9vcC9Ecm9wYm94L1NWTlJlcG9zaXRvcnkvdHJ1bms\=
+org.eclipse.team.svn.ui.panel.ListSelectionPanel.height=195
+org.eclipse.team.svn.ui.panel.ListSelectionPanel.width=470
+org.eclipse.team.svn.ui.panel.common.RepositoryTreePanel.height=201
+org.eclipse.team.svn.ui.panel.common.RepositoryTreePanel.width=470
+org.eclipse.team.svn.ui.panel.reporting.ErrorCancelPanel.height=134
+org.eclipse.team.svn.ui.panel.reporting.ErrorCancelPanel.width=640
+preference.core.svnconnector=org.eclipse.team.svn.connector.svnkit18

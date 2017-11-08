@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<met:KNIMEMetaInfo xmlns:met="http://www.knime.org/2.9/metainfo">
+  <met:element form="text" name="Author">Churn / Cancelation / Retention Analysis</met:element>
+  <met:element form="multiline" name="Comments">This KNIME workflow focuses on identifying classes of 
+telecommunication customers that churn using K-Means.
+As in all exploratory data mining, it is unknown
+beforehand what number of clusters will be appropriate,
+therefore the workflow allows the user to specify 
+different numbers of clusters for K-means to calculate.  
+Each set of clusters has its’ cluster centers and 
+variances combined and presented both as a report and
+automatically into a spreedsheet so that clusters can be
+interpreted.</met:element>
+  <met:element form="text" name="Last Uploaded" read-only="true">2016-08-19 10:36:36 +0000</met:element>
+</met:KNIMEMetaInfo>

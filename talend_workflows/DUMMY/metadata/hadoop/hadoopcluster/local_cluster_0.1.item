@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TalendHadoopCluster:HadoopClusterConnection xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendHadoopCluster="http://www.talend.org/hadoopcluster" xmi:id="_1zL_MKPlEeWBkp6UYjgaEw" name="local_cluster" label="local_cluster" distribution="APACHE" dfVersion="APACHE_1_0_0" nameNodeURI="hdfs://localhost:9000" jobTrackerURI="localhost:9001" principal="nn/_HOST@EXAMPLE.COM" jtOrRmPrincipal="mapred/_HOST@EXAMPLE.COM" jobHistoryPrincipal="mapred/_HOST@EXAMPLE.COM" group="" authMode="USERNAME" jobHistory="0.0.0.0:10020" stagingDirectory="/user" useDNHost="true" useCustomConfs="true">
+  <connectionList>_1zlAwKPlEeWBkp6UYjgaEw</connectionList>
+</TalendHadoopCluster:HadoopClusterConnection>

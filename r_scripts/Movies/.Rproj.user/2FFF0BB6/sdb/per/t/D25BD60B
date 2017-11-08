@@ -1,0 +1,16 @@
+{
+    "contents" : "#Install the R package arules\n# install.packages(\"arules\");\n\n#load the arules package\nlibrary(\"arules\");\n\n#movies <- read.csv(\"~/programme/data_mining/data/movies.csv\", sep=\";\")\nmovies<-read.transactions(file=\"~/programme/data_mining/data/movies.csv\", rm.duplicates= FALSE, format=\"single\",sep=\";\",cols =c(1,2))\n\ninspect(movies)\n\nhead(movies)\n\n# movies$ID<-as.factor(movies$ID)\n# str(movies)\nsummary(movies)\nbasket_rules <- apriori(movies, parameter = list(sup = 0.3, conf = 0.9,target=\"rules\"));\n\n# Check the generated rules using inspect\ninspect(basket_rules)\nmovies <- read.table(\"~/programme/data_mining/data/movies.csv\", sep=\";\", quote=\"\\\"\")\n",
+    "created" : 1368273147716.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2013946871",
+    "id" : "D25BD60B",
+    "lastKnownWriteTime" : 1369126654,
+    "path" : "~/programme/data_mining/R/Movies/Movies.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

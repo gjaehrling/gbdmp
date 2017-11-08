@@ -1,0 +1,101 @@
+Lesson 4.2
+========================================================
+
+## Data from Mitchell soil temperature
+```{r}
+install.packages('alr3')
+library(ggplot2)
+library(car)
+library(alr3)
+data(Mitchell)
+?Mitchell
+summary(Mitchell)
+```
+
+## Scatterplot of temperature vs. month
+```{r}
+names(Mitchell)
+ggplot(aes(y=Temp, x=Month), data = Mitchell)  + geom_point()
+```
+
+## Correlation
+```{r}
+cor.test(Mitchell$Temp, Mitchell$Month, method = "pearson")
+```
+
+## X-Axis with breaks every 12 months
+```{r}
+range(Mitchell$Month)
+ggplot(aes(y=Temp, x=Month), data = Mitchell)  + 
+  geom_point() +
+  scale_x_discrete(breaks = seq(0,203,12))
+```
+
+## understanding noise: age to age months:
+```{r}
+ggplot(aes(x=age, y=friend_count_mean), data=pf.fc_by_age) +
+  geom_line()
+
+head(pf.fc_by_age, 10)
+pf.fc_by_age[17:19,]
+```
+
+creat an age with months variable:
+```{r}
+pf$age_with_months <- pf$age + (1-(pf$dob_month / 12))
+```
+
+## age with months means
+```{r}
+library(dplyr)
+
+age_groups <- group_by(pf, age_with_months)
+pf.fc_by_age_months <- summarize(age_groups, 
+          friend_count_mean = mean(friend_count),
+          friend_count_median = median(friend_count),
+          n = n())
+
+pf.fc_by_age_months <- arrange(pf.fc_by_age_months, age_with_months)
+head(pf.fc_by_age_months)
+```
+
+## plotting age with months
+```{r}
+names(pf.fc_by_age_months)
+age_less_71 <- subset(pf.fc_by_age_months, pf.fc_by_age_months$age_with_months < 71)
+     
+ggplot(aes(x=age_with_months, y=friend_count_mean), data=age_less_71) +
+  geom_line()
+
+ggplot(aes(x=age_with_months, y=friend_count_mean), 
+       data=subset(pf.fc_by_age_months, age_with_months < 71)) +
+    geom_line()
+```
+
+## plotting the two variants side by side
+```{r}
+install.packages('gridExtra')
+library(grid)
+library(gridExtra)
+
+p1 <- ggplot(aes(x=age, y=friend_count_mean), 
+             data=subset(pf.fc_by_age, age < 71)) +
+    geom_line()
+  
+p2 <- ggplot(aes(x=age_with_months, y=friend_count_mean), 
+       data=subset(pf.fc_by_age_months, age_with_months < 71)) +
+    geom_line()
+
+p3 <- ggplot(aes(x=round(age / 5) * 5, y=friend_count_mean), 
+             data=subset(pf.fc_by_age, age < 71)) +
+    geom_line(stat = 'summary', fun.y= mean)
+
+p4 <- ggplot(aes(x=age_with_months, y=friend_count_mean), 
+       data=subset(pf.fc_by_age_months, age_with_months < 71)) +
+    geom_line() + 
+    geom_smooth()
+
+grid.arrange(p1, p2, p3, p4, ncol=1)
+```
+
+

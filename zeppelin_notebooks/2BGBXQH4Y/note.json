@@ -1,0 +1,327 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n#Analyze World Development Indicators using SparkQL\n\nRead data from world-development-indicators-release-2016-01-28-06-31-53.zip\n### Data Structure\n\n- CountryName\n- CountryCode\n- IndiciatorName\n- IndicatorCode\n- Year\n- Value",
+      "dateUpdated": "Mar 23, 2016 10:24:37 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457813589359_201825521",
+      "id": "20160312-211309_1237389595",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch1\u003eAnalyze World Development Indicators using SparkQL\u003c/h1\u003e\n\u003cp\u003eRead data from world-development-indicators-release-2016-01-28-06-31-53.zip\u003c/p\u003e\n\u003ch3\u003eData Structure\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eCountryName\u003c/li\u003e\n\u003cli\u003eCountryCode\u003c/li\u003e\n\u003cli\u003eIndiciatorName\u003c/li\u003e\n\u003cli\u003eIndicatorCode\u003c/li\u003e\n\u003cli\u003eYear\u003c/li\u003e\n\u003cli\u003eValue\u003c/li\u003e\n\u003c/ul\u003e\n"
+      },
+      "dateCreated": "Mar 12, 2016 9:13:09 PM",
+      "dateStarted": "Mar 22, 2016 4:48:54 PM",
+      "dateFinished": "Mar 22, 2016 4:48:54 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Load the data",
+      "text": "%sh\ncd /Users/hadoop/hadoop-1.2.1\nbin/hadoop fs -mkdir data\nbin/hadoop fs -copyFromLocal /Users/hadoop/Documents/programs/Spark-Masterclass-master/europe-indicators.csv data\nbin/hadoop fs -ls data",
+      "dateUpdated": "Mar 23, 2016 10:16:31 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/sh",
+        "editorHide": true,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457813681411_-389210086",
+      "id": "20160312-211441_1311589974",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "mkdir: cannot create directory data: File exists\ncopyFromLocal: Target data/europe-indicators.csv already exists\nFound 2 items\n-rw-r--r--   1 hadoop supergroup   61626644 2016-03-21 12:13 /user/hadoop/data/europe-indicators.csv\n-rw-r--r--   1 hadoop supergroup       4821 2016-03-21 11:42 /user/hadoop/data/iris.csv\n"
+      },
+      "dateCreated": "Mar 12, 2016 9:14:41 PM",
+      "dateStarted": "Mar 22, 2016 4:48:54 PM",
+      "dateFinished": "Mar 22, 2016 4:49:08 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Load Dependencies",
+      "text": "%dep\n# load the dependencies. In case of an error restart the interpreter!\nz.reset()\nz.addRepo(\"Spark Packages Repo\").url(\"http://dl.bintray.com/spark-packages/maven\")\nz.load(\"com.databricks:spark-csv_2.10:1.3.0\")\nz.load(\"org.apache.spark:spark-streaming-kafka_2.10:1.6.0\")",
+      "dateUpdated": "Mar 23, 2016 10:33:33 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": true,
+        "title": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1458641406791_324512775",
+      "id": "20160322-111006_1762956664",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "res0: org.apache.zeppelin.spark.dep.Dependency \u003d org.apache.zeppelin.spark.dep.Dependency@45a3726a\n"
+      },
+      "dateCreated": "Mar 22, 2016 11:10:06 AM",
+      "dateStarted": "Mar 23, 2016 9:56:38 AM",
+      "dateFinished": "Mar 23, 2016 9:56:51 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Process data",
+      "text": "%pyspark\n\nimport re\nfrom pyspark.sql.types import *\n\nschema \u003d StructType([ \\\n   StructField(\"CountryName\",   StringType(),  True), \\\n   StructField(\"CountryCode\",   StringType(),  True), \\\n   StructField(\"IndicatorName\", StringType(),  True), \\\n   StructField(\"IndicatorCode\", StringType(),  True), \\\n   StructField(\"Year\",          IntegerType(), True), \\\n   StructField(\"Value\",         DoubleType(),  True)  \\\n])\n\n    \nindicators_csv \u003d sqlContext.load(source\u003d\"com.databricks.spark.csv\", header\u003d\u0027true\u0027, path\u003d\u0027data/europe-indicators.csv\u0027, schema\u003dschema).cache()\nsqlContext.registerDataFrameAsTable(indicators_csv, \"IndicatorsRDD\")\n\nprint \"Total number of records: \"\nprint(indicators_csv.count())\nprint \"\\nExample datasets:\"\n\nfor x in indicators_csv.take(10): print x\n",
+      "dateUpdated": "Mar 28, 2016 1:00:01 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": true,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457813884203_-1569929484",
+      "id": "20160312-211804_1053341868",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "Total number of records: \n618067\n\nExample datasets:\nRow(CountryName\u003du\u0027Austria\u0027, CountryCode\u003du\u0027AUT\u0027, IndicatorName\u003du\u0027Adolescent fertility rate (births per 1,000 women ages 15-19)\u0027, IndicatorCode\u003du\u0027SP.ADO.TFRT\u0027, Year\u003d1960, Value\u003d48.3914)\nRow(CountryName\u003du\u0027Austria\u0027, CountryCode\u003du\u0027AUT\u0027, IndicatorName\u003du\u0027Age dependency ratio (% of working-age population)\u0027, IndicatorCode\u003du\u0027SP.POP.DPND\u0027, Year\u003d1960, Value\u003d52.348170383459205)\nRow(CountryName\u003du\u0027Austria\u0027, CountryCode\u003du\u0027AUT\u0027, IndicatorName\u003du\u0027Age dependency ratio, old (% of working-age population)\u0027, IndicatorCode\u003du\u0027SP.POP.DPND.OL\u0027, Year\u003d1960, Value\u003d18.4951086719202)\nRow(CountryName\u003du\u0027Austria\u0027, CountryCode\u003du\u0027AUT\u0027, IndicatorName\u003du\u0027Age dependency ratio, young (% of working-age population)\u0027, IndicatorCode\u003du\u0027SP.POP.DPND.YG\u0027, Year\u003d1960, Value\u003d33.853061711539)\nRow(CountryName\u003du\u0027Austria\u0027, CountryCode\u003du\u0027AUT\u0027, IndicatorName\u003du\u0027Alternative and nuclear energy (% of total energy use)\u0027, IndicatorCode\u003du\u0027EG.USE.COMM.CL.ZS\u0027, Year\u003d1960, Value\u003d8.96433606078842)\nRow(CountryName\u003du\u0027Austria\u0027, CountryCode\u003du\u0027AUT\u0027, IndicatorName\u003du\u0027Arms imports (SIPRI trend indicator values)\u0027, IndicatorCode\u003du\u0027MS.MIL.MPRT.KD\u0027, Year\u003d1960, Value\u003d7000000.0)\nRow(CountryName\u003du\u0027Austria\u0027, CountryCode\u003du\u0027AUT\u0027, IndicatorName\u003du\u0027Birth rate, crude (per 1,000 people)\u0027, IndicatorCode\u003du\u0027SP.DYN.CBRT.IN\u0027, Year\u003d1960, Value\u003d17.9)\nRow(CountryName\u003du\u0027Austria\u0027, CountryCode\u003du\u0027AUT\u0027, IndicatorName\u003du\u0027CO2 emissions (kg per 2005 US$ of GDP)\u0027, IndicatorCode\u003du\u0027EN.ATM.CO2E.KD.GD\u0027, Year\u003d1960, Value\u003d0.388626120450145)\nRow(CountryName\u003du\u0027Austria\u0027, CountryCode\u003du\u0027AUT\u0027, IndicatorName\u003du\u0027CO2 emissions (kt)\u0027, IndicatorCode\u003du\u0027EN.ATM.CO2E.KT\u0027, Year\u003d1960, Value\u003d30821.135)\nRow(CountryName\u003du\u0027Austria\u0027, CountryCode\u003du\u0027AUT\u0027, IndicatorName\u003du\u0027CO2 emissions (metric tons per capita)\u0027, IndicatorCode\u003du\u0027EN.ATM.CO2E.PC\u0027, Year\u003d1960, Value\u003d4.37331882803344)\n"
+      },
+      "dateCreated": "Mar 12, 2016 9:18:04 PM",
+      "dateStarted": "Mar 23, 2016 10:34:11 AM",
+      "dateFinished": "Mar 23, 2016 10:34:32 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "show schema",
+      "text": "%pyspark\nindicators_csv.printSchema()\n",
+      "dateUpdated": "Mar 23, 2016 10:19:11 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": true,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457814105491_409709232",
+      "id": "20160312-212145_1125570150",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "root\n |-- CountryName: string (nullable \u003d true)\n |-- CountryCode: string (nullable \u003d true)\n |-- IndicatorName: string (nullable \u003d true)\n |-- IndicatorCode: string (nullable \u003d true)\n |-- Year: integer (nullable \u003d true)\n |-- Value: double (nullable \u003d true)\n\n"
+      },
+      "dateCreated": "Mar 12, 2016 9:21:45 PM",
+      "dateStarted": "Mar 22, 2016 4:48:54 PM",
+      "dateFinished": "Mar 22, 2016 4:49:14 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nselect CountryCode, sum(Value) as Total\nfrom IndicatorsRDD\nwhere CountryCode in (\u0027AUT\u0027, \u0027FRA\u0027, \u0027DEU\u0027, \u0027GRC\u0027, \u0027IRL\u0027, \u0027ITA\u0027, \u0027NLD\u0027, \u0027PRT\u0027, \u0027ESP\u0027, \u0027GBR\u0027)\nand Year \u003d 1990\ngroup by CountryCode\n",
+      "dateUpdated": "Mar 27, 2016 11:04:26 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "pieChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "CountryCode",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "Total",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "CountryCode",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1458570114277_-439363082",
+      "id": "20160321-152154_333447080",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "CountryCode\tTotal\nGRC\t5.334336705656833E12\nFRA\t6.420337347825242E13\nPRT\t4.757601133946429E12\nGBR\t5.348343037441832E13\nESP\t2.539652052410407E13\nIRL\t2.301432360863747E12\nDEU\t8.159888621708556E13\nNLD\t1.7879215943285586E13\nAUT\t8.994797164253672E12\nITA\t5.7160716241959836E13\n"
+      },
+      "dateCreated": "Mar 21, 2016 3:21:54 PM",
+      "dateStarted": "Mar 22, 2016 4:49:14 PM",
+      "dateFinished": "Mar 22, 2016 4:49:16 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nselect Year, sum(Value) as Total\nfrom IndicatorsRDD\ngroup by Year",
+      "dateUpdated": "Mar 22, 2016 5:43:24 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "multiBarChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "Year",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "Total",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1458568025639_-94030948",
+      "id": "20160321-144705_2127854681",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "Year\tTotal\n1960\t2.799422065224155E13\n1961\t2.975572469720975E13\n1962\t3.1647338228658164E13\n1963\t3.3497503747683223E13\n1964\t3.5683641932291125E13\n1965\t3.842317776851278E13\n1966\t4.064446161275613E13\n1967\t4.252947597653516E13\n1968\t4.488319116036768E13\n1969\t4.855733385295838E13\n1970\t1.3084321701651588E14\n1971\t1.3811490544244145E14\n1972\t1.469654572276285E14\n1973\t1.5912529181772284E14\n1974\t1.655316978386142E14\n1975\t1.706445947050129E14\n1976\t1.8020121685890562E14\n1977\t1.8853535497493812E14\n1978\t2.0055298092534662E14\n1979\t2.1574164622150047E14\n1980\t2.293129469491319E14\n1981\t2.2697768582389525E14\n1982\t2.3005665229679888E14\n1983\t2.3467891900320147E14\n1984\t2.4184167522372234E14\n1985\t2.5063087582916597E14\n1986\t2.7226435600178094E14\n1987\t2.936176625411743E14\n1988\t3.131058574622284E14\n1989\t3.283030920440728E14\n1990\t4.4910818601674056E14\n1991\t6.355294236768822E14\n1992\t6.579470724818481E14\n1993\t6.881826987922106E14\n1994\t7.250309938458265E14\n1995\t8.548024183200682E14\n1996\t8.922486124027228E14\n1997\t9.374644982601194E14\n1998\t9.99407196266037E14\n1999\t1.0486064104007915E15\n2000\t1.107955354130731E15\n2001\t1.2014897887921638E15\n2002\t1.2631865427560102E15\n2003\t1.3496654221247005E15\n2004\t1.4548077901630105E15\n2005\t1.5714773891671732E15\n2006\t1.6877026538802575E15\n2007\t1.808284322376149E15\n2008\t1.8618595809628038E15\n2009\t1.746259027614252E15\n2010\t1.8015238702133442E15\n2011\t1.877193604565009E15\n2012\t1.8577773264951005E15\n2013\t1.78378389856754E15\n2014\t1.7981521972385965E15\n2015\t5.715752732421615E10\n"
+      },
+      "dateCreated": "Mar 21, 2016 2:47:05 PM",
+      "dateStarted": "Mar 22, 2016 4:49:15 PM",
+      "dateFinished": "Mar 22, 2016 4:49:19 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "dateUpdated": "Mar 22, 2016 5:43:24 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1458661996424_-2141154847",
+      "id": "20160322-165316_1242161202",
+      "dateCreated": "Mar 22, 2016 4:53:16 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Lab4 Spark QL",
+  "id": "2BGBXQH4Y",
+  "angularObjects": {
+    "2BCE6R8T2": [],
+    "2BDMU83T5": [],
+    "2BEMMQPJG": [],
+    "2BDW72X9E": [],
+    "2BF3AAW7U": [],
+    "2BEJ4D5SJ": [],
+    "2BF7MH2JM": [],
+    "2BE1TRU6B": [],
+    "2BE5CQ2W8": [],
+    "2BFUXNJ9R": [],
+    "2BCQ6J7ZP": [],
+    "2BCWJF462": [],
+    "2BFDNS2ZU": []
+  },
+  "config": {
+    "looknfeel": "default"
+  },
+  "info": {}
+}

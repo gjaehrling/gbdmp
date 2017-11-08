@@ -1,0 +1,9 @@
+# command to crate the .jar file:
+
+1. right click on the project:
+2. run as
+3. Maven install
+
+# command to run the .jar file on own cluster:
+
+hadoop$ bin/hadoop jar /Users/hadoop/Documents/programs/java/Citation/target/citation-0.0.1-SNAPSHOT.jar hadoop.citation.Citation /user/hadoop/citation_example/cite75_99.txt citation_output

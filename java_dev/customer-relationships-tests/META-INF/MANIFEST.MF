@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: customer-relationships-tests
+Bundle-Name: Customer Relationships - Tests
+Bundle-Version: 1.0.0.201505151142
+Bundle-ManifestVersion: 2
+Bundle-Vendor: JBoss
+
+

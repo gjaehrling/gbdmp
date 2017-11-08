@@ -1,0 +1,2 @@
+/home/hadoop/SVNWorkplace/SVNRepository/trunk/knime_modells/Example Workflow/example_workflow_test_output.csv
+/home/hadoop/Desktop/test_output.csv

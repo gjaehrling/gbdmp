@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-Description: <html><body>This project contains the <b>Work Item
+ </b> Java handler code and can be built using Maven.<p/>The resulting
+  jar file must be manually copied into the main project and the handl
+ ers must be configured in the WEB-INF/classes/META-INF/CustomWorkItem
+ Handlers.conf file,for Example:<pre>    "CreateCustomer": new org.jbp
+ m.customer.services.CreateCustomerWorkItemHandler(),    <br/>    "Add
+ CustomerComment": new org.jbpm.customer.services.AddCustomerCommentsW
+ orkItemHandler(),    <br/>    "ManagersReport": new org.jbpm.customer
+ .services.ManagersReportWorkItemHandler(),</pre></body></html> 
+Bundle-SymbolicName: customer-relationships-workitems
+Bundle-Name: Customer Relationships - Workitems
+Bundle-Version: 1.0.0.201505151142
+Bundle-ManifestVersion: 2
+Bundle-Vendor: JBoss
+
+

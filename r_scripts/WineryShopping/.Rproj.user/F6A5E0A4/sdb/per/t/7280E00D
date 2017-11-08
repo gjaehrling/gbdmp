@@ -1,0 +1,16 @@
+{
+    "contents" : "#Install the R package arules\ninstall.packages(\"arules\");\n\n#load the arules package\nlibrary(\"arules\");\n\nWineryData<-read.transactions(\"/Users/gerd/Dropbox/user_gerd/programme/data_mining/R/WineryShopping/Wine.csv\", format=\"single\", rm.duplicates=TRUE, sep=\";\", cols=c(1,2))\ninspect(WineryData)\n#image(WineryData)\n\nbasket_rules <- apriori(WineryData,parameter = list(sup = 0.1, conf = 0.4,target=\"rules\"));\n\n# Check the generated rules using inspect\ninspect(basket_rules)\n\nsummary(basket_rules)\n\nitemFrequencyPlot(WineryData, sup=0.1)",
+    "created" : 1493125049655.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "381729899",
+    "id" : "7280E00D",
+    "lastKnownWriteTime" : 1471376233,
+    "path" : "~/SVNWorkplace/SVNRepository/trunk/r_scripts/WineryShopping/WinerySource.R",
+    "project_path" : "WinerySource.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

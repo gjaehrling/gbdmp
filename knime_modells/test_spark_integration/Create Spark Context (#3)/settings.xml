@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.knime.org/2008/09/XMLConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.knime.org/2008/09/XMLConfig http://www.knime.org/XMLConfig_2008_09.xsd" key="settings.xml">
+<entry key="node_file" type="xstring" value="settings.xml"/>
+<config key="flow_stack"/>
+<config key="internal_node_subsettings">
+<entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
+</config>
+<config key="model">
+<config key="settingsFormatVersion_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="settingsFormatVersion" type="xstring" value="1.6.0"/>
+<config key="v1_6.jobServerUrl_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="v1_6.jobServerUrl" type="xstring" value="http://localhost:8090/"/>
+<config key="v1_6.authentication_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_authentication"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<config key="v1_6.authentication">
+<entry key="credentials" type="xstring" isnull="true" value=""/>
+<entry key="username" type="xstring" value=""/>
+<entry key="password" type="xpassword" value="015B23820E5D69FE178DD2D4FAB40F1303"/>
+<entry key="selectedType" type="xstring" value="NONE"/>
+</config>
+<config key="v1_6.sparkJobTimeout_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_integer"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="v1_6.sparkJobTimeout" type="xint" value="7200"/>
+<config key="v1_6.sparkJobCheckFrequency_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_integer"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="v1_6.sparkJobCheckFrequency" type="xint" value="1"/>
+<config key="v1_6.sparkVersion_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="v1_6.sparkVersion" type="xstring" value="1.6"/>
+<config key="v1_6.contextName_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="v1_6.contextName" type="xstring" value="knimeSparkContext"/>
+<config key="v1_6.deleteObjectsOnDispose_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="v1_6.deleteObjectsOnDispose" type="xboolean" value="true"/>
+<config key="v1_6.sparkJobLogLevel_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="v1_6.sparkJobLogLevel" type="xstring" value="WARN"/>
+<config key="v1_6.overrideSparkSettings_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="v1_6.overrideSparkSettings" type="xboolean" value="false"/>
+<config key="v1_6.customSparkSettings_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<entry key="EnabledStatus" type="xboolean" value="false"/>
+</config>
+<entry key="v1_6.customSparkSettings" type="xstring" value="memory-per-node: 512m%%00010"/>
+</config>
+<entry key="customDescription" type="xstring" isnull="true" value=""/>
+<entry key="state" type="xstring" value="CONFIGURED"/>
+<config key="nodecontainer_message">
+<entry key="type" type="xstring" value="ERROR"/>
+<entry key="message" type="xstring" value="Execute failed: Error when trying to execute Spark job. Please restart the Spark context, reset all preceding nodes and try again."/>
+</config>
+<entry key="factory" type="xstring" value="com.knime.bigdata.spark.node.util.context.create.SparkContextCreatorNodeFactory"/>
+<entry key="node-name" type="xstring" value="Create Spark Context"/>
+<entry key="node-bundle-name" type="xstring" value="KNIME Spark Executor Nodes"/>
+<entry key="node-bundle-symbolic-name" type="xstring" value="com.knime.bigdata.spark.node"/>
+<entry key="node-bundle-vendor" type="xstring" value="KNIME.com, Zurich, Switzerland"/>
+<entry key="node-bundle-version" type="xstring" value="1.6.2.v201612191633"/>
+<entry key="node-feature-name" type="xstring" value="KNIME Spark Executor"/>
+<entry key="node-feature-symbolic-name" type="xstring" value="com.knime.features.bigdata.spark.feature.group"/>
+<entry key="node-feature-vendor" type="xstring" value="KNIME.com, Zurich, Switzerland"/>
+<entry key="node-feature-version" type="xstring" value="1.6.2.v201612191633"/>
+<config key="factory_settings"/>
+<entry key="name" type="xstring" value="Create Spark Context"/>
+<entry key="hasContent" type="xboolean" value="false"/>
+<entry key="isInactive" type="xboolean" value="false"/>
+<config key="ports">
+<config key="port_1">
+<entry key="index" type="xint" value="1"/>
+<entry key="port_dir_location" type="xstring" isnull="true" value=""/>
+</config>
+</config>
+<config key="filestores">
+<entry key="file_store_location" type="xstring" isnull="true" value=""/>
+<entry key="file_store_id" type="xstring" isnull="true" value=""/>
+</config>
+</config>

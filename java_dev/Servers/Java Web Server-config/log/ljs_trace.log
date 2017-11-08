@@ -1,0 +1,16 @@
+FILE_TYPE:DAAA96DE-B0FB-4c6e-AF7B-A445F5BF9BE2
+FILE_ID:1464213132897
+ENCODING:[UTF8|NWCJS:ASCII]
+RECORD_SEPARATOR:124
+COLUMN_SEPARATOR:35
+ESC_CHARACTER:92
+COLUMNS:Time|TZone|Severity|Logger|ACH|User|Thread|Bundle name|JPSpace|JPAppliance|JPComponent|Tenant Alias|Text|
+SEVERITY_MAP:FINEST|Information|FINER|Information|FINE|Information|CONFIG|Information|DEBUG|Information|PATH|Information|INFO|Information|WARNING|Warning|ERROR|Error|SEVERE|Error|FATAL|Error
+HEADER_END
+
+2016 05 25 23:52:17#+0200#INFO#System.out##anonymous#Thread-6#na#N/A#N/A#N/A##Deploying file with path [/home/hadoop/SVNWorkplace/trunk/java_dev/Servers/Java Web Server-config/./pickup/HanaHelloWorld.war]|
+2016 05 25 23:52:18#+0200#INFO#System.out##anonymous#Thread-6#na#N/A#N/A#N/A##Deployment of file with path [/home/hadoop/SVNWorkplace/trunk/java_dev/Servers/Java Web Server-config/./pickup/HanaHelloWorld.war] is successful.|
+2016 07 04 15:30:40#+0200#INFO#System.out##anonymous#Thread-6#na#N/A#N/A#N/A##Updating file with path [/home/hadoop/SVNWorkplace/trunk/java_dev/Servers/Java Web Server-config/./pickup/HanaHelloWorld.war]|
+2016 07 04 15:30:40#+0200#INFO#System.out##anonymous#Thread-6#na#N/A#N/A#N/A##Update of file with path [/home/hadoop/SVNWorkplace/trunk/java_dev/Servers/Java Web Server-config/./pickup/HanaHelloWorld.war] is successful.|
+2016 07 04 18:36:26#+0200#INFO#System.out##anonymous#Thread-6#na#N/A#N/A#N/A##Updating file with path [/home/hadoop/SVNWorkplace/trunk/java_dev/Servers/Java Web Server-config/./pickup/HanaHelloWorld.war]|
+2016 07 04 18:36:27#+0200#INFO#System.out##anonymous#Thread-6#na#N/A#N/A#N/A##Update of file with path [/home/hadoop/SVNWorkplace/trunk/java_dev/Servers/Java Web Server-config/./pickup/HanaHelloWorld.war] is successful.|

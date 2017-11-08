@@ -1,0 +1,448 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n# Test Notebook\nIn order to work with spark and python interpreter, spark server and worker must run and hadoop must be started.\n \n* start hadoop: $HADOOP_HOME/bin/start-all.sh\n* start zeppelin: $ZEPPELIN/bin/zeppelin-daemon.sh start\n* start spark: $SPARK_HOME/sbin/start-all.sh\n\nCheck Spark is running: http://gerdmac:8081/\n",
+      "dateUpdated": "Mar 26, 2016 8:59:10 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457707972749_724555214",
+      "id": "20160311-155252_681313652",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch1\u003eTest Notebook\u003c/h1\u003e\n\u003cp\u003eIn order to work with spark and python interpreter, spark server and worker must run and hadoop must be started.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003estart hadoop: $HADOOP_HOME/bin/start-all.sh\u003c/li\u003e\n\u003cli\u003estart zeppelin: $ZEPPELIN/bin/zeppelin-daemon.sh start\u003c/li\u003e\n\u003cli\u003estart spark: $SPARK_HOME/sbin/start-all.sh\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eCheck Spark is running: http://gerdmac:8081/\u003c/p\u003e\n"
+      },
+      "dateCreated": "Mar 11, 2016 3:52:52 PM",
+      "dateStarted": "Mar 26, 2016 8:59:06 PM",
+      "dateFinished": "Mar 26, 2016 8:59:07 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Check Spark Context",
+      "text": "sc\n\nsc.master\n",
+      "dateUpdated": "Mar 28, 2016 2:08:06 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala",
+        "tableHide": false,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457625485952_-1987920138",
+      "id": "20160310-165805_1865750843",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "res8: org.apache.spark.SparkContext \u003d org.apache.spark.SparkContext@501c2957\nres10: String \u003d local[*]\n"
+      },
+      "dateCreated": "Mar 10, 2016 4:58:05 PM",
+      "dateStarted": "Mar 28, 2016 2:08:11 PM",
+      "dateFinished": "Mar 28, 2016 2:08:40 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sh\nls -lt",
+      "dateUpdated": "Mar 20, 2016 8:55:27 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/sh",
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457625523045_1773416281",
+      "id": "20160310-165843_826307592",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "total 2688\ndrwxr-xr-x  22 hadoop  staff      748 Mar 20 20:55 logs\ndrwxr-xr-x   6 hadoop  staff      204 Mar 20 20:55 run\n-rw-r--r--   1 hadoop  staff      731 Mar 20 20:53 derby.log\ndrwxr-xr-x   9 hadoop  staff      306 Mar 20 20:53 metastore_db\ndrwxr-xr-x@  9 hadoop  staff      306 Mar 12 21:13 notebook\ndrwxr-xr-x   6 hadoop  staff      204 Mar 12 13:37 local-repo\ndrwxr-xr-x@ 10 hadoop  staff      340 Mar  4 10:18 conf\n-rw-r--r--@  1 hadoop  staff    27489 Nov 11 13:05 LICENSE\n-rw-r--r--@  1 hadoop  staff     5627 Nov 11 13:05 NOTICE\ndrwxr-xr-x@ 37 hadoop  staff     1258 Nov 11 13:05 licenses\n-rw-r--r--@  1 hadoop  staff      542 Nov 11 13:04 DISCLAIMER\n-rw-r--r--@  1 hadoop  staff     6242 Nov 11 13:04 README.md\ndrwxr-xr-x@  7 hadoop  staff      238 Nov 11 13:04 bin\ndrwxr-xr-x@ 15 hadoop  staff      510 Nov 11 13:04 interpreter\ndrwxr-xr-x@ 75 hadoop  staff     2550 Nov 11 13:04 lib\n-rw-r--r--@  1 hadoop  staff    49960 Nov 11 13:04 zeppelin-server-0.5.5-incubating.jar\n-rw-r--r--@  1 hadoop  staff  1267959 Nov 11 13:04 zeppelin-web-0.5.5-incubating.war\n"
+      },
+      "dateCreated": "Mar 10, 2016 4:58:43 PM",
+      "dateStarted": "Mar 20, 2016 8:55:27 PM",
+      "dateFinished": "Mar 20, 2016 8:55:30 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndata \u003d sc.parallelize(xrange(1,10))\n\nfor n in data.collect():\n    print \"test no: \", n\n    ",
+      "dateUpdated": "Mar 20, 2016 8:55:27 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala",
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457625827766_1074942141",
+      "id": "20160310-170347_1391971321",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "test no:  1\ntest no:  2\ntest no:  3\ntest no:  4\ntest no:  5\ntest no:  6\ntest no:  7\ntest no:  8\ntest no:  9\n"
+      },
+      "dateCreated": "Mar 10, 2016 5:03:47 PM",
+      "dateStarted": "Mar 20, 2016 8:55:27 PM",
+      "dateFinished": "Mar 20, 2016 8:55:34 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nprint data",
+      "dateUpdated": "Mar 20, 2016 8:55:27 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala",
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457625938051_-869624772",
+      "id": "20160310-170538_752119490",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "PythonRDD[13] at collect at \u003cstring\u003e:2\n"
+      },
+      "dateCreated": "Mar 10, 2016 5:05:38 PM",
+      "dateStarted": "Mar 20, 2016 8:55:27 PM",
+      "dateFinished": "Mar 20, 2016 8:55:34 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark \nfile \u003d \"file:///Users/hadoop/spark-1.3.1-bin-hadoop1/README.md\"\ntext \u003d sc.textFile(file).count()\nprint text",
+      "dateUpdated": "Mar 20, 2016 8:55:27 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala",
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457626266493_611164830",
+      "id": "20160310-171106_940118204",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "98\n"
+      },
+      "dateCreated": "Mar 10, 2016 5:11:06 PM",
+      "dateStarted": "Mar 20, 2016 8:55:34 PM",
+      "dateFinished": "Mar 20, 2016 8:55:34 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n##testing Scala interpreter",
+      "dateUpdated": "Mar 20, 2016 8:55:27 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/markdown",
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457712627689_1472737462",
+      "id": "20160311-171027_1914773192",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003etesting Scala interpreter\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Mar 11, 2016 5:10:27 PM",
+      "dateStarted": "Mar 20, 2016 8:55:27 PM",
+      "dateFinished": "Mar 20, 2016 8:55:27 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Scala SQL Context",
+      "text": "val sqlContext \u003d new org.apache.spark.sql.SQLContext(sc)\n\nimport sqlContext.implicits._\nimport org.apache.spark.sql._\nimport org.apache.spark.sql.types._;\n\ncase class Counts(count: Int, word: String)\n\nval lines \u003d \"file:///Users/hadoop/spark-1.3.1-bin-hadoop1/README.md\"\nval counts \u003d sc.textFile(lines)\n    .flatMap(l \u003d\u003e l.split(\" \"))\n    .filter(_.nonEmpty)\n    .map(word \u003d\u003e word.toUpperCase)\n    .map(word \u003d\u003e (word, 1))\n    .reduceByKey(_ + _)\n    .map(pair \u003d\u003e pair.swap)\n    .sortByKey(false)\n    .toDF()\n\ncounts.registerTempTable(\"counts\")\ncounts.printSchema()\n\nval results \u003d sqlContext.sql(\"SELECT _2 FROM counts\")\nresults.map(t \u003d\u003e \"counts: \" + t).take(10).foreach(println)\n\n//counts.take(10).foreach(println(\"rank: \", _))\n\n",
+      "dateUpdated": "Mar 28, 2016 2:48:16 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala",
+        "tableHide": false,
+        "editorHide": false,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457692102440_1608379196",
+      "id": "20160311-112822_2031531143",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "sqlContext: org.apache.spark.sql.SQLContext \u003d org.apache.spark.sql.SQLContext@113b1a6e\nimport sqlContext.implicits._\nimport org.apache.spark.sql._\nimport org.apache.spark.sql.types._\ndefined class Counts\nlines: String \u003d file:///Users/hadoop/spark-1.3.1-bin-hadoop1/README.md\ncounts: org.apache.spark.sql.DataFrame \u003d [_1: int, _2: string]\nroot\n |-- _1: integer (nullable \u003d false)\n |-- _2: string (nullable \u003d true)\n\nresults: org.apache.spark.sql.DataFrame \u003d [_2: string]\ncounts: [THE]\ncounts: [TO]\ncounts: [SPARK]\ncounts: [FOR]\ncounts: [AND]\ncounts: [A]\ncounts: [##]\ncounts: [YOU]\ncounts: [RUN]\ncounts: [IS]\n"
+      },
+      "dateCreated": "Mar 11, 2016 11:28:22 AM",
+      "dateStarted": "Mar 28, 2016 2:48:16 PM",
+      "dateFinished": "Mar 28, 2016 2:48:37 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// sc is an existing SparkContext.\nval sqlContext \u003d new org.apache.spark.sql.SQLContext(sc)\n// this is used to implicitly convert an RDD to a DataFrame.\nimport sqlContext.implicits._\n\n// Define the schema using a case class.\n// Note: Case classes in Scala 2.10 can support only up to 22 fields. To work around this limit,\n// you can use custom classes that implement the Product interface.\ncase class Customers(id: Int, name: String, city: String, state: String, zip: Int)\n\n// Create an RDD of Person objects and register it as a table.\nval cust \u003d sc.textFile(\"file:///Users/hadoop/Downloads/customers.txt\").map(_.split(\",\")).map(p \u003d\u003e Customers(p(0).trim.toInt, p(1), p(2), p(3), p(4).trim.toInt)).toDF()\ncust.registerTempTable(\"customerTable\")\n\ncust.printSchema()\n\n// SQL statements can be run by using the sql methods provided by sqlContext.\nval results \u003d sqlContext.sql(\"SELECT name, city FROM customerTable\")\n\n// The results of SQL queries are DataFrames and support all the normal RDD operations.\n// The columns of a row in the result can be accessed by ordinal.\nresults.map(t \u003d\u003e \"Name: \" + t(0)).collect().foreach(println)\n\n",
+      "dateUpdated": "Mar 28, 2016 6:38:46 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1459169351465_-1378924749",
+      "id": "20160328-144911_486425474",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "sqlContext: org.apache.spark.sql.SQLContext \u003d org.apache.spark.sql.SQLContext@5627ee71\nimport sqlContext.implicits._\ndefined class Customers\ncust: org.apache.spark.sql.DataFrame \u003d [id: int, name: string, city: string, state: string, zip: int]\nroot\n |-- id: integer (nullable \u003d false)\n |-- name: string (nullable \u003d true)\n |-- city: string (nullable \u003d true)\n |-- state: string (nullable \u003d true)\n |-- zip: integer (nullable \u003d false)\n\nresults: org.apache.spark.sql.DataFrame \u003d [name: string, city: string]\nName:  John Smith\nName:  Joe Johnson\nName:  Bob Jones\nName:  Andy Davis\nName:  James Williams\n"
+      },
+      "dateCreated": "Mar 28, 2016 2:49:11 PM",
+      "dateStarted": "Mar 28, 2016 6:38:46 PM",
+      "dateFinished": "Mar 28, 2016 6:40:18 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\n\nselect * from customerTable",
+      "dateUpdated": "Mar 28, 2016 6:46:44 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1459179566070_-1429540943",
+      "id": "20160328-173926_35134368",
+      "result": {
+        "code": "ERROR",
+        "type": "TEXT",
+        "msg": "org.apache.spark.sql.AnalysisException: no such table customerTable; line 1 pos 14\n\tat org.apache.spark.sql.catalyst.analysis.package$AnalysisErrorAt.failAnalysis(package.scala:42)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveRelations$.getTable(Analyzer.scala:177)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveRelations$$anonfun$apply$6.applyOrElse(Analyzer.scala:186)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveRelations$$anonfun$apply$6.applyOrElse(Analyzer.scala:181)\n\tat org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$3.apply(TreeNode.scala:188)\n\tat org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$3.apply(TreeNode.scala:188)\n\tat org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:51)\n\tat org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:187)\n\tat org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$4.apply(TreeNode.scala:208)\n\tat scala.collection.Iterator$$anon$11.next(Iterator.scala:328)\n\tat scala.collection.Iterator$class.foreach(Iterator.scala:727)\n\tat scala.collection.AbstractIterator.foreach(Iterator.scala:1157)\n\tat scala.collection.generic.Growable$class.$plus$plus$eq(Growable.scala:48)\n\tat scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:103)\n\tat scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:47)\n\tat scala.collection.TraversableOnce$class.to(TraversableOnce.scala:273)\n\tat scala.collection.AbstractIterator.to(Iterator.scala:1157)\n\tat scala.collection.TraversableOnce$class.toBuffer(TraversableOnce.scala:265)\n\tat scala.collection.AbstractIterator.toBuffer(Iterator.scala:1157)\n\tat scala.collection.TraversableOnce$class.toArray(TraversableOnce.scala:252)\n\tat scala.collection.AbstractIterator.toArray(Iterator.scala:1157)\n\tat org.apache.spark.sql.catalyst.trees.TreeNode.transformChildrenDown(TreeNode.scala:238)\n\tat org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:193)\n\tat org.apache.spark.sql.catalyst.trees.TreeNode.transform(TreeNode.scala:178)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveRelations$.apply(Analyzer.scala:181)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveRelations$.apply(Analyzer.scala:171)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor$$anonfun$apply$1$$anonfun$apply$2.apply(RuleExecutor.scala:61)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor$$anonfun$apply$1$$anonfun$apply$2.apply(RuleExecutor.scala:59)\n\tat scala.collection.LinearSeqOptimized$class.foldLeft(LinearSeqOptimized.scala:111)\n\tat scala.collection.immutable.List.foldLeft(List.scala:84)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor$$anonfun$apply$1.apply(RuleExecutor.scala:59)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor$$anonfun$apply$1.apply(RuleExecutor.scala:51)\n\tat scala.collection.immutable.List.foreach(List.scala:318)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.apply(RuleExecutor.scala:51)\n\tat org.apache.spark.sql.SQLContext$QueryExecution.analyzed$lzycompute(SQLContext.scala:1082)\n\tat org.apache.spark.sql.SQLContext$QueryExecution.analyzed(SQLContext.scala:1082)\n\tat org.apache.spark.sql.SQLContext$QueryExecution.assertAnalyzed(SQLContext.scala:1080)\n\tat org.apache.spark.sql.DataFrame.\u003cinit\u003e(DataFrame.scala:133)\n\tat org.apache.spark.sql.DataFrame$.apply(DataFrame.scala:51)\n\tat org.apache.spark.sql.hive.HiveContext.sql(HiveContext.scala:101)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:606)\n\tat org.apache.zeppelin.spark.SparkSqlInterpreter.interpret(SparkSqlInterpreter.java:136)\n\tat org.apache.zeppelin.interpreter.ClassloaderInterpreter.interpret(ClassloaderInterpreter.java:57)\n\tat org.apache.zeppelin.interpreter.LazyOpenInterpreter.interpret(LazyOpenInterpreter.java:93)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:276)\n\tat org.apache.zeppelin.scheduler.Job.run(Job.java:170)\n\tat org.apache.zeppelin.scheduler.FIFOScheduler$1.run(FIFOScheduler.java:118)\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:262)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:178)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:292)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)\n\tat java.lang.Thread.run(Thread.java:745)\n"
+      },
+      "dateCreated": "Mar 28, 2016 5:39:26 PM",
+      "dateStarted": "Mar 28, 2016 6:46:44 PM",
+      "dateFinished": "Mar 28, 2016 6:46:44 PM",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// Create the SQLContext first from the existing Spark Context\nval sqlContext \u003d new org.apache.spark.sql.SQLContext(sc)\n\n// Import statement to implicitly convert an RDD to a DataFrame\nimport sqlContext.implicits._\n\n// Create a custom class to represent the Customer\ncase class Customer(customer_id: Int, name: String, city: String, state: String, zip_code: String)\n\n// Create a DataFrame of Customer objects from the dataset text file.\nval dfCustomers \u003d sc.textFile(\"file:///Users/hadoop/Downloads/customers.txt\").map(_.split(\",\")).map(p \u003d\u003e Customer(p(0).trim.toInt, p(1), p(2), p(3), p(4))).toDF()\n\n// Register DataFrame as a table.\ndfCustomers.registerTempTable(\"customers\")\n\n// Display the content of DataFrame\ndfCustomers.show()\n\n// Print the DF schema\ndfCustomers.printSchema()\n\n// Select customer name column\ndfCustomers.select(\"name\").show()\n\n// Select customer name and city columns\ndfCustomers.select(\"name\", \"city\").show()\n\n// Select a customer by id\ndfCustomers.filter(dfCustomers(\"customer_id\").equalTo(500)).show()\n\n// Count the customers by zip code\ndfCustomers.groupBy(\"zip_code\").count().show()\n",
+      "dateUpdated": "Mar 28, 2016 1:25:08 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1459164272021_971583205",
+      "id": "20160328-132432_2112620721",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "sqlContext: org.apache.spark.sql.SQLContext \u003d org.apache.spark.sql.SQLContext@7a524be5\nimport sqlContext.implicits._\ndefined class Customer\ndfCustomers: org.apache.spark.sql.DataFrame \u003d [customer_id: int, name: string, city: string, state: string, zip_code: string]\ncustomer_id name            city         state zip_code\n100          John Smith      Austin       TX    78727  \n200          Joe Johnson     Dallas       TX    75201  \n300          Bob Jones       Houston      TX    77028  \n400          Andy Davis      San Antonio  TX    78227  \n500          James Williams  Austin       TX    78727  \nroot\n |-- customer_id: integer (nullable \u003d false)\n |-- name: string (nullable \u003d true)\n |-- city: string (nullable \u003d true)\n |-- state: string (nullable \u003d true)\n |-- zip_code: string (nullable \u003d true)\n\nname           \n John Smith    \n Joe Johnson   \n Bob Jones     \n Andy Davis    \n James Williams\nname            city        \n John Smith      Austin     \n Joe Johnson     Dallas     \n Bob Jones       Houston    \n Andy Davis      San Antonio\n James Williams  Austin     \ncustomer_id name            city    state zip_code\n500          James Williams  Austin  TX    78727  \nzip_code count\n 78227   1    \n 78727   2    \n 77028   1    \n 75201   1    \n"
+      },
+      "dateCreated": "Mar 28, 2016 1:24:32 PM",
+      "dateStarted": "Mar 28, 2016 1:25:08 PM",
+      "dateFinished": "Mar 28, 2016 1:25:26 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\n//\n// Programmatically Specifying the Schema\n//\n\n// Create SQLContext from the existing SparkContext.\nval sqlContext \u003d new org.apache.spark.sql.SQLContext(sc)\n\n// Create an RDD\nval rddCustomers \u003d sc.textFile(\"file:///Users/hadoop/Downloads/customers.txt\")\n\n// The schema is encoded in a string\nval schemaString \u003d \"customer_id name city state zip_code\"\n\n// Import Spark SQL data types and Row.\nimport org.apache.spark.sql._\n\nimport org.apache.spark.sql.types._;\n\n// Generate the schema based on the string of schema\nval schema \u003d StructType(schemaString.split(\" \").map(fieldName \u003d\u003e StructField(fieldName, StringType, true)))\n\n// Convert records of the RDD (rddCustomers) to Rows.\nval rowRDD \u003d rddCustomers.map(_.split(\",\")).map(p \u003d\u003e Row(p(0).trim,p(1),p(2),p(3),p(4)))\n\n// Apply the schema to the RDD.\nval dfCustomers \u003d sqlContext.createDataFrame(rowRDD, schema)\n\n// Register the DataFrames as a table.\ndfCustomers.registerTempTable(\"customers\")\n\n// SQL statements can be run by using the sql methods provided by sqlContext.\nval custNames \u003d sqlContext.sql(\"SELECT name FROM customers\")\n\n// The results of SQL queries are DataFrames and support all the normal RDD operations.\n// The columns of a row in the result can be accessed by ordinal.\ncustNames.map(t \u003d\u003e \"Name: \" + t(0)).collect().foreach(println)\n\n// SQL statements can be run by using the sql methods provided by sqlContext.\nval customersByCity \u003d sqlContext.sql(\"SELECT name,zip_code FROM customers ORDER BY zip_code\")\n\n// The results of SQL queries are DataFrames and support all the normal RDD operations.\n// The columns of a row in the result can be accessed by ordinal.\ncustomersByCity.map(t \u003d\u003e t(0) + \",\" + t(1)).collect().foreach(println)\n",
+      "dateUpdated": "Mar 28, 2016 1:23:28 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala",
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457726363329_-251385676",
+      "id": "20160311-205923_460179145",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "sqlContext: org.apache.spark.sql.SQLContext \u003d org.apache.spark.sql.SQLContext@2ead1bc8\nrddCustomers: org.apache.spark.rdd.RDD[String] \u003d file:///Users/hadoop/Downloads/customers.txt MapPartitionsRDD[38] at textFile at \u003cconsole\u003e:102\nschemaString: String \u003d customer_id name city state zip_code\nimport org.apache.spark.sql._\nimport org.apache.spark.sql.types._\nschema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(customer_id,StringType,true), StructField(name,StringType,true), StructField(city,StringType,true), StructField(state,StringType,true), StructField(zip_code,StringType,true))\nrowRDD: org.apache.spark.rdd.RDD[org.apache.spark.sql.Row] \u003d MapPartitionsRDD[40] at map at \u003cconsole\u003e:110\ndfCustomers: org.apache.spark.sql.DataFrame \u003d [customer_id: string, name: string, city: string, state: string, zip_code: string]\ncustNames: org.apache.spark.sql.DataFrame \u003d [name: string]\nName:  John Smith\nName:  Joe Johnson\nName:  Bob Jones\nName:  Andy Davis\nName:  James Williams\ncustomersByCity: org.apache.spark.sql.DataFrame \u003d [name: string, zip_code: string]\n Joe Johnson, 75201\n Bob Jones, 77028\n Andy Davis, 78227\n John Smith, 78727\n James Williams, 78727\n"
+      },
+      "dateCreated": "Mar 11, 2016 8:59:23 PM",
+      "dateStarted": "Mar 28, 2016 1:23:28 PM",
+      "dateFinished": "Mar 28, 2016 1:23:40 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1459164208178_-2137880784",
+      "id": "20160328-132328_820861415",
+      "dateCreated": "Mar 28, 2016 1:23:28 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "2_Dummy_Notebook",
+  "id": "2BFNUYE9V",
+  "angularObjects": {
+    "2BCE6R8T2": [],
+    "2BDMU83T5": [],
+    "2BEMMQPJG": [],
+    "2BDW72X9E": [],
+    "2BF3AAW7U": [],
+    "2BEJ4D5SJ": [],
+    "2BF7MH2JM": [],
+    "2BE1TRU6B": [],
+    "2BE5CQ2W8": [],
+    "2BFUXNJ9R": [],
+    "2BCQ6J7ZP": [],
+    "2BCWJF462": [],
+    "2BFDNS2ZU": []
+  },
+  "config": {
+    "looknfeel": "default"
+  },
+  "info": {}
+}

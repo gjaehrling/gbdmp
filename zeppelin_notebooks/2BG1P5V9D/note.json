@@ -1,0 +1,136 @@
+{
+  "paragraphs": [
+    {
+      "text": "sc",
+      "dateUpdated": "Apr 14, 2016 1:18:59 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1460632728510_1581634030",
+      "id": "20160414-131848_1970185138",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "res0: org.apache.spark.SparkContext \u003d org.apache.spark.SparkContext@76956412\n"
+      },
+      "dateCreated": "Apr 14, 2016 1:18:48 PM",
+      "dateStarted": "Apr 14, 2016 1:18:59 PM",
+      "dateFinished": "Apr 14, 2016 1:19:37 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sh\npwd\nls -lt",
+      "dateUpdated": "Apr 14, 2016 1:19:59 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/sh"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1460632739336_-1317064184",
+      "id": "20160414-131859_828195726",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "/Users/hadoop/zeppelin-0.5.5-incubating-bin-all\ntotal 2688\ndrwxr-xr-x  48 hadoop  staff     1632 Apr 14 13:19 logs\ndrwxr-xr-x   5 hadoop  staff      170 Apr 14 13:19 run\ndrwxr-xr-x@ 13 hadoop  staff      442 Apr 14 13:18 notebook\n-rw-r--r--   1 hadoop  staff      732 Mar 28 17:39 derby.log\ndrwxr-xr-x   9 hadoop  staff      306 Mar 28 17:39 metastore_db\ndrwxr-xr-x   6 hadoop  staff      204 Mar 12 13:37 local-repo\ndrwxr-xr-x@ 10 hadoop  staff      340 Mar  4 10:18 conf\n-rw-r--r--@  1 hadoop  staff    27489 Nov 11 13:05 LICENSE\n-rw-r--r--@  1 hadoop  staff     5627 Nov 11 13:05 NOTICE\ndrwxr-xr-x@ 37 hadoop  staff     1258 Nov 11 13:05 licenses\n-rw-r--r--@  1 hadoop  staff      542 Nov 11 13:04 DISCLAIMER\n-rw-r--r--@  1 hadoop  staff     6242 Nov 11 13:04 README.md\ndrwxr-xr-x@  7 hadoop  staff      238 Nov 11 13:04 bin\ndrwxr-xr-x@ 15 hadoop  staff      510 Nov 11 13:04 interpreter\ndrwxr-xr-x@ 75 hadoop  staff     2550 Nov 11 13:04 lib\n-rw-r--r--@  1 hadoop  staff    49960 Nov 11 13:04 zeppelin-server-0.5.5-incubating.jar\n-rw-r--r--@  1 hadoop  staff  1267959 Nov 11 13:04 zeppelin-web-0.5.5-incubating.war\n"
+      },
+      "dateCreated": "Apr 14, 2016 1:18:59 PM",
+      "dateStarted": "Apr 14, 2016 1:19:59 PM",
+      "dateFinished": "Apr 14, 2016 1:19:59 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\nval raw_data \u003d sc.textFile(\"file:////Users/hadoop/spark-1.3.1-bin-hadoop1/README.md\")\n    .flatMap(x \u003d\u003e x.split(\" \"))\n    .take(10)",
+      "dateUpdated": "Apr 14, 2016 1:28:43 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1460632792092_-94424124",
+      "id": "20160414-131952_1176746044",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "raw_data: Array[String] \u003d Array(#, Apache, Spark, \"\", Spark, is, a, fast, and, general)\n"
+      },
+      "dateCreated": "Apr 14, 2016 1:19:52 PM",
+      "dateStarted": "Apr 14, 2016 1:28:43 PM",
+      "dateFinished": "Apr 14, 2016 1:28:44 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1460633196516_-716625513",
+      "id": "20160414-132636_282363593",
+      "dateCreated": "Apr 14, 2016 1:26:36 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "1_Gerds_research",
+  "id": "2BG1P5V9D",
+  "angularObjects": {
+    "2BCE6R8T2": [],
+    "2BDMU83T5": [],
+    "2BEMMQPJG": [],
+    "2BDW72X9E": [],
+    "2BF3AAW7U": [],
+    "2BEJ4D5SJ": [],
+    "2BF7MH2JM": [],
+    "2BE1TRU6B": [],
+    "2BE5CQ2W8": [],
+    "2BFUXNJ9R": [],
+    "2BCQ6J7ZP": [],
+    "2BCWJF462": [],
+    "2BFDNS2ZU": []
+  },
+  "config": {
+    "looknfeel": "default"
+  },
+  "info": {}
+}

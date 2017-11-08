@@ -1,0 +1,18 @@
+{
+    "contents" : "# load libraries: \nlibrary(tseries)\nlibrary(forecast)\n\n# load the data: \nstocks <- read.csv(\"sp500.csv\", header = TRUE, sep = \" \")\nsummary(stocks)\nhead(stocks, n=10)\nstr(stocks)\n\n# change Indes from Factor to Date:\nstocks$Index <- as.Date(stocks$Index, format=\"%Y-%m-%d\")\n\n# first plot:\nplot(stocks$Index, stocks$AdjClose, type=\"l\")\n\n# create time series\n#stocks.ts <- ts(t(stocks$AdjClose))\n#str(stocks.ts)\n\n# calculate forecast using ARIMA model (auto regressive integrated moving average)\nauto.arima(stocks$AdjClose)\nfit <- arima(stocks$AdjClose, seasonal=list(order=c(0,1,0), period=200))\nfc <- forecast(fit)\n\n# plot results: \nplot(fc)\n",
+    "created" : 1436597776156.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1372581926",
+    "id" : "B65DBAC4",
+    "lastKnownWriteTime" : 1436601758,
+    "path" : "~/Dropbox/user_gerd/programme/data_mining/R/Stocks/Stocks.R",
+    "project_path" : "Stocks.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

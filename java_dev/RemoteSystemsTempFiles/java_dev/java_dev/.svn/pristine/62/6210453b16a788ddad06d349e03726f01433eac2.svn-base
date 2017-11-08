@@ -1,0 +1,33 @@
+import java.io.IOException;
+import java.util.Iterator;
+
+import org.apache.hadoop.io.WritableComparable;
+import org.apache.hadoop.mapred.MapReduceBase;
+import org.apache.hadoop.mapred.OutputCollector;
+import org.apache.hadoop.mapred.Reducer;
+import org.apache.hadoop.mapred.Reporter;
+
+
+public class SalesDataReducer extends MapReduceBase implements Reducer {
+
+	public void reduce(WritableComparable _key, Iterator values,
+			OutputCollector output, Reporter reporter) throws IOException {
+		// replace KeyType with the real type of your key
+		KeyType key = (KeyType) _key;
+
+		while (values.hasNext()) {
+			// replace ValueType with the real type of your value
+			ValueType value = (ValueType) values.next();
+
+			// process value
+		}
+	}
+
+	@Override
+	public void reduce(Object arg0, Iterator arg1, OutputCollector arg2,
+			Reporter arg3) throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

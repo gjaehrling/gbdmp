@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: customer-relationships;singleton:=true
+Bundle-Name: Customer Relationships
+Bundle-Version: 1.0.0.201505151142
+Require-Bundle: customer-relationships-workitems;bundle-version="1.0.0
+ "
+Bundle-ManifestVersion: 2
+Bundle-Vendor: JBoss
+
+

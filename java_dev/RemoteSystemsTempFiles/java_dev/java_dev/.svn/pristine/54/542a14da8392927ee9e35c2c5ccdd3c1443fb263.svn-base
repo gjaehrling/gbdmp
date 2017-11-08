@@ -1,0 +1,6 @@
+#
+#Mon Jul 04 15:10:13 CEST 2016
+customer-relationships=target/classes
+customer-relationships-workitems=target/classes
+customer-relationships-tests=target/classes
+@ignoredot@=true

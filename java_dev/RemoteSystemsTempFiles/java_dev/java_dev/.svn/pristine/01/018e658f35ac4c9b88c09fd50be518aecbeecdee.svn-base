@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workflow-app
+   xmlns="uri:oozie:workflow:0.5"
+   name="wf-check">
+   <global>
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+   </global>
+   <start to="py-check" />
+   <action name="py-check">
+      <python xmlns="uri:oozie:bdmp-python-action:0.1">test-python-1</python>
+      <python xmlns="uri:oozie:bdmp-python-action:0.1">test-python-2</python>
+      <ok to="end" />
+      <error to="fail" />
+   </action>
+   <kill name="fail">
+      <message>Python failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+   </kill>
+   <end name="end" />
+</workflow-app>

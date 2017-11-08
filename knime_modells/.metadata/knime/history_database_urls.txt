@@ -1,0 +1,4 @@
+jdbc:hive2://sandbox.hortonworks.com:10000/
+<protocol>://<host>:<port>/<database_name>
+jdbc:hive2://localhost:10000/default
+jdbc:hive2://localhost:10000/gbdmp

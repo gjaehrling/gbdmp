@@ -1,0 +1,21 @@
+{
+    "contents" : "",
+    "created" : 1368189305864.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "C4AD5661",
+    "lastKnownWriteTime" : 4611686018427387904,
+    "path" : null,
+    "properties" : {
+        "caption" : "Arthritis",
+        "contentUrl" : "content?title=Arthritis&file=a613f13a2729436bbd2f9b5309b6ea92.htm",
+        "displayedObservations" : 84,
+        "displayedVariables" : 5,
+        "totalObservations" : 84,
+        "variables" : 5
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

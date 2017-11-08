@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="/Users/hadoop/hadoop-1.2.1/hadoop-core-1.2.1.jar" sourcepath="/hadoop-socks/src/java"/>
+	<classpathentry kind="lib" path="/Users/hadoop/.m2/repository/ant/ant/1.6.5/ant-1.6.5.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="ant"/>
+			<attribute name="maven.artifactId" value="ant"/>
+			<attribute name="maven.version" value="1.6.5"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/hadoop/.m2/repository/org/apache/hadoop/hadoop-core/1.2.1/hadoop-core-1.2.1.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="org.apache.hadoop"/>
+			<attribute name="maven.artifactId" value="hadoop-core"/>
+			<attribute name="maven.version" value="1.2.1"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

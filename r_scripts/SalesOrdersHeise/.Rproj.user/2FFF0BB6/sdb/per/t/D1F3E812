@@ -1,0 +1,17 @@
+{
+    "contents" : "Udacity lessen 4\n========================================================\n```{r}\ninstall.packages('ggplot2')\nlibrary(ggplot2)\n```\n\nThis is an R Markdown document. Markdown is a simple formatting syntax for authoring web pages (click the **MD** toolbar button for help on Markdown).\n\nWhen you click the **Knit HTML** button a web page will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:\n\n```{r}\nqplot(x = price, data = diamonds) + facet_wrap(~cut)\n```\n\nYou can also embed plots, for example:\n\n```{r fig.width=7, fig.height=6}\nqplot(x = price, data = diamonds, binwidth = 100) + facet_wrap(~cut, scales = \"free_y\")\n```\n\n```{r}\nqplot(x = price / carat, data = diamonds, binwidth = 0.1, color = cut) + geom_histogram() + scale_x_log10() + facet_wrap(~cut, scales = \"free_y\") \n```\n\n```{r}\nqplot(x = price / carat, data = diamonds, binwidth = 0.1, color = cut, geom='freqpoly') + geom_histogram() + scale_x_log10() + facet_wrap(~cut, scales = \"free_y\") \n```\n\nBox plots:\n```{r}\nsummary(diamonds$cut)\nsummary(diamonds$clarity)\nsummary(diamonds$color)\n\nqplot(x = cut, y = price, \n      data = subset(diamonds, !is.na(price)),\n      geom='boxplot', color = cut) + \n  coord_cartesian(ylim=c(0,10000))\n```\n```{r}\nqplot(x = color, y = price, \n      data = subset(diamonds, !is.na(price)),\n      geom='boxplot', color = color) + \n  coord_cartesian(ylim=c(0,10000))\n```\n\n```{r}\nqplot(y = price/carat, x = color, data = diamonds,\ngeom = 'boxplot', fill = color) + \n  coord_cartesian(ylim=c(0,10000))\n```\n\n```{r}\nqplot(carat, data = diamonds, geom = \"freqpoly\", binwidth = 0.01) +\n  scale_x_continuous(limits = c(0,2.5), breaks = seq(0,2.5,0.1)) +\n  geom_abline(intercept = 2000, slope = 0, color = 'blue', size = 0.5, lty = 'dashed')\n```\n\n```{r}\nsetwd('Users/gerd/programme/data_mining/R/Udacity')\ngetwd()\nread.csv('data.csv', header = TRUE, row.names = 1)\n```\n\n",
+    "created" : 1397405305772.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3961937573",
+    "id" : "D1F3E812",
+    "lastKnownWriteTime" : 1398598926,
+    "path" : "~/programme/data_mining/R/Udacity/lesson4.Rmd",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}

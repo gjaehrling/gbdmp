@@ -1,0 +1,17 @@
+{
+    "contents" : "Lesson 5 (many variables)\n========================================================\n\nLoad data:\n```{r}\nlibrary(ggplot2)\npf <- read.csv(\"~/programme/data_mining/R/Udacity/pseudo_facebook.tsv\", sep=\"\\t\", header = TRUE, row.names = 1)\nsummary(pf)\n```\n\n\nThird Qualitative Variable\n```{r}\nggplot(aes(x=gender, y=age), data=subset(pf, !is.na(gender))) +\n  geom_boxplot() +\n  stat_summary(fun.y=mean, geom='point', shape=4)\n\nggplot(aes(x=age, y=friend_count), data=subset(pf, !is.na(gender))) +\n  geom_line(aes(color=gender), stat=\"summary\", fun.y=median)\n```\n\nSecond option for third qualitative variable:\n```{r}\nlibrary('dplyr')\npf.fc_gender <- filter(pf, !is.na(pf$gender))\ngroup_age_gender <- group_by(pf.fc_gender, age, gender)\n\npf.fc_by_age_gender <- summarize(group_age_gender, \n          friend_count_mean = mean(friend_count),\n          friend_count_median = median(friend_count),\n          n = n())\nhead(pf.fc_by_age_gender)\n```\n\nThird option for qualitative variables:\n```{r}\nlibrary('dplyr')\n\npf.fc_by_age_gender <- pf %.%\n  filter(!is.na(gender)) %.%\n  group_by(age, gender) %.%\n  summarize(mean_friend_count = mean(friend_count),\n            median_friend_count = median(friend_count),\n            n = n()) %.%\n  ungroup() %.%\n  arrange(age)\n\nhead(pf.fc_by_age_gender)\n```\n\nPlotting third qualitative variable:\n```{r}\nggplot(aes(x=age, y=median_friend_count), \n       data=pf.fc_by_age_gender) +\n  geom_line(aes(color=gender))\n```\n\n",
+    "created" : 1402822761454.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2719056214",
+    "id" : "72B4386B",
+    "lastKnownWriteTime" : 1403167551,
+    "path" : "~/programme/data_mining/R/Udacity/Udacity/lesson_5_many_variables.Rmd",
+    "project_path" : "lesson_5_many_variables.Rmd",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}

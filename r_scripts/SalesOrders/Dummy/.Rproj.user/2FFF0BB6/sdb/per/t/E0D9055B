@@ -1,0 +1,21 @@
+{
+    "contents" : "",
+    "created" : 1368274042402.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "E0D9055B",
+    "lastKnownWriteTime" : -1152912734283628800,
+    "path" : null,
+    "properties" : {
+        "caption" : "Simple_Shopping_Basket",
+        "contentUrl" : "content?title=Simple_Shopping_Basket&file=6eec03f743fc4945b96b691383b5fa93.htm",
+        "displayedObservations" : "13",
+        "displayedVariables" : 2,
+        "totalObservations" : "13",
+        "variables" : "2"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<met:KNIMEMetaInfo xmlns:met="http://www.knime.org/2.9/metainfo">
+  <met:element form="text" name="Author">&lt;unknown></met:element>
+  <met:element form="date" name="Creation Date">1/0/1970/1:0:0 +01:00</met:element>
+  <met:element form="multiline" name="Comments">Churn / Cancelation / Retention Analysis
+
+This KNIME workflow focuses onclustering telco customers. As in all exploratory data mining, it is unknown
+beforehand what number of clusters will be appropriate, therefore the workflow allows the user to specify 
+different numbers of clusters for K-means to calculate. Each set of clusters has its’ cluster centers and variances combined and presented both as a report and automatically into a spreedsheet so that clusters can be
+interpreted.
+
+URL: Churn / Cancelation / Retention Analysis https://www.knime.org/knime-applications/churn-analysis
+TAG: Churn Analysis, K-means, Customers, Clusters, Variances</met:element>
+  <met:element form="text" name="Last Uploaded" read-only="true">2016-08-19 10:36:38 +0000</met:element>
+  <met:element form="text" name="Last Edited" read-only="true">2016-06-02 12:28:35 +0200</met:element>
+</met:KNIMEMetaInfo>

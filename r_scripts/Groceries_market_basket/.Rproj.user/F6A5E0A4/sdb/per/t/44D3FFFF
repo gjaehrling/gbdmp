@@ -1,0 +1,16 @@
+{
+    "contents" : "# market basket analysis: \n# from: http://www.salemmarafi.com/code/market-basket-analysis-with-r/comment-page-1/\n\nlibrary(arules)\nlibrary(arulesViz)\nlibrary(datasets)\n\n# Load the data set\ndata(Groceries)\n\n# Create an item frequency plot for the top 20 items\nitemFrequencyPlot(Groceries,topN=20,type=\"absolute\")\n\n# Get the rules\nrules <- apriori(Groceries, parameter = list(supp = 0.001, conf = 0.8))\n\n# Show the top 5 rules, but only 2 digits\noptions(digits=2)\ninspect(rules[1:5])\n\n# sort the top rules first and show the ten most significant rules: \nrules <-sort(rules, by=\"confidence\", decreasing=TRUE)\ninspect(rules[1:10])\n\n# by adding a “maxlen” parameter to your apriori function the length of the rule can be limited:\nrules <- apriori(Groceries, parameter = list(supp = 0.001, conf = 0.8,maxlen=3))\ninspect(rules[1:10])\n\n# eliminate redundant rules: \nsubset.matrix <- is.subset(rules, rules)\nsubset.matrix[lower.tri(subset.matrix, diag=T)] <- NA\nredundant <- colSums(subset.matrix, na.rm=T) >= 1\nrules.pruned <- rules[!redundant]\nrules<-rules.pruned\ninspect(rules[1:10])\n\n# targetting items:\nrules<-apriori(data=Groceries, parameter=list(supp=0.001,conf = 0.08), \n               appearance = list(default=\"lhs\",rhs=\"whole milk\"),\n               control = list(verbose=F))\nrules<-sort(rules, decreasing=TRUE,by=\"confidence\")\ninspect(rules[1:5])\n\n# targetting 2: \nrules<-apriori(data=Groceries, parameter=list(supp=0.001,conf = 0.15,minlen=2), \n               appearance = list(default=\"rhs\",lhs=\"whole milk\"),\n               control = list(verbose=F))\nrules<-sort(rules, decreasing=TRUE,by=\"confidence\")\ninspect(rules[1:5])\n\n# visualization:\nlibrary(arulesViz)\nplot(rules,method=\"graph\",interactive=TRUE,shading=NA)\n",
+    "created" : 1482151570848.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "778326129",
+    "id" : "44D3FFFF",
+    "lastKnownWriteTime" : 1482867697,
+    "path" : "~/SVNWorkplace/SVNRepository/trunk/r_scripts/Groceries_market_basket/Groceries_market_basket.R",
+    "project_path" : "Groceries_market_basket.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,21 @@
+{
+    "contents" : "",
+    "created" : 1369126332473.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "DB56B237",
+    "lastKnownWriteTime" : 4312773456,
+    "path" : null,
+    "properties" : {
+        "caption" : "movies",
+        "contentUrl" : "content?title=movies&file=6df5f11cb7294bb3968b19454b1348bb.htm",
+        "displayedObservations" : 30,
+        "displayedVariables" : 2,
+        "totalObservations" : 30,
+        "variables" : 2
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

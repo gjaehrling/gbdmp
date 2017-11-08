@@ -1,0 +1,84 @@
+install.packages("tseries", dependencies=TRUE)
+install.packages("forecast", dependencies=TRUE)
+library(tseries, forecast)
+library(tseries)
+library(forecast)
+weather <- read.csv("M4_not_cleaned.csv", header=TRUE)
+names(weather)
+head(weather, n=10)
+summary(weather)
+str(weather)
+weather.clean <- na.omit(weather)
+show(weather.clean)
+view(weather.clean)
+View(weather.clean)
+weather.clean <- weather[complete.cases(data), ]
+weather.clean <- weather[complete.cases(weather), ]
+show(weather.clean)
+View(weather)
+View(weather)
+View(weather.clean)
+names(weather.clean)
+atm.prs <- weather.clean$AtmosphericPressure
+plot(atm.prs)
+atm.prs <- weather.clean$AtmosphericPressure_mb
+summary(atm.prs)
+atm.prs <- weather.clean$AtmosphericPressure
+summary(atm.prs)
+str(atm.prs)
+summary(weather.clean)
+weather.clean <- weather[complete.cases(weather), ]
+View(weather.clean)
+weather.clean<-weather[cocomplete.cases(weather), ]
+weather.clean<-weather[complete.cases(weather), ]
+View(weather.clean)
+weather.clean<-weather[is.na(weather)]<-0
+View(weather.clean)
+weather.clean<-weather.is.finite(NaN)
+weather.clean<-weather[is.finite(NaN), ]
+View(weather.clean)
+weather.clean<-weather[is.finite(weather), ]
+weather.clean<-weather[!rowSums(!is.finite(weather)),]
+weather.clean<-weather[ !is.nan(weather) ]
+weather[!complete.cases(weather),]
+weather <- read.csv("M4_not_cleaned.csv", header=TRUE)
+weather[!complete.cases(weather),]
+weather.clean <- na.omit(weather)
+weather.clean <- nan.omit(weather)
+x <- c(1,2,3,4,NaN)
+y  <- c(1,2,NaN,4,5)
+myDF <- data.frame(x,y)
+myDF
+myDF[ is.na(myDF) ] <- NA
+myDF
+weathermyDF[ is.na(weather) ] <- NA
+weathermy[ is.na(weather) ] <- NA
+weather[ is.na(weather) ] <- NA
+weather[!complete.cases(weather),]
+View(weather)
+weather[ is.nan(weather) ] <- NA
+weather[ is.na(weather) ] <- NA
+weather.clean <- weather[ is.na(weather) ] <- NA
+View(weather.clean)
+View(myDF)
+View(myDF)
+weather.clean <- weather[complete.cases(weather), ]
+data <- c(1,2,3,4,5,6,NaN,5,9,NaN,23,9)
+data
+attr(data,"dim") <- c(6,2)
+data
+data[complete.cases(data), ]
+weather <- read.csv("M4_not_cleaned.csv", header=TRUE)
+row.names(weather.clean) <- NULL
+View(weather.clean)
+weather.clean <- weather[complete.cases(weather), ]
+weather <- read.csv("M4_not_cleaned.csv", header=TRUE)
+weather.clean <- weather[complete.cases(weather), ]
+is.na(weather[1,6])
+weather <- read.csv("M4_not_cleaned.csv", header=TRUE)
+weather.clean <- weather[complete.cases(weather), ]
+View(weather.clean)
+weather.clean <- na.omit(weather)
+weather.clean <- weather[complete.cases(weather), ]
+weather.clean <- weather[complete.cases(weather), ]
+source('~/Dropbox/user_gerd/programme/data_mining/R/WeatherData/forecastWeatherData.R', echo=TRUE)

@@ -1,0 +1,16 @@
+{
+    "contents" : "# preparation\nlibrary(car)\nlibrary(mclust)\n# load data from csv file:\nSalesOrders <- read.csv(\"/Users/gerd/programme/data_mining/data/SalesOrders.csv\", \n                        sep=\",\",\n                        stringsAsFactors=FALSE)\n# change format for date fields:\nSalesOrders$DeliveryDate <- as.Date(SalesOrders$DeliveryDate, format=\"%Y-%m-%d\")\nSalesOrders$DueDate <- as.Date(SalesOrders$DueDate, format=\"%Y-%m-%d\")\nSalesOrders$DatePayed <- as.Date(SalesOrders$DatePayed, format=\"%Y-%m-%d\")\n\n# view structure:\nstr(SalesOrders)\n# show summary\nsummary(SalesOrders)\nnames(SalesOrders)\n\n# display data:\npar(mfrow=c(2,2))\nhist(SalesOrders$BuyerRef)\nhist(SalesOrders$DeliveryDate, \"weeks\")\nhist(SalesOrders$TotalValue)\nhist(SalesOrders$PaymentMade, main=\"Payment History\")\nlines(density(SalesOrders$PaymentMade, na.rm=T))\nrug(jitter(SalesOrders$PaymentMade))\n\n# QQ Plot of payment history\npar(mfrow=c(1,1))\nqqPlot(SalesOrders$PaymentMade)\nabline(h=mean(SalesOrders$PaymentMade, na.rm=T), lty=2)\n\n# create the time series for the payment history of the customers\nPh.ts<-aggregate(x=SalesOrders$PaymentMade, by=list(Customer=SalesOrders$BuyerRef), FUN=ts)\nnames(Ph.ts)<-c(\"Customer\", \"TimeSeries\")\nstr(Ph.ts[1:3,])\n\n# Average days per customer\nPh.mean<-sapply(Ph.ts[, \"TimeSeries\"], FUN=mean)\n\n# bind the vector \"Ph.mean\" with the TimeSeries Data-Frames mit \"cbind\"\nPh<-cbind(Ph.ts, Mean=Ph.mean)\n\n# example for the combination of the two commands for the standard-deviation values\nPh<-cbind(Ph, StdDev=sapply(Ph.ts[, \"TimeSeries\"], FUN=sd))\n\n# add the number of sales orders to the TimeSeries Data-Frame\nPh.nr<-aggregate(x=SalesOrders$PaymentMade, \n                 by=list(Customer=SalesOrders$BuyerRef), FUN=length)\nnames(Ph.nr)<-c(\"Customer\", \"NrDel\")\nPh<-merge(Ph, Ph.nr)\n\nstr(Ph[1:5,])\n\nPh <- Ph[, c(1,3,4,5,2)]\nstr(Ph[1:3,])\n\n# cluster analysis\ncl.m<-Mclust(Ph[,2:4])\n# display the cluster centers\ncl.m$parameters$mean\n\n# plot the cluster\npar(mfrow=c(1,1))\nplot(cl.m, Pd[,2:4], dimens=c(1:2),what=c(\"classification\"))",
+    "created" : 1367521366594.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "286380994",
+    "id" : "67EFFD95",
+    "lastKnownWriteTime" : 1369050612,
+    "path" : "~/programme/data_mining/R/SalesOrders/SalesOrders_script.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

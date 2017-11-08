@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "getwd()\n# get available list of data sources in the R package: \ndata()\n\n# load a dataset: \ndata(\"iris\")\n# to get the the type of the dataset use the class function: \nclass(iris)\n# example to save data as a file in the current workspace:\nsave(iris, file=\"myData.RData\")\n",
+    "created" : 1483376200778.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "241879824",
+    "id" : "3FC45F06",
+    "lastKnownWriteTime" : 1483376516,
+    "last_content_update" : 1483376516724,
+    "path" : "~/SVNWorkplace/SVNRepository/trunk/r_scripts/Data_Science_with_R_code_examples.R",
+    "project_path" : "Data_Science_with_R_code_examples.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

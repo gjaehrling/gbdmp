@@ -1,0 +1,14 @@
+# create topic:
+kafka-topics --zookeeper localhost:2181 --create --topic zerg.hydra --partitions 1 --replication-factor 1
+
+# check for available kafka-topics:
+kafka-topics --zookeeper localhost:2181 --list
+# output of the list command: 
+__consumer_offsets
+zerg.hydra
+
+# create a consolde producer: 
+kafka-console-producer --broker-list localhost:9092, localhost:9093 --sync --topic zerg.hydra
+
+# create a consolde consumer:
+kafka-console-consumer --zookeeper localhost:2181 --topic zerg.hydra --from-beginning

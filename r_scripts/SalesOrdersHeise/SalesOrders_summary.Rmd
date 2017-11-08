@@ -1,0 +1,234 @@
+---
+title: "Sales_Order_Example"
+author: "GJA"
+date: "11. Juni 2015"
+output: html_document
+---
+## Load the data:
+```{r}
+SalesOrders1 <- read.csv("~/Downloads/SalesOrders1.csv", sep=";")
+summary(SalesOrders1)
+```
+
+Important is to ananlyze the structure of the data. For this purpose, the command str() has to be used.
+Show structure of the data:
+```{r, echo=FALSE}
+str(SalesOrders1)
+```
+
+Structure shows, that the date is represented as a factor. 
+To correct, that date is represented as factor, the stringAsFactor() has to be set to false during upload:
+```{r}
+SalesOrders1 <- read.csv("~/Downloads/SalesOrders1.csv", sep=";", stringsAsFactors = FALSE)
+str(SalesOrders1)
+```
+Strings are represented as a vector of strings.
+Convert string to date:
+```{r}
+SalesOrders1$DeliveryDate <- as.Date(SalesOrders1$DeliveryDate, format="%Y-%m-%d")
+str(SalesOrders1)
+```
+
+## Analysis of the raw data:
+The analysis of the raw data loaded is the basis for the development of the model. 
+
+1. first step is to analyse the distribution of the different variables in the data set. In order to analyze more than one attribute, the command par() and mfrow has to be used to split the output screen into different sections.
+```{r}
+par(mfrow=c(2,2))
+names(SalesOrders1)
+```
+
+Command par() is used to set graphical parameters and mfrow(2,2) splits the output window into four parts. Command names() returns the names of the attributes. 
+Historgamms are used to show the distribution of the frequency of the occurrence of an attribute: 
+```{r}
+hist(SalesOrders1$BuyerRef)
+hist(SalesOrders1$DeliveryDate, "weeks")
+hist(SalesOrders1$TotalPrice) 
+hist(SalesOrders1$PaymentDuration)
+```
+
+Histogramms are one dimensional plots.
+The histogram for PaymentDuration shows a small peak around 5 and a plateau around 19. This can be seen as indication for a difference in customers payment history. 
+Scatter-plots are used to analyze the dependency between two attributes:
+```{r}
+plot(SalesOrders1$BuyerRef, SalesOrders1$PaymentDuration)
+smoothScatter(SalesOrders1$BuyerRef, SalesOrders1$PaymentDuration)
+smoothScatter(SalesOrders1$TotalPrice, SalesOrders1$PaymentDuration)
+plot(SalesOrders1$TotalPrice, SalesOrders1$PaymentDuration, cex=0.3)
+```
+
+The first plot shows the dependency between the attributes PaymentDuration and BuyerRef. The standard function plot() creates for every pair of values one data point. For a large number of data points, the method is not useful, as every single point has to be drawn and the information is for a large number of points not helpful. A possiblity is to reduce the size of the data points in the standard plot with the parameter cex. 
+Smooth scatter plots shows the concentration of data points and are more helpful for a large number of records. 
+
+Another possiblity to visualize information about the data within one picture is the Scatterplot-Matrix:
+```{r}
+library(car)
+scatterplotMatrix(SalesOrders1, diagonal="histogram", cex=0.5, smooth=FALSE, reg.line=FALSE)
+```
+
+The scatterplot matrix is the central plotting method of the package car (Companion to Applied Regression). 
+
+## Development of the Model
+From the visualization of the data no special distribution and dependencies of BuyerRef, DeliveryDate and TotalPrice could be detected. Only the attribut PaymentDuration showed indications, that the payment varies for the customers. 
+
+### Time Series:
+First step to create a time series for the payment history per customer ist the creation of a TimeSeries-object:
+```{r}
+Pd.ts <- aggregate(x=SalesOrders1$PaymentDuration,
+          by=list(Customer=SalesOrders1$BuyerRef), FUN=ts)
+names(Pd.ts) <- c("Customer", "TimeSeries")
+str(Pd.ts[1:3,])
+```
+
+The function aggregate() processes the data frame record by record aggregates the column PaymentDuration by customer (BuyerRef) using the function TimeSeries (FUN=ts). The output is saved in a new data frame Pd.ts, the names function creates the column names for the Pd.ts object. 
+
+In order to add a calculation the function sapply() can be used. Hereby, the function creates a vector of the mean values: 
+```{r}
+# mean value of the time series
+Pd.mean <- sapply(Pd.ts[, "TimeSeries"], FUN=mean)
+str(Pd.mean)
+```
+
+The structure is "named vector" comprising the numeric mean value and an indicator. The next step is to bind the data frame and the vector together:
+```{r}
+Pd <- cbind(Pd.ts, Mean=Pd.mean)
+#str(Pd)
+```
+
+It is possible to combine both commands, for example to add the standard deviation: 
+```{r}
+Pd <- cbind(Pd, StdDev=sapply(Pd.ts[, "TimeSeries"], FUN=sd))
+```
+
+### Adding the number of customer orders:
+In the next step, the number of orders (DeliveryDate) per customer shall be created in a new data frame and merged with the time series data frame: 
+```{r}
+Pd.nr <- aggregate(x=SalesOrders1$PaymentDuration, 
+          by=list(Customer=SalesOrders1$BuyerRef), FUN=length)
+names(Pd.nr)   <- c("Customer", "NrDel")
+str(Pd.nr)
+```
+
+Merge the two data frames:
+```{r}
+Pd <- merge(Pd, Pd.nr)
+#str(Pd)
+```
+
+It needs to be considered, that the names of the columns corresponds in the objects to be merged. If not, than the columns can be adressed by the parameters by.x and by.y.
+
+Rearranging the columns, so that the time series is at the end of the data frame:
+```{r}
+Pd <- Pd[, c(1,3,4,5,2)]
+str(Pd[1:3,])
+```
+
+## Analysis of the Model
+The following assumptions can be made:
+
+- A narrow peak around 5 to 8 of the histogram of the PaymentDuaration 
+- A broad peak from 15 to 22 of the PaymentDuration histogram
+- Assumption is, that the payment behaviour differentiates between *early payers* (using the discount) and *long payers* (paying at the end of the payment term)
+
+The assumption has to be verified by the analysis of the model using a *cluster analysis*.
+```{r}
+library(mclust)
+cl.m <- Mclust(Pd[,2:3])
+cl.m$parameters$mean
+```
+
+Important is, that the clustering shall only 
+
+###  Plot the classification:
+```{r}
+library(car)
+par(mfrow=c(1,1))
+plot(cl.m, what=c("classification"))
+#plot(cl.m, what=c("classification"),dimens=c(2:4))
+```
+
+The classification shows three clusters. The green cluster comprises customers paying early in order to ge the discount, the blue cluster represents customers paying within the, or at the end of the payment terms. But the red cluster comprises customers paying after getting a dunning letter. 
+
+# Prediction of customer payment
+## Prediction functiion:
+Function to predict the incoming payment based on the customers payment history:
+```{r}
+predict.payDur <- function(ID) {
+    i <- match(ID, Pd$Customer, nomatch = 0)
+    if(i==0) {
+      # unknown customer, best guess:
+      # return mean value and standard deviation of 
+      # all historical PaymentDuration
+      payDur.mean <- mean(unlist(Pd[,"TimeSeries"]))
+      payDur.sd   <- sd(unlist(Pd[,"TimeSeries"]))
+    } else {
+      payDur.mean <- Pd[Pd$Customer == Pd$Customer[i], "Mean"]
+      payDur.sd   <- Pd[Pd$Customer == Pd$Customer[i], "StdDev"]
+    }
+    return(c(payDur.mean, payDur.sd))
+}
+```
+
+## Create random test data:
+Create some sample data for testing:
+```{r}
+set.seed(1234)               # set seed for random number generation
+d0         <- as.Date("1970-01-01")  # set constant: begin of date
+date.min   <- as.Date("2012-07-01")  # earliest date for SalesOrder
+date.max   <- as.Date("2012-08-31")  # latest date for SalesOrder
+nr         <- 1000                   # create 1000 SalesOrders
+```
+
+Select 1000 customer ID's randomly:
+```{r}
+cust.test  <- round(runif(nr, min=1001, max=1100))
+```
+
+Create random dates between the earliest and the latest date:
+```{r}
+date.test  <- d0 + round(runif(nr, min = date.min-d0, 
+                                   max = date.max-d0))
+```
+
+Create random prices:
+```{r}
+total.test <- 10000+round(rnorm(nr, mean=10000, sd=5000))
+```
+
+Combine customer number, dates and prices to one data frame:
+```{r}
+SO.test    <- data.frame(Customer=cust.test, 
+                         DeliveryDate=date.test, 
+                         TotalPrice=total.test)
+```
+
+## Test the function:
+Apply prediction for random test data:
+```{r}
+cust.pred <- t(sapply(SO.test$Customer, FUN=predict.payDur))
+```
+
+Enhance the test data with the data from prediction:
+```{r}
+SO.test   <- cbind(SO.test,
+                   predict.pd.mean=cust.pred[,1], 
+                   predict.pd.sd=cust.pred[,2],
+                   predict.date=SO.test$DeliveryDate+cust.pred[,1]
+                  )
+```
+
+## Analyze predicted data:
+1. add week format to the test data:
+```{r}
+SO.test$predict.week <- as.numeric(format(SO.test[,6], "%W"))
+```
+
+2. Plot the data:
+```{r}
+# plot sum per week
+sum.week <- aggregate(x=SO.test$TotalPrice,
+                      by=list(SO.test$predict.week), FUN=sum)
+names(sum.week) <- c("predicted.week","TotalSum")
+plot(sum.week, type="b")
+```
+

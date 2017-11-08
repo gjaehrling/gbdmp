@@ -1,0 +1,17 @@
+{
+    "contents" : "# install.packages(\"sparklyr\")\n# install.packages(c(\"nycflights13\", \"Lahman\"))\n# install.packages(\"leaflet\")\n# install.packages(\"ggmap\")\n\n# ###################################################\nlibrary(sparklyr)\nlibrary(dplyr)\nlibrary(DBI)\nlibrary(datasets)\nlibrary(leaflet)\nlibrary(ggmap)\nlibrary(SparkR, lib.loc = c(file.path(Sys.getenv(\"SPARK_HOME\"), \"R\", \"lib\")))\n\n# ###################################################\n\n#spark_install(version = \"2.0.0\")\n#devtools::install_github(\"rstudio/sparklyr\")\nSys.getenv(\"SPARK_HOME\")\nSys.getenv(\"SPARK_HOME_VERSION\")\n# Sys.setenv(SPARK_HOME_VERSION=\"1.6.0\")\nsc <- spark_connect(master = \"local\", spark_home = Sys.getenv(\"SPARK_HOME\"))\nsc\n\n# ###################################################\n\ndbGetQuery(sc, \"use gbdmp\")\ncheck_tables <- dbGetQuery(sc, \"show tables\")\ncheck_tables\ndbGetQuery(sc, \"describe business\")\nsome_data <- dbGetQuery(sc, \"SELECT name, latitude, longitude from business limit 100\")\nstr(some_data)\n\n# #########################################################\n\n# test with rworldmap:\n# install.packages(\"rworldmap\")\nlibrary(rworldmap)\nnewmap <- getMap(resolution = \"low\")\nplot(newmap, xlim = c(-20, 59), ylim = c(35, 71), asp = 1)\n\n# test with ggmap\n# hdf <- get_map(\"darmstadt, Germany\")\nhdf <- get_map(c(-79.90070, 40.35433))\nggmap(hdf, extent = \"device\")\nqplot(longitude, latitude, data = some_data)\nggmap(hdf, extent = \"panel\") +\n  geom_point(aes(x = longitude, y = latitude, color = \"red\"), data = some_data, alpha = 1)\n\n# ##########################################################\nlibrary(leaflet)\nlibrary(htmltools)\n\nm <- leaflet()\nm <- addTiles(m)\nm <- addMarkers(m, lng=174.768, lat=-36.852, popup=\"The birthplace of R\")\nm\n\nleaflet(some_data) %>% addTiles() %>%\n  addMarkers(~longitude, ~latitude, popup = ~htmlEscape(name))\n",
+    "created" : 1484833604018.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2230965206",
+    "id" : "29EF3E73",
+    "lastKnownWriteTime" : 1484947805,
+    "path" : "~/SVNWorkplace/SVNRepository/trunk/r_scripts/SparkTest/SparkTest.R",
+    "project_path" : "SparkTest.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

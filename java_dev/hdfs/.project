@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>hdfs</name>
+	<comment></comment>
+	<projects>
+		<project>Chapter1</project>
+		<project>Citation</project>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+</projectDescription>

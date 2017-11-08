@@ -1,0 +1,65 @@
+Udacity lessen 4
+========================================================
+```{r}
+install.packages('ggplot2')
+library(ggplot2)
+```
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring web pages (click the **MD** toolbar button for help on Markdown).
+
+When you click the **Knit HTML** button a web page will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+qplot(x = price, data = diamonds) + facet_wrap(~cut)
+```
+
+You can also embed plots, for example:
+
+```{r fig.width=7, fig.height=6}
+qplot(x = price, data = diamonds, binwidth = 100) + facet_wrap(~cut, scales = "free_y")
+```
+
+```{r}
+qplot(x = price / carat, data = diamonds, binwidth = 0.1, color = cut) + geom_histogram() + scale_x_log10() + facet_wrap(~cut, scales = "free_y") 
+```
+
+```{r}
+qplot(x = price / carat, data = diamonds, binwidth = 0.1, color = cut, geom='freqpoly') + geom_histogram() + scale_x_log10() + facet_wrap(~cut, scales = "free_y") 
+```
+
+Box plots:
+```{r}
+summary(diamonds$cut)
+summary(diamonds$clarity)
+summary(diamonds$color)
+
+qplot(x = cut, y = price, 
+      data = subset(diamonds, !is.na(price)),
+      geom='boxplot', color = cut) + 
+  coord_cartesian(ylim=c(0,10000))
+```
+```{r}
+qplot(x = color, y = price, 
+      data = subset(diamonds, !is.na(price)),
+      geom='boxplot', color = color) + 
+  coord_cartesian(ylim=c(0,10000))
+```
+
+```{r}
+qplot(y = price/carat, x = color, data = diamonds,
+geom = 'boxplot', fill = color) + 
+  coord_cartesian(ylim=c(0,10000))
+```
+
+```{r}
+qplot(carat, data = diamonds, geom = "freqpoly", binwidth = 0.01) +
+  scale_x_continuous(limits = c(0,2.5), breaks = seq(0,2.5,0.1)) +
+  geom_abline(intercept = 2000, slope = 0, color = 'blue', size = 0.5, lty = 'dashed')
+```
+
+```{r}
+setwd('Users/gerd/programme/data_mining/R/Udacity')
+getwd()
+read.csv('data.csv', header = TRUE, row.names = 1)
+```
+

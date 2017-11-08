@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# Vorbereitungen\nlibrary(car)\nlibrary(mclust)\n\n# Einlesen der Daten aus der CSV-Datei\nSalesOrdersHeise <- read.csv(\"SalesOrdersHeise.csv\", sep=\";\", stringsAsFactor=FALSE)\n\n# Anzeige der Struktur\nstr(SalesOrdersHeise)\n# Konvertierung des Felds 'DeliveryDate' vom character nach date\nSalesOrdersHeise$DeliveryDate<-as.Date(SalesOrdersHeise$DeliveryDate, format=\"%Y-%m-%d\")\n\n# Überprüfen der Struktur\nstr(SalesOrdersHeise)\n\n# Teile das Ausgabefenster in eine 2,2 Felder Matrix\npar(mfrow=c(2,2)) \n# Spaltennamen zuweisen\nattach(SalesOrdersHeise)\n# Spaltennamen ausgeben\nnames(SalesOrdersHeise)\n\n# Histogramme\nhist(BuyerRef)\nhist(DeliveryDate, \"weeks\")\nhist(TotalPrice)\nhist(PaymentDuration, main=\"Zahlungsverhalten\")\nlines(density(PaymentDuration, na.rm=T))\nrug(jitter(PaymentDuration))\n\npar(mfrow=c(1,1))\nqqPlot(PaymentDuration, main=\"Zahlungsverhalten QQ Plot\")\n\n# 2-dimensionale Korrelationsplots\npar(mfrow=c(2,2)) \nplot(BuyerRef, PaymentDuration)\nsmoothScatter(BuyerRef, PaymentDuration)\nsmoothScatter(TotalPrice, PaymentDuration)\nplot(TotalPrice, PaymentDuration, cex=0.3)\n\nscatterplotMatrix(SalesOrdersHeise, diagonal=\"histogram\", cex=0.5,smooth=FALSE, reg.line=FALSE)\n\n# erzeuge die Zeitreihe für die Zahlungshistorie der Kunden\nPd.ts<-aggregate(x=SalesOrdersHeise$PaymentDuration, by=list(Customer=SalesOrdersHeise$BuyerRef), FUN=ts)\nnames(Pd.ts)<-c(\"Customer\", \"TimeSeries\")\nstr(Pd.ts[1:3,])\n\n# Durchschnittswert der Tage pro Kunde\nPd.mean<-sapply(Pd.ts[, \"TimeSeries\"], FUN=mean)\n\n# Zusammenfügen des Vektors \"Pd.mean\" zu dem TimeSeries Data-Frames mit \"cbind\"\nPd<-cbind(Pd.ts, Mean=Pd.mean)\n\n# Beispiel zur Kombination der beiden Befehle beim Hinzufügen des Wertes zur Standardabweichung\nPd<-cbind(Pd, StdDev=sapply(Pd.ts[, \"TimeSeries\"], FUN=sd))\n\n# Hinzufügen der Anzahl Verkaufsaufträge zum TimeSeries Data-Frame\nPd.nr<-aggregate(x=SalesOrdersHeise$PaymentDuration, \n                by=list(Customer=SalesOrdersHeise$BuyerRef), FUN=length)\nnames(Pd.nr)<-c(\"Customer\", \"NrDel\")\n# Verbinden der beiden Data-frames\nPd<-merge(Pd, Pd.nr)\n\nstr(Pd)\n# Umsortieren der Spalten\nPd <- Pd[, c(1,3,4,5,2)]\nstr(Pd[1:3,])\n# Clusteranalyse mit Mclust\ncl.m <- Mclust(Pd[,2:4])\n# Ausgabe der Cluster-Zentren\ncl.m$parameters$mean\n\n# Ausgabe des Clusters\npar(mfrow=c(1,1))\nplot(cl.m, Pd[,2:4], dimens=c(1:2),what=c(\"classification\"))\n",
+    "created" : 1474195893063.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2965610374",
+    "id" : "E1C376C7",
+    "lastKnownWriteTime" : 1474196047,
+    "last_content_update" : 1474196047019,
+    "path" : "~/SVNWorkplace/SVNRepository/trunk/r_scripts/SalesOrdersHeise/SalesOrdersHeise_script.R",
+    "project_path" : "SalesOrdersHeise_script.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

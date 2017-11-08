@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd">
+  <talendfile:ContextType confirmationNeeded="false" name="CDH_context">
+    <contextParameter comment="" name="hdfsHost" prompt="hdfsHost?" promptNeeded="false" type="id_String" value="192.168.2.135"/>
+    <contextParameter comment="" name="hdfsPort" prompt="hdfsPort?" promptNeeded="false" type="id_String" value="8020"/>
+    <contextParameter comment="" name="username" prompt="username?" promptNeeded="false" type="id_String" value="gerd"/>
+  </talendfile:ContextType>
+  <talendfile:ContextType confirmationNeeded="false" name="Default">
+    <contextParameter comment="" name="hdfsHost" prompt="hdfsHost?" promptNeeded="false" type="id_String" value="192.168.2.135"/>
+    <contextParameter comment="" name="hdfsPort" prompt="hdfsPort?" promptNeeded="false" type="id_String" value="8020"/>
+    <contextParameter comment="" name="username" prompt="username?" promptNeeded="false" type="id_String" value="cloudera"/>
+  </talendfile:ContextType>
+</xmi:XMI>

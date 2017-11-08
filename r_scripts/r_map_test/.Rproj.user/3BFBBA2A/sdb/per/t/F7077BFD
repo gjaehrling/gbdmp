@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "install.packages(\"sparklyr\")\ninstall.packages(c(\"nycflights13\", \"Lahman\"))\ninstall.packages(\"leaflet\")\n\n# ###################################################\nlibrary(sparklyr)\nlibrary(dplyr)\nlibrary(DBI)\nlibrary(datasets)\nlibrary(SparkR, lib.loc = c(file.path(Sys.getenv(\"SPARK_HOME\"), \"R\", \"lib\")))\n\n#spark_install(version = \"2.0.0\")\n#devtools::install_github(\"rstudio/sparklyr\")\nSys.getenv(\"SPARK_HOME\")\nSys.getenv(\"SPARK_HOME_VERSION\")\nSys.setenv(SPARK_HOME_VERSION=\"1.6.0\")\nsc <- spark_connect(master = \"local\", spark_home = Sys.getenv(\"SPARK_HOME\"))\nsc\n\ndbGetQuery(sc, \"use gbdmp\")\ncheck_tables <- dbGetQuery(sc, \"show tables\")\ncheck_tables\ndbGetQuery(sc, \"describe business\")\nsome_data = dbGetQuery(sc, \"SELECT name, latitude, longitude from business limit 10\")\nsome_data\n\n# test with rworldmap:\n# install.packages(\"rworldmap\")\nlibrary(rworldmap)\nnewmap <- getMap(resolution = \"low\")\nplot(newmap, xlim = c(-20, 59), ylim = c(35, 71), asp = 1)\n\n# test with ggmap\n\n",
+    "created" : 1484923701442.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1583589797",
+    "id" : "F7077BFD",
+    "lastKnownWriteTime" : 1484923973,
+    "last_content_update" : 1484923973243,
+    "path" : "~/SVNWorkplace/SVNRepository/trunk/r_scripts/r_map_test/r_map_test.R",
+    "project_path" : "r_map_test.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

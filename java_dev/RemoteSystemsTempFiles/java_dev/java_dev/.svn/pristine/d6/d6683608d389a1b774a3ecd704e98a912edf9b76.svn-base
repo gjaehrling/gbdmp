@@ -1,0 +1,14 @@
+#This configuration file was written by: org.eclipse.equinox.internal.frameworkadmin.equinox.EquinoxFwConfigFileParser
+#Wed May 25 23:39:16 CEST 2016
+eclipse.p2.profile=JavaServerJPaaSSDK
+osgi.framework=file\:plugins/org.eclipse.osgi_3.7.2.sap-05.jar
+equinox.use.ds=true
+com.sap.core.js.jarscanner.bundles=com.springsource.org.apache.tomcat.websocket,com.sap.core.jpaas.security.auth.local.loginpage
+server.config.home=.
+osgi.bundles=reference\:file\:org.eclipse.equinox.simpleconfigurator_1.0.200.v20100503-sap.jar@1\:start
+org.eclipse.equinox.simpleconfigurator.configUrl=file\:org.eclipse.equinox.simpleconfigurator/bundles.info
+osgi.framework.extensions=reference\:file\:com.sap.core.js.deployer.equinox.extension_1.0.0.jar,reference\:file\:com.sap.core.services.accessor.equinox.extension_1.0.0.1.jar,reference\:file\:com.sap.javax.xml.bind_2.1.0.BUILD-20130730.jar,reference\:file\:org.eclipse.gemini.jpa.weaving_1.0.0.RC2.jar,reference\:file\:org.eclipse.virgo.osgi.console_3.0.0.RELEASE.jar
+osgi.bundles.defaultStartLevel=4
+eclipse.p2.data.area=@config.dir/../p2
+org.osgi.framework.bootdelegation=com.sap.jvm.impl.*,com.sun.tools.attach*,sun.tools.attach,javax.management.*
+osgi.bundlefile.limit=500

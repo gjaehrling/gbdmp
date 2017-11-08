@@ -1,0 +1,16 @@
+# Plot a histogram and a Q-Plot on one page:
+> par(mfrow=c(1,2))
+> hist(algae$mxPH, prob=T, main="Histogramm max PH", ylim=0:1)
+> lines(density(algae$mxPH, na.rm=T))
+> rug(jitter(algae$mxPH))
+> qqPlot(algae$mxPH)
+> par(mfrow=c(1,1))
+
+# just plot the data points:
+> plot(algae$mxPH)
+
+# add some additional lines to the plot 
+> abline(h=mean(algae$mxPH), lty=1)
+> abline(h=mean(algae$mxPH, na.rm=T), lty=1)
+> abline(h=mean(algae$mxPH, na.rm=T), lty=2)
+

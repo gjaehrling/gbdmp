@@ -1,0 +1,11 @@
+Problem:
+-----------------------------------------------------------
+> Error: attempt to apply non-function
+> In addition: Warning message:
+> In method(obj, ...) : Unknown internal child: selection
+
+Solution:
+-----------------------------------------------------------
+> library(rattle)
+> crv$rattleUI <- "rattle_macosx.ui"
+> rattle()

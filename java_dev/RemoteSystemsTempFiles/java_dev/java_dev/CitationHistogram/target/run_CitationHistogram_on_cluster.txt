@@ -1,0 +1,5 @@
+# run CitationHistogram on HDFS cluster:
+# the job has to run against the output of 
+# Citation user/hadoop/citation_output/part-00000
+
+bin/hadoop jar /Users/hadoop/Documents/programs/java/CitationHistogram/target/CitationHistogram-0.0.1-SNAPSHOT.jar hadoop.CitationHistogram.CitationHistogram /user/hadoop/citation_output/part-00000 citation_histogram

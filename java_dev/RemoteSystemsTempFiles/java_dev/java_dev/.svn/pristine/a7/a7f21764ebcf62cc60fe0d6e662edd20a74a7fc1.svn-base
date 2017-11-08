@@ -1,0 +1,191 @@
+Manifest-Version: 1.0
+Bundle-ClassPath: WEB-INF/classes
+Class-Path: 
+Bundle-ManifestVersion: 2
+Web-ContextPath: /HanaHelloWorld
+Import-Package: com.sap.jpaas.service.persistence.core;resolution:="op
+ tional",javax.annotation;version="1.1.0",javax.servlet;version="2.5.0
+ ",javax.servlet.annotation;version="2.6.0",javax.servlet.descriptor;v
+ ersion="2.6.0",javax.servlet.http;version="2.5.0",javax.servlet.jsp;v
+ ersion="2.1.0",javax.servlet.jsp.el;version="2.1.0",javax.servlet.jsp
+ .tagext;version="2.1.0",javax.el;version="1.0.0",javax.websocket;vers
+ ion="1.0.0",javax.websocket.server;version="1.0.0",javax.crypto.inter
+ faces;version="[0.0.0, 0.0.0]",org.omg.CosNaming.NamingContextPackage
+ ;version="[0.0.0, 0.0.0]",org.omg.DynamicAny.DynAnyFactoryPackage;ver
+ sion="[0.0.0, 0.0.0]",org.eclipse.osgi.internal.provisional.verifier;
+ version="[0.0.0, 0.0.0]",javax.management.timer;version="[0.0.0, 0.0.
+ 0]",javax.jws;version="[0.0.0, 0.0.0]",org.eclipse.osgi.baseadaptor.h
+ ooks;version="[0.0.0, 0.0.0]",javax.xml.ws.spi.http;version="[0.0.0, 
+ 0.0.0]",org.osgi.framework.wiring;version="[1.0.0, 1.0.0]",javax.rmi.
+ ssl;version="[0.0.0, 0.0.0]",org.w3c.dom.ranges;version="[0.0.0, 0.0.
+ 0]",javax.naming.spi;version="[0.0.0, 0.0.0]",javax.xml.stream;versio
+ n="[0.0.0, 0.0.0]",javax.swing.filechooser;version="[0.0.0, 0.0.0]",j
+ avax.swing.plaf;version="[0.0.0, 0.0.0]",javax.lang.model;version="[0
+ .0.0, 0.0.0]",org.w3c.dom.xpath;version="[0.0.0, 0.0.0]",com.sap.core
+ .services.accessor.equinox.extension.hook;version="[0.0.0, 0.0.0]",or
+ g.eclipse.virgo.osgi.console.telnet;version="[3.0.0.RELEASE, 3.0.0.RE
+ LEASE]",javax.lang.model.util;version="[0.0.0, 0.0.0]",org.eclipse.os
+ gi.framework.eventmgr;version="[1.2.0, 1.2.0]",javax.naming.ldap;vers
+ ion="[0.0.0, 0.0.0]",javax.security.auth.kerberos;version="[0.0.0, 0.
+ 0.0]",org.omg.PortableServer.CurrentPackage;version="[0.0.0, 0.0.0]",
+ javax.crypto;version="[0.0.0, 0.0.0]",javax.naming.event;version="[0.
+ 0.0, 0.0.0]",javax.print.attribute.standard;version="[0.0.0, 0.0.0]",
+ javax.imageio.plugins.bmp;version="[0.0.0, 0.0.0]",org.eclipse.osgi.b
+ aseadaptor.bundlefile;version="[0.0.0, 0.0.0]",org.eclipse.gemini.jpa
+ .weaving.equinox;version="[0.0.0, 0.0.0]",org.osgi.service.permission
+ admin;version="[1.2.0, 1.2.0]",javax.xml.ws.handler.soap;version="[0.
+ 0.0, 0.0.0]",org.osgi.service.url;version="[1.0.0, 1.0.0]",javax.prin
+ t.attribute;version="[0.0.0, 0.0.0]",javax.xml.transform.dom;version=
+ "[0.0.0, 0.0.0]",org.w3c.dom.traversal;version="[0.0.0, 0.0.0]",javax
+ .sql.rowset.serial;version="[0.0.0, 0.0.0]",org.omg.PortableServer.PO
+ AManagerPackage;version="[0.0.0, 0.0.0]",org.osgi.framework.hooks.res
+ olver;version="[1.0.0, 1.0.0]",org.eclipse.core.runtime.internal.adap
+ tor;version="[0.0.0, 0.0.0]",javax.sound.midi;version="[0.0.0, 0.0.0]
+ ",org.eclipse.osgi.service.pluginconversion;version="[1.0.0, 1.0.0]",
+ javax.swing.event;version="[0.0.0, 0.0.0]",javax.management.namespace
+ ;version="[0.0.0, 0.0.0]",javax.xml.ws.spi;version="[0.0.0, 0.0.0]",o
+ rg.eclipse.osgi.util;version="[1.1.0, 1.1.0]",javax.net;version="[0.0
+ .0, 0.0.0]",javax.xml.stream.util;version="[0.0.0, 0.0.0]",javax.secu
+ rity.auth.spi;version="[0.0.0, 0.0.0]",javax.management.loading;versi
+ on="[0.0.0, 0.0.0]",javax.print;version="[0.0.0, 0.0.0]",org.omg.Mess
+ aging;version="[0.0.0, 0.0.0]",javax.xml.crypto.dsig.keyinfo;version=
+ "[0.0.0, 0.0.0]",org.omg.CORBA.ORBPackage;version="[0.0.0, 0.0.0]",ja
+ vax.swing.plaf.multi;version="[0.0.0, 0.0.0]",javax.xml.namespace;ver
+ sion="[0.0.0, 0.0.0]",org.osgi.service.startlevel;version="[1.1.0, 1.
+ 1.0]",org.osgi.service.log;version="[1.3.0, 1.3.0]",org.eclipse.osgi.
+ framework.internal.protocol;version="[0.0.0, 0.0.0]",javax.swing;vers
+ ion="[0.0.0, 0.0.0]",com.sun.xml.bind;version="[0.0.0, 0.0.0]",org.ec
+ lipse.osgi.internal.loader;version="[0.0.0, 0.0.0]",javax.xml.transfo
+ rm.sax;version="[0.0.0, 0.0.0]",com.sun.xml.internal;version="[0.0.0,
+  0.0.0]",org.eclipse.osgi.service.localization;version="[1.1.0, 1.1.0
+ ]",javax.management.relation;version="[0.0.0, 0.0.0]",javax.naming;ve
+ rsion="[0.0.0, 0.0.0]",javax.xml.transform.stax;version="[0.0.0, 0.0.
+ 0]",org.eclipse.core.runtime.internal.stats;version="[0.0.0, 0.0.0]",
+ org.omg.stub.java.rmi;version="[0.0.0, 0.0.0]",javax.xml.crypto.dsig.
+ dom;version="[0.0.0, 0.0.0]",javax.xml.parsers;version="[0.0.0, 0.0.0
+ ]",org.ietf.jgss;version="[0.0.0, 0.0.0]",javax.xml.xpath;version="[0
+ .0.0, 0.0.0]",javax.xml.bind.attachment;version="[0.0.0, 0.0.0]",org.
+ eclipse.osgi.internal.composite;version="[0.0.0, 0.0.0]",org.eclipse.
+ osgi.framework.console;version="[1.1.0, 1.1.0]",org.osgi.framework;ve
+ rsion="[1.6.0, 1.6.0]",org.eclipse.osgi.storagemanager;version="[1.0.
+ 0, 1.0.0]",javax.xml.crypto.dsig.spec;version="[0.0.0, 0.0.0]",org.ec
+ lipse.osgi.internal.permadmin;version="[0.0.0, 0.0.0]",javax.swing.un
+ do;version="[0.0.0, 0.0.0]",javax.swing.text;version="[0.0.0, 0.0.0]"
+ ,javax.print.event;version="[0.0.0, 0.0.0]",javax.imageio.spi;version
+ ="[0.0.0, 0.0.0]",org.osgi.service.framework;version="[1.0.0, 1.0.0]"
+ ,com.sun.xml;version="[0.0.0, 0.0.0]",org.w3c.dom.stylesheets;version
+ ="[0.0.0, 0.0.0]",javax.script;version="[0.0.0, 0.0.0]",org.w3c.dom.l
+ s;version="[0.0.0, 0.0.0]",org.omg.PortableInterceptor;version="[0.0.
+ 0, 0.0.0]",org.omg.CORBA.TypeCodePackage;version="[0.0.0, 0.0.0]",org
+ .osgi.framework.launch;version="[1.0.0, 1.0.0]",org.eclipse.osgi.fram
+ ework.util;version="[0.0.0, 0.0.0]",org.eclipse.osgi.service.environm
+ ent;version="[1.3.0, 1.3.0]",javax.xml.bind.annotation.adapters;versi
+ on="[0.0.0, 0.0.0]",org.eclipse.osgi.internal.serviceregistry;version
+ ="[0.0.0, 0.0.0]",javax.xml.stream.events;version="[0.0.0, 0.0.0]",ja
+ vax.sql;version="[0.0.0, 0.0.0]",org.eclipse.equinox.log.internal;ver
+ sion="[0.0.0, 0.0.0]",javax.transaction;version="[0.0.0, 0.0.0]",org.
+ omg.CORBA_2_3;version="[0.0.0, 0.0.0]",javax.rmi;version="[0.0.0, 0.0
+ .0]",org.eclipse.osgi.service.datalocation;version="[1.3.0, 1.3.0]",o
+ rg.eclipse.osgi.internal.resolver;version="[0.0.0, 0.0.0]",org.eclips
+ e.osgi.baseadaptor;version="[0.0.0, 0.0.0]",javax.xml.soap;version="[
+ 0.0.0, 0.0.0]",javax.management.modelmbean;version="[0.0.0, 0.0.0]",j
+ avax.xml.bind;version="[0.0.0, 0.0.0]",javax.xml.ws;version="[0.0.0, 
+ 0.0.0]",org.w3c.dom.html;version="[0.0.0, 0.0.0]",org.eclipse.osgi.fr
+ amework.debug;version="[0.0.0, 0.0.0]",javax.swing.tree;version="[0.0
+ .0, 0.0.0]",javax.sound.midi.spi;version="[0.0.0, 0.0.0]",org.eclipse
+ .equinox.log;version="[1.0.0, 1.0.0]",org.w3c.dom.css;version="[0.0.0
+ , 0.0.0]",org.omg.PortableServer;version="[0.0.0, 0.0.0]",org.eclipse
+ .osgi.event;version="[1.0.0, 1.0.0]",org.xml.sax;version="[0.0.0, 0.0
+ .0]",org.eclipse.osgi.framework.internal.protocol.reference;version="
+ [0.0.0, 0.0.0]",javax.xml.ws.handler;version="[0.0.0, 0.0.0]",org.ecl
+ ipse.osgi.service.runnable;version="[1.1.0, 1.1.0]",org.eclipse.osgi.
+ internal.service.security;version="[0.0.0, 0.0.0]",org.omg.IOP.CodecF
+ actoryPackage;version="[0.0.0, 0.0.0]",org.omg.IOP;version="[0.0.0, 0
+ .0.0]",org.eclipse.osgi.framework.adaptor;version="[0.0.0, 0.0.0]",co
+ m.sun.xml.internal.bind.v2;version="[0.0.0, 0.0.0]",org.eclipse.osgi.
+ framework.internal.reliablefile;version="[0.0.0, 0.0.0]",javax.sql.ro
+ wset;version="[0.0.0, 0.0.0]",org.eclipse.core.runtime.adaptor;versio
+ n="[0.0.0, 0.0.0]",javax.swing.plaf.basic;version="[0.0.0, 0.0.0]",ja
+ vax.swing.border;version="[0.0.0, 0.0.0]",javax.management.openmbean;
+ version="[0.0.0, 0.0.0]",org.omg.CORBA.portable;version="[0.0.0, 0.0.
+ 0]",org.omg.Dynamic;version="[0.0.0, 0.0.0]",javax.security.auth;vers
+ ion="[0.0.0, 0.0.0]",org.eclipse.osgi.service.security;version="[1.0.
+ 0, 1.0.0]",org.w3c.dom;version="[0.0.0, 0.0.0]",javax.imageio.event;v
+ ersion="[0.0.0, 0.0.0]",org.omg.DynamicAny.DynAnyPackage;version="[0.
+ 0.0, 0.0.0]",javax.xml.datatype;version="[0.0.0, 0.0.0]",javax.imagei
+ o.metadata;version="[0.0.0, 0.0.0]",javax.management.remote;version="
+ [0.0.0, 0.0.0]",org.omg.CORBA.DynAnyPackage;version="[0.0.0, 0.0.0]",
+ org.eclipse.virgo.osgi.console.supportability;version="[3.0.0.RELEASE
+ , 3.0.0.RELEASE]",javax.swing.table;version="[0.0.0, 0.0.0]",javax.xm
+ l.transform.stream;version="[0.0.0, 0.0.0]",javax.xml.crypto;version=
+ "[0.0.0, 0.0.0]",org.eclipse.osgi.service.resolver;version="[1.5.0, 1
+ .5.0]",javax.annotation.processing;version="[0.0.0, 0.0.0]",javax.sec
+ urity.auth.login;version="[0.0.0, 0.0.0]",javax.imageio.stream;versio
+ n="[0.0.0, 0.0.0]",org.omg.CORBA;version="[0.0.0, 0.0.0]",org.osgi.fr
+ amework.hooks.service;version="[1.1.0, 1.1.0]",org.omg.IOP.CodecPacka
+ ge;version="[0.0.0, 0.0.0]",javax.jws.soap;version="[0.0.0, 0.0.0]",j
+ avax.xml.ws.http;version="[0.0.0, 0.0.0]",javax.imageio;version="[0.0
+ .0, 0.0.0]",javax.xml.bind.helpers;version="[0.0.0, 0.0.0]",org.omg.P
+ ortableServer.portable;version="[0.0.0, 0.0.0]",javax.swing.text.rtf;
+ version="[0.0.0, 0.0.0]",javax.security.cert;version="[0.0.0, 0.0.0]"
+ ,org.eclipse.osgi.service.debug;version="[1.2.0, 1.2.0]",javax.lang.m
+ odel.element;version="[0.0.0, 0.0.0]",javax.rmi.CORBA;version="[0.0.0
+ , 0.0.0]",javax.xml.ws.soap;version="[0.0.0, 0.0.0]",org.w3c.dom.even
+ ts;version="[0.0.0, 0.0.0]",org.omg.CosNaming;version="[0.0.0, 0.0.0]
+ ",org.omg.CosNaming.NamingContextExtPackage;version="[0.0.0, 0.0.0]",
+ javax.swing.text.html.parser;version="[0.0.0, 0.0.0]",javax.xml.ws.ws
+ addressing;version="[0.0.0, 0.0.0]",org.osgi.service.condpermadmin;ve
+ rsion="[1.1.1, 1.1.1]",org.eclipse.gemini.jpa.weaving;version="[0.0.0
+ , 0.0.0]",javax.crypto.spec;version="[0.0.0, 0.0.0]",org.omg.Portable
+ Server.POAPackage;version="[0.0.0, 0.0.0]",org.eclipse.osgi.internal.
+ module;version="[0.0.0, 0.0.0]",org.eclipse.osgi.signedcontent;versio
+ n="[1.0.0, 1.0.0]",com.sun.xml.internal.bind;version="[0.0.0, 0.0.0]"
+ ,javax.swing.plaf.metal;version="[0.0.0, 0.0.0]",javax.accessibility;
+ version="[0.0.0, 0.0.0]",org.eclipse.osgi.framework.internal.protocol
+ .bundleresource;version="[0.0.0, 0.0.0]",org.eclipse.osgi.framework.l
+ og;version="[1.1.0, 1.1.0]",org.eclipse.osgi.framework.internal.core;
+ version="[0.0.0, 0.0.0]",org.eclipse.osgi.internal.baseadaptor;versio
+ n="[0.0.0, 0.0.0]",org.osgi.framework.startlevel;version="[1.0.0, 1.0
+ .0]",org.eclipse.virgo.osgi.console.telnet.hook;version="[3.0.0.RELEA
+ SE, 3.0.0.RELEASE]",org.omg.PortableServer.ServantLocatorPackage;vers
+ ion="[0.0.0, 0.0.0]",javax.management;version="[0.0.0, 0.0.0]",org.ec
+ lipse.osgi.framework.internal.protocol.bundleentry;version="[0.0.0, 0
+ .0.0]",javax.swing.colorchooser;version="[0.0.0, 0.0.0]",org.omg.Send
+ ingContext;version="[0.0.0, 0.0.0]",javax.naming.directory;version="[
+ 0.0.0, 0.0.0]",org.w3c.dom.views;version="[0.0.0, 0.0.0]",org.xml.sax
+ .ext;version="[0.0.0, 0.0.0]",javax.xml.bind.util;version="[0.0.0, 0.
+ 0.0]",javax.transaction.xa;version="[0.0.0, 0.0.0]",javax.security.au
+ th.x500;version="[0.0.0, 0.0.0]",javax.net.ssl;version="[0.0.0, 0.0.0
+ ]",javax.management.monitor;version="[0.0.0, 0.0.0]",javax.swing.text
+ .html;version="[0.0.0, 0.0.0]",javax.swing.plaf.nimbus;version="[0.0.
+ 0, 0.0.0]",org.osgi.service.packageadmin;version="[1.2.0, 1.2.0]",jav
+ ax.imageio.plugins.jpeg;version="[0.0.0, 0.0.0]",org.eclipse.osgi.ser
+ vice.internal.composite;version="[0.0.0, 0.0.0]",org.w3c.dom.bootstra
+ p;version="[0.0.0, 0.0.0]",org.eclipse.osgi.baseadaptor.loader;versio
+ n="[0.0.0, 0.0.0]",javax.management.event;version="[0.0.0, 0.0.0]",ja
+ vax.xml.bind.annotation;version="[0.0.0, 0.0.0]",org.eclipse.osgi.lau
+ nch;version="[1.0.0, 1.0.0]",javax.xml.validation;version="[0.0.0, 0.
+ 0.0]",javax.sound.sampled;version="[0.0.0, 0.0.0]",org.xml.sax.helper
+ s;version="[0.0.0, 0.0.0]",javax.lang.model.type;version="[0.0.0, 0.0
+ .0]",javax.management.remote.rmi;version="[0.0.0, 0.0.0]",org.eclipse
+ .osgi.internal.loader.buddy;version="[0.0.0, 0.0.0]",javax.sound.samp
+ led.spi;version="[0.0.0, 0.0.0]",javax.activity;version="[0.0.0, 0.0.
+ 0]",javax.sql.rowset.spi;version="[0.0.0, 0.0.0]",org.eclipse.osgi.in
+ ternal.signedcontent;version="[0.0.0, 0.0.0]",org.osgi.util.tracker;v
+ ersion="[1.5.0, 1.5.0]",org.omg.DynamicAny;version="[0.0.0, 0.0.0]",o
+ rg.omg.PortableInterceptor.ORBInitInfoPackage;version="[0.0.0, 0.0.0]
+ ",org.eclipse.osgi.internal.profile;version="[0.0.0, 0.0.0]",javax.se
+ curity.sasl;version="[0.0.0, 0.0.0]",javax.security.auth.callback;ver
+ sion="[0.0.0, 0.0.0]",org.eclipse.virgo.osgi.console.common;version="
+ [3.0.0.RELEASE, 3.0.0.RELEASE]",org.eclipse.osgi.internal.provisional
+ .service.security;version="[1.0.0, 1.0.0]",javax.tools;version="[0.0.
+ 0, 0.0.0]",org.osgi.framework.hooks.bundle;version="[1.0.0, 1.0.0]",j
+ avax.xml;version="[0.0.0, 0.0.0]",javax.activation;version="[0.0.0, 0
+ .0.0]",org.eclipse.osgi.service.urlconversion;version="[1.0.0, 1.0.0]
+ ",javax.xml.transform;version="[0.0.0, 0.0.0]",org.omg.CORBA_2_3.port
+ able;version="[0.0.0, 0.0.0]",javax.xml.crypto.dsig;version="[0.0.0, 
+ 0.0.0]",com.sun.xml.bind.v2;version="[0.0.0, 0.0.0]",org.osgi.framewo
+ rk.hooks.weaving;version="[1.0.0, 1.0.0]",javax.swing.plaf.synth;vers
+ ion="[0.0.0, 0.0.0]",javax.xml.crypto.dom;version="[0.0.0, 0.0.0]"
+Bundle-SymbolicName: HanaHelloWorld
+

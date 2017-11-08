@@ -1,0 +1,18 @@
+{
+    "contents" : "#load the arules package\nlibrary(\"arules\");\n\nMarketBasket<-read.transactions(\"film_analysis_2.csv\", rm.duplicates=TRUE, format=\"single\", sep=\";\", cols=c(1,2))\ninspect(MarketBasket)\nsummary(MarketBasket)\n\n# Market Basket\nbasket_rules <- apriori(MarketBasket,parameter = list(sup = 0.1, conf = 0.1,target=\"rules\"));\n\n# Check the generated rules using inspect\ninspect(basket_rules)\n\n",
+    "created" : 1369056655817.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1008392253",
+    "id" : "64E88801",
+    "lastKnownWriteTime" : 1392156193,
+    "path" : "~/Dropbox/user_gerd/programme/data_mining/R/MarketBasket/fiml_analysis.R",
+    "project_path" : "fiml_analysis.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 0,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

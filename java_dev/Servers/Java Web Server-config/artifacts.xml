@@ -1,0 +1,1105 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<repository name='Bundle pool' type='org.eclipse.equinox.p2.artifact.repository.simpleRepository' version='1'>
+  <properties size='2'>
+    <property name='p2.system' value='true'/>
+    <property name='p2.timestamp' value='1464212354990'/>
+  </properties>
+  <mappings size='3'>
+    <rule filter='(&amp; (classifier=osgi.bundle))' output='${repoUrl}/plugins/${id}_${version}.jar'/>
+    <rule filter='(&amp; (classifier=binary))' output='${repoUrl}/binary/${id}_${version}'/>
+    <rule filter='(&amp; (classifier=org.eclipse.update.feature))' output='${repoUrl}/features/${id}_${version}.jar'/>
+  </mappings>
+  <artifacts size='218'>
+    <artifact classifier='osgi.bundle' id='com.sap.core.configuration.runtime.api' version='0.1.473'>
+      <properties size='1'>
+        <property name='download.size' value='6163'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='javax.el' version='2.2.0.v201105051105'>
+      <properties size='1'>
+        <property name='download.size' value='51111'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.persistence.osgi.local.config' version='0.6.86'>
+      <properties size='1'>
+        <property name='download.size' value='4147'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.osgi.util' version='3.2.100.v20100503'>
+      <properties size='1'>
+        <property name='download.size' value='23758'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.gemini.web.tomcat' version='2.2.6.RELEASE'>
+      <properties size='1'>
+        <property name='download.size' value='104537'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.cloud.security.oauth2.as.commons' version='0.0.127'>
+      <properties size='1'>
+        <property name='download.size' value='105961'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.js.deployer.watchservice' version='1.0.0'>
+      <properties size='1'>
+        <property name='download.size' value='29442'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.reconciler.dropins' version='1.1.0.v20100525'>
+      <properties size='1'>
+        <property name='download.size' value='43595'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.auth.local.loginpage' version='1.2.86'>
+      <properties size='1'>
+        <property name='download.size' value='12738'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.javax.mail' version='1.4.1'>
+      <properties size='1'>
+        <property name='download.size' value='452239'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.apache.derby' version='10.8.2.2'>
+      <properties size='1'>
+        <property name='download.size' value='2968428'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.repository' version='2.0.0.201010141416'>
+      <properties size='1'>
+        <property name='download.size' value='120424'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.publisher' version='1.1.0.sap-01'>
+      <properties size='1'>
+        <property name='download.size' value='277816'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.service.auditlog.impl' version='0.6.36'>
+      <properties size='1'>
+        <property name='download.size' value='39011'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.springsource.org.apache.catalina.tribes' version='7.0.69'>
+      <properties size='1'>
+        <property name='download.size' value='267975'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.persistence.osgi.hdb.v1.0.82.datasource' version='0.6.86'>
+      <properties size='1'>
+        <property name='download.size' value='763886'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.persistence.osgi.hdb.v1.102.0.datasource' version='0.6.86'>
+      <properties size='1'>
+        <property name='download.size' value='839218'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.sat4j.core' version='2.2.0.v20100429'>
+      <properties size='1'>
+        <property name='download.size' value='193844'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='osgi.enterprise' version='4.2.0.201003190513'>
+      <properties size='1'>
+        <property name='download.size' value='354432'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.service.auditlog.extension.api' version='0.6.36'>
+      <properties size='1'>
+        <property name='download.size' value='5164'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.cloud.account' version='0.5.60'>
+      <properties size='1'>
+        <property name='download.size' value='5118'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.cloud.crypto.keystore.api' version='1.0.22'>
+      <properties size='1'>
+        <property name='download.size' value='5073'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.auth.local' version='1.2.86'>
+      <properties size='1'>
+        <property name='download.size' value='30181'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.core.compiler.batch' version='3.10.2.v20150120-1634'>
+      <properties size='1'>
+        <property name='download.size' value='2310271'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.conn.jco.cloud.rt.sdk' version='3.1.1.17'>
+      <properties size='1'>
+        <property name='download.size' value='1042093'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.conn.jco.cloud.linux.x86_64' version='3.1.1.17'>
+      <properties size='1'>
+        <property name='download.size' value='2244764'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.springsource.javax.xml.soap' version='1.3.0'>
+      <properties size='1'>
+        <property name='download.size' value='19496'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.log.providers' version='1.0.0.3'>
+      <properties size='1'>
+        <property name='download.size' value='5104'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.cloud.security.oauth2.service' version='0.0.127'>
+      <properties size='1'>
+        <property name='download.size' value='48909'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.gemini.naming' version='1.0.5.RELEASE'>
+      <properties size='1'>
+        <property name='download.size' value='107372'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.frameworkadmin.equinox' version='1.0.200.v20100505'>
+      <properties size='1'>
+        <property name='download.size' value='61052'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.connectivity.apiext' version='0.9.216'>
+      <properties size='1'>
+        <property name='download.size' value='5455'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.ljs.jpaas.zipped.resources.bundle' version='1.103.8'>
+      <properties size='1'>
+        <property name='download.size' value='23778'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.cloud.crypto.keystore.service' version='1.0.22'>
+      <properties size='1'>
+        <property name='download.size' value='101746'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.springsource.org.apache.tomcat.websocket' version='7.0.69'>
+      <properties size='1'>
+        <property name='download.size' value='215073'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.service.auditlog.api' version='0.6.36'>
+      <properties size='1'>
+        <property name='download.size' value='13405'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.springsource.javax.xml.stream' version='1.0.1'>
+      <properties size='1'>
+        <property name='download.size' value='26729'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.util' version='1.0.200.v20100503'>
+      <properties size='1'>
+        <property name='download.size' value='76820'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.virgo.osgi.console' version='3.0.0.RELEASE'>
+      <properties size='1'>
+        <property name='download.size' value='40810'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.gemini.web.core' version='2.2.6.RELEASE'>
+      <properties size='1'>
+        <property name='download.size' value='68576'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.tenant.valve' version='0.5.60'>
+      <properties size='1'>
+        <property name='download.size' value='6000'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.persistence.osgi.sybase.datasource' version='0.6.86'>
+      <properties size='1'>
+        <property name='download.size' value='510372'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.connectivity.apiext.impl' version='0.9.216'>
+      <properties size='1'>
+        <property name='download.size' value='74067'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.services.accessor' version='1.0.0.1'>
+      <properties size='1'>
+        <property name='download.size' value='32300'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.jpaas.service.securestore.password' version='0.7.24'>
+      <properties size='1'>
+        <property name='download.size' value='6016'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.org.apache.catalina-jmx-remote-fragment' version='7.0.61.201505071653'>
+      <properties size='1'>
+        <property name='download.size' value='11105'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.planner' version='1.0.0.201010141416'>
+      <properties size='1'>
+        <property name='download.size' value='10086'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.virgo.util.common' version='3.1.0.D-20110927204747'>
+      <properties size='1'>
+        <property name='download.size' value='44383'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.ecm.api.impl.local' version='0.9.192'>
+      <properties size='1'>
+        <property name='download.size' value='4784'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='javax.websocket' version='1.1.0'>
+      <properties size='1'>
+        <property name='download.size' value='38132'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.apache.httpcomponents.httpcore' version='4.1.4'>
+      <properties size='1'>
+        <property name='download.size' value='383595'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.cloud.security.password.api' version='0.0.10'>
+      <properties size='1'>
+        <property name='download.size' value='3713'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.sat4j.pb' version='2.2.0.v20100429'>
+      <properties size='1'>
+        <property name='download.size' value='121388'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.lib.sso2' version='1.0.7'>
+      <properties size='1'>
+        <property name='download.size' value='28634'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.persistence.antlr' version='2.3.2.v20111125-r10461'>
+      <properties size='1'>
+        <property name='download.size' value='191807'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.jpaas.service.mail.local.config' version='1.0.2'>
+      <properties size='1'>
+        <property name='download.size' value='6071'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.springsource.org.apache.catalina.ha' version='7.0.69'>
+      <properties size='1'>
+        <property name='download.size' value='130456'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.persistence.osgi.hdb.datasource' version='0.6.86'>
+      <properties size='1'>
+        <property name='download.size' value='838996'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.connectivity.api' version='0.9.216'>
+      <properties size='1'>
+        <property name='download.size' value='5586'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.frameworkadmin' version='2.0.0.v20100503'>
+      <properties size='1'>
+        <property name='download.size' value='34985'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.saml2.cfg' version='1.1.114'>
+      <properties size='1'>
+        <property name='download.size' value='494338'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.directorywatcher' version='1.0.200.v20100601'>
+      <properties size='1'>
+        <property name='download.size' value='30637'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.saml2.lib' version='1.1.114'>
+      <properties size='1'>
+        <property name='download.size' value='387662'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.org.apache.log4j' version='1.2.15.BUILD-20110727'>
+      <properties size='1'>
+        <property name='download.size' value='385888'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.virgo.util.osgi' version='3.1.0.D-20110927204747'>
+      <properties size='1'>
+        <property name='download.size' value='7940'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.utils' version='1.4.40'>
+      <properties size='1'>
+        <property name='download.size' value='71281'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.saml2.sp' version='1.1.114'>
+      <properties size='1'>
+        <property name='download.size' value='69879'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.destinations.common' version='1.0.5'>
+      <properties size='1'>
+        <property name='download.size' value='13851'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.apache.httpcomponents.httpclient' version='4.1.3'>
+      <properties size='1'>
+        <property name='download.size' value='539566'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.auth.service.webcontainer.fragment' version='1.2.86'>
+      <properties size='1'>
+        <property name='download.size' value='2162'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.js.statistics.impl' version='1.0.0.10'>
+      <properties size='1'>
+        <property name='download.size' value='59054'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.connectivity.httpdestination.common' version='0.9.216'>
+      <properties size='1'>
+        <property name='download.size' value='25444'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.garbagecollector' version='1.0.100.v20100503'>
+      <properties size='1'>
+        <property name='download.size' value='24513'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.js.ach.manager' version='1.6.0'>
+      <properties size='1'>
+        <property name='download.size' value='47900'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.springsource.javax.ejb' version='3.0.0'>
+      <properties size='1'>
+        <property name='download.size' value='34176'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.springsource.org.apache.tomcat.api' version='7.0.69'>
+      <properties size='1'>
+        <property name='download.size' value='9841'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.core' version='2.0.0.201010141416'>
+      <properties size='1'>
+        <property name='download.size' value='62314'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.cloud.security.password.impl' version='0.0.10'>
+      <properties size='1'>
+        <property name='download.size' value='7356'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.connectivity.httpdestination.emulation' version='0.9.216'>
+      <properties size='1'>
+        <property name='download.size' value='6282'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.persistence.asm' version='2.3.2.v20111125-r10461'>
+      <properties size='1'>
+        <property name='download.size' value='272816'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.js.catalina.fragment' version='1.0.0.2'>
+      <properties size='1'>
+        <property name='download.size' value='5901'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.simpleconfigurator' version='1.0.200.v20100503-sap'>
+      <properties size='1'>
+        <property name='download.size' value='37182'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.connectivity.local.destinations' version='0.9.216'>
+      <properties size='1'>
+        <property name='download.size' value='5959'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.connectivity.destinations' version='0.9.216'>
+      <properties size='1'>
+        <property name='download.size' value='151131'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.js.tc.logging' version='1.1.0'>
+      <properties size='1'>
+        <property name='download.size' value='24011'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.persistence.jpa' version='2.3.2.v20111125-r10461'>
+      <properties size='1'>
+        <property name='download.size' value='959339'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.ecm.api' version='0.9.192'>
+      <properties size='1'>
+        <property name='download.size' value='25656'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.javax.faces' version='1.2.0.BUILD-20100618'>
+      <properties size='1'>
+        <property name='download.size' value='315249'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.launcher' version='1.1.0.v20100507'>
+      <properties size='1'>
+        <property name='download.size' value='47023'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.springsource.javax.transaction' version='1.1.0'>
+      <properties size='1'>
+        <property name='download.size' value='15518'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.common' version='3.6.0.v20110506'>
+      <properties size='1'>
+        <property name='download.size' value='105621'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.metadata.repository' version='1.1.0.201010141416'>
+      <properties size='1'>
+        <property name='download.size' value='105374'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.ecm.json-simple' version='1.18.0'>
+      <properties size='1'>
+        <property name='download.size' value='15881'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.js.passport.api' version='1.2.0'>
+      <properties size='1'>
+        <property name='download.size' value='35243'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.virgo.util.osgi.manifest' version='3.1.0.D-20110927204747'>
+      <properties size='1'>
+        <property name='download.size' value='91931'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.apache.geronimo.specs.geronimo-j2ee-management_1.1_spec' version='1.0.1'>
+      <properties size='1'>
+        <property name='download.size' value='20220'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.connectivity.httpdestination' version='0.9.216'>
+      <properties size='1'>
+        <property name='download.size' value='98998'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.auth.service' version='1.2.86'>
+      <properties size='1'>
+        <property name='download.size' value='82571'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.scim.client' version='1.0.15'>
+      <properties size='1'>
+        <property name='download.size' value='65791'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.services.accessor.tomcat.listener' version='1.0.0.1'>
+      <properties size='1'>
+        <property name='download.size' value='2030'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.js.logging' version='1.0.0.3'>
+      <properties size='1'>
+        <property name='download.size' value='69375'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.js.conf.bundlestate' version='1.0.0.3'>
+      <properties size='1'>
+        <property name='download.size' value='18030'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.js.startup' version='1.1.0'>
+      <properties size='1'>
+        <property name='download.size' value='21076'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.ecm.api.cmis.spi' version='0.9.192'>
+      <properties size='1'>
+        <property name='download.size' value='17547'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='slf4j.log4j12' version='1.7.2'>
+      <properties size='1'>
+        <property name='download.size' value='8819'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.springsource.org.apache.juli.extras' version='7.0.69'>
+      <properties size='1'>
+        <property name='download.size' value='41600'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.destinations.core' version='1.0.5'>
+      <properties size='1'>
+        <property name='download.size' value='11507'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.saml2.service' version='1.1.114'>
+      <properties size='1'>
+        <property name='download.size' value='73964'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.springsource.org.apache.jasper' version='7.0.69'>
+      <properties size='1'>
+        <property name='download.size' value='601658'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.gemini.dbaccess.util' version='1.1.0.201206271621'>
+      <properties size='1'>
+        <property name='download.size' value='11877'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.preferences' version='3.4.0.v20110502'>
+      <properties size='1'>
+        <property name='download.size' value='111583'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.tenant.common' version='0.5.60'>
+      <properties size='1'>
+        <property name='download.size' value='6983'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.js.deployer.equinox.extension' version='1.0.0'>
+      <properties size='1'>
+        <property name='download.size' value='7129'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.connectivity.httpdestination.api' version='0.9.216'>
+      <properties size='1'>
+        <property name='download.size' value='10318'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.tenant.service' version='0.5.60'>
+      <properties size='1'>
+        <property name='download.size' value='16472'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.gemini.jpa' version='1.0.0.RC2'>
+      <properties size='1'>
+        <property name='download.size' value='116228'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.js.log4j.properties' version='1.0.0.3'>
+      <properties size='1'>
+        <property name='download.size' value='2176'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.springsource.org.apache.tomcat.util' version='7.0.69'>
+      <properties size='1'>
+        <property name='download.size' value='32881'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.repository.tools' version='2.0.0.v20100520'>
+      <properties size='1'>
+        <property name='download.size' value='227539'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.saml2.localidp' version='1.1.114'>
+      <properties size='1'>
+        <property name='download.size' value='36707'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.update.configurator' version='3.3.100.v20100512'>
+      <properties size='1'>
+        <property name='download.size' value='99908'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.gemini.jpa.weaving' version='1.0.0.RC2'>
+      <properties size='1'>
+        <property name='download.size' value='10681'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.javax.activation' version='1.1.1'>
+      <properties size='1'>
+        <property name='download.size' value='71892'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.springsource.javax.persistence' version='1.0.0'>
+      <properties size='1'>
+        <property name='download.size' value='53773'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.javax.xml.ws' version='2.1.0.BUILD-20100618'>
+      <properties size='1'>
+        <property name='download.size' value='43518'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.auth.lib' version='1.2.86'>
+      <properties size='1'>
+        <property name='download.size' value='49656'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.connectivity.httpdestination.configuration' version='0.9.216'>
+      <properties size='1'>
+        <property name='download.size' value='5036'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.persistence.osgi.hdb.v1.0.61.datasource' version='0.6.86'>
+      <properties size='1'>
+        <property name='download.size' value='779817'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.ecm.gateway.mongodb.server.sdk' version='0.9.192'>
+      <properties size='1'>
+        <property name='download.size' value='21969'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.gemini.dbaccess.derby' version='1.1.0.201206271621'>
+      <properties size='1'>
+        <property name='download.size' value='13522'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.security.core.server.csi' version='1.0.8'>
+      <properties size='1'>
+        <property name='download.size' value='40426'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.scim.lib' version='1.0.15'>
+      <properties size='1'>
+        <property name='download.size' value='54025'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.connectivity.apiext.local' version='0.9.216'>
+      <properties size='1'>
+        <property name='download.size' value='6904'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.destinations.http' version='1.0.5'>
+      <properties size='1'>
+        <property name='download.size' value='12260'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.js.mbeanserver.registerer.bundle' version='1.1.0'>
+      <properties size='1'>
+        <property name='download.size' value='3826'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.services.accessor.equinox.extension' version='1.0.0.1'>
+      <properties size='1'>
+        <property name='download.size' value='5672'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.virgo.util.math' version='3.1.0.D-20110927204747'>
+      <properties size='1'>
+        <property name='download.size' value='8728'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.tenant.registry.runtime.local' version='0.5.60'>
+      <properties size='1'>
+        <property name='download.size' value='5777'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.persistence.osgi.hdb.platform' version='0.6.86'>
+      <properties size='1'>
+        <property name='download.size' value='8611'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.javax.servlet.jsp.jstl' version='1.2.0.BUILD-20100618'>
+      <properties size='1'>
+        <property name='download.size' value='57633'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.tenant.registry.runtime.api' version='0.5.60'>
+      <properties size='1'>
+        <property name='download.size' value='3372'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.saml2.commons' version='1.1.114'>
+      <properties size='1'>
+        <property name='download.size' value='208262'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.cloud.security.oauth2.as.local' version='0.0.127'>
+      <properties size='1'>
+        <property name='download.size' value='70357'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.cloud.tomcat.session.management' version='0.0.6'>
+      <properties size='1'>
+        <property name='download.size' value='6041'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.springsource.org.apache.catalina' version='7.0.69'>
+      <properties size='1'>
+        <property name='download.size' value='1662543'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.cloud.crypto.clientcert.lm' version='0.0.19'>
+      <properties size='1'>
+        <property name='download.size' value='54833'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.touchpoint.eclipse' version='2.0.0.201106231456'>
+      <properties size='1'>
+        <property name='download.size' value='102693'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.persistence.osgi.hdb.datasource.latest' version='0.6.86'>
+      <properties size='1'>
+        <property name='download.size' value='845784'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.director' version='2.0.0.201010141416'>
+      <properties size='1'>
+        <property name='download.size' value='89296'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.ecm.gateway.mongodb.server' version='0.9.192'>
+      <properties size='1'>
+        <property name='download.size' value='6631268'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='javax.persistence' version='2.0.3.v201010191057'>
+      <properties size='1'>
+        <property name='download.size' value='126856'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.app' version='1.3.100.v20110321'>
+      <properties size='1'>
+        <property name='download.size' value='85218'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.persistence.osgi.hdb.v1.0.72.datasource' version='0.6.86'>
+      <properties size='1'>
+        <property name='download.size' value='761315'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.log' version='1.2.0.v20090520-1800'>
+      <properties size='1'>
+        <property name='download.size' value='35320'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.gemini.web.extender' version='2.2.6.RELEASE'>
+      <properties size='1'>
+        <property name='download.size' value='5618'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.springsource.org.apache.el' version='7.0.69'>
+      <properties size='1'>
+        <property name='download.size' value='128353'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.db.jdbc' version='1.102.0.b4b45c17f7c80be1bf0f0b2f247807378c3210d3'>
+      <properties size='1'>
+        <property name='download.size' value='882065'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='javax.annotation' version='1.1.0.v201105051105'>
+      <properties size='1'>
+        <property name='download.size' value='26453'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.metadata' version='2.1.0.201010141416'>
+      <properties size='1'>
+        <property name='download.size' value='311801'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.registry' version='3.5.100.v20110502'>
+      <properties size='1'>
+        <property name='download.size' value='183014'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.um.local' version='1.2.94'>
+      <properties size='1'>
+        <property name='download.size' value='31171'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.xml.signature' version='1.0.7'>
+      <properties size='1'>
+        <property name='download.size' value='1540214'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.simpleconfigurator.manipulator' version='2.0.0.v20100503'>
+      <properties size='1'>
+        <property name='download.size' value='22829'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.virgo.util.io' version='3.1.0.D-20110927204747'>
+      <properties size='1'>
+        <property name='download.size' value='27216'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.ecm.api.impl' version='0.9.192'>
+      <properties size='1'>
+        <property name='download.size' value='5000'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.springsource.javax.jms' version='1.1.0'>
+      <properties size='1'>
+        <property name='download.size' value='26178'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.springsource.org.apache.coyote' version='7.0.69'>
+      <properties size='1'>
+        <property name='download.size' value='802250'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.jpaas.service.securestore.password.local' version='0.7.24'>
+      <properties size='1'>
+        <property name='download.size' value='11078'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.ecm.gateway.mongodb.server.api' version='0.9.192'>
+      <properties size='1'>
+        <property name='download.size' value='29199'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.console' version='1.0.300.sap-02'>
+      <properties size='1'>
+        <property name='download.size' value='26274'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.js.conf.agent' version='1.0.0.3'>
+      <properties size='1'>
+        <property name='download.size' value='42705'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.auth.api' version='1.2.86'>
+      <properties size='1'>
+        <property name='download.size' value='5023'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.ds' version='1.3.0.v20110124-0830'>
+      <properties size='1'>
+        <property name='download.size' value='188892'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.touchpoint.natives' version='1.0.200.201010141416'>
+      <properties size='1'>
+        <property name='download.size' value='49208'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.cloud.security.oauth2.commons' version='0.0.127'>
+      <properties size='1'>
+        <property name='download.size' value='20886'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.ljs.javaweb.common.resources.bundle' version='1.0.0.12'>
+      <properties size='1'>
+        <property name='download.size' value='352710'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.engine' version='2.0.1.201010141416'>
+      <properties size='1'>
+        <property name='download.size' value='150133'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.persistence.osgi.config' version='0.6.86'>
+      <properties size='1'>
+        <property name='download.size' value='385946'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.cloud.account.impl' version='0.5.60'>
+      <properties size='1'>
+        <property name='download.size' value='8394'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='javax.servlet.jsp' version='2.2.0.v201103241009'>
+      <properties size='1'>
+        <property name='download.size' value='106036'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.persistence.osgi.sybase.v7.07.130.datasource' version='0.6.86'>
+      <properties size='1'>
+        <property name='download.size' value='712458'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.cm' version='1.0.100.v20090520-1800'>
+      <properties size='1'>
+        <property name='download.size' value='62059'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.js.monitoring.tomcat.valve' version='1.8.0'>
+      <properties size='1'>
+        <property name='download.size' value='5106'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.artifact.repository' version='1.1.0.201010141416'>
+      <properties size='1'>
+        <property name='download.size' value='120496'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.js.monitoring' version='1.8.0'>
+      <properties size='1'>
+        <property name='download.size' value='43059'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.osgi.services' version='3.3.0.v20110110'>
+      <properties size='1'>
+        <property name='download.size' value='70836'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.apache.commons.io' version='2.0.1'>
+      <properties size='1'>
+        <property name='download.size' value='150456'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.ecm.gateway.mongodb.web' version='0.9.192'>
+      <properties size='1'>
+        <property name='download.size' value='3357'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.extensionlocation' version='1.2.0.201010141416'>
+      <properties size='1'>
+        <property name='download.size' value='31813'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.javax.xml.bind' version='2.1.0.BUILD-20130730'>
+      <properties size='1'>
+        <property name='download.size' value='2001'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.js.statistics.tomcat.valve' version='1.0.0.10'>
+      <properties size='1'>
+        <property name='download.size' value='6390'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.jpaas.service.mail.service' version='1.0.2'>
+      <properties size='1'>
+        <property name='download.size' value='11443'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.springsource.javax.xml.rpc' version='1.1.0.v20110517'>
+      <properties size='1'>
+        <property name='download.size' value='32374'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.persistence.osgi.localresources' version='0.6.86'>
+      <properties size='1'>
+        <property name='download.size' value='3680'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.apache.chemistry.opencmis.chemistry-opencmis-osgi-client-addon' version='0.13.0.sap-01'>
+      <properties size='1'>
+        <property name='download.size' value='741751'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.supportability.tools' version='1.1.0'>
+      <properties size='1'>
+        <property name='download.size' value='9528'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.js.statistics.api' version='1.0.0.10'>
+      <properties size='1'>
+        <property name='download.size' value='71645'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.gemini.mgmt' version='1.0.1.RELEASE'>
+      <properties size='1'>
+        <property name='download.size' value='100134'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.apache.chemistry.opencmis.chemistry-opencmis-osgi-client' version='0.13.0.sap-01'>
+      <properties size='1'>
+        <property name='download.size' value='1206879'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.services.accessor.tomcat.factory' version='1.0.0.1'>
+      <properties size='1'>
+        <property name='download.size' value='2014'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.org.apache.commons.logging' version='1.1.1'>
+      <properties size='1'>
+        <property name='download.size' value='54028'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.um.api' version='1.2.94'>
+      <properties size='1'>
+        <property name='download.size' value='10139'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.conn.jco.cloud' version='3.1.1.17'>
+      <properties size='1'>
+        <property name='download.size' value='46980'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com-sap-opencmis-libs' version='1.18.0'>
+      <properties size='1'>
+        <property name='download.size' value='870101'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.service.auditlog.extension.impl' version='0.6.36'>
+      <properties size='1'>
+        <property name='download.size' value='10071'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.persistence.osgi.hdb.v1.90.4.datasource' version='0.6.86'>
+      <properties size='1'>
+        <property name='download.size' value='834960'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.persistence.osgi.dbtech' version='0.6.86'>
+      <properties size='1'>
+        <property name='download.size' value='723362'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='slf4j.api' version='1.7.2'>
+      <properties size='1'>
+        <property name='download.size' value='26083'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.persistence.core' version='2.3.2.v20111125-r10461'>
+      <properties size='1'>
+        <property name='download.size' value='4320186'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.osgi' version='3.7.2.sap-05'>
+      <properties size='1'>
+        <property name='download.size' value='1340110'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.saml2.sp.lib' version='1.1.114'>
+      <properties size='1'>
+        <property name='download.size' value='189529'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.google.gson' version='1.6.0'>
+      <properties size='1'>
+        <property name='download.size' value='164984'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.jobs' version='3.5.100.v20110404'>
+      <properties size='1'>
+        <property name='download.size' value='91038'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.ecm.gateway.mongodb.commands' version='0.9.192'>
+      <properties size='1'>
+        <property name='download.size' value='11354'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.core.jpaas.security.um.service' version='1.2.94'>
+      <properties size='1'>
+        <property name='download.size' value='64727'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.virgo.util.parser.manifest' version='3.1.0.D-20110927204747'>
+      <properties size='1'>
+        <property name='download.size' value='24932'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='javax.servlet' version='3.0.0.v201103241009'>
+      <properties size='1'>
+        <property name='download.size' value='200390'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.sap.cloud.security.oauth2.api' version='0.0.127'>
+      <properties size='1'>
+        <property name='download.size' value='5339'/>
+      </properties>
+    </artifact>
+  </artifacts>
+</repository>

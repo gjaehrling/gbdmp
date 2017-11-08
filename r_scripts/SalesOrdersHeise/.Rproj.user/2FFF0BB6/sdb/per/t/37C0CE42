@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1397403520242.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "37C0CE42",
+    "lastKnownWriteTime" : -3387098320152297472,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "diamonds",
+        "contentUrl" : "content?title=diamonds&file=3744c9391432404e9fd5f83e99c633d8.htm",
+        "displayedObservations" : 1000,
+        "displayedVariables" : 10,
+        "totalObservations" : 53940,
+        "variables" : 10
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

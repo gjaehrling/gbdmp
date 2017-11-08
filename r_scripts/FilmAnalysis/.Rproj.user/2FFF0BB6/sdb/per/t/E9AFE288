@@ -1,0 +1,17 @@
+{
+    "contents" : "# libraries\nlibrary(mclust)\n\n# load data\nfilm_analysis <- read.csv(\"~/Dropbox/user_gerd/programme/data_mining/R/FilmAnalysis/film_analysis.csv\")\n\nhead(film_analysis)\nsummary(film_analysis)\n\n# create time-series object\nFa.ts<-aggregate(x=film_analysis$rental_time, by=list(film=film_analysis$film_id), FUN=ts)\nnames(Fa.ts)<-c(\"Film\", \"TimeSeries\")\nstr(Fa.ts[1:3,])\n\n# mean value of time series\nFa.mean<-sapply(Fa.ts[, \"TimeSeries\"], FUN=mean)\nFa<-cbind(Fa.ts, Mean=Fa.mean)\nFa<-cbind(Fa, StdDev=sapply(Fa.ts[, \"TimeSeries\"], FUN=sd))\n\nFa.nr<-aggregate(x=film_analysis$rental_time, by=list(Customer=film_analysis$customer_id), FUN=length)\nnames(Fa.nr)<-c(\"Customer\", \"Nr.Orders\")\nFa<-merge(Fa,Fa.nr)\nFa<-Fa[,c(1,3,4,6,5,2)]\nstr(Fa[1:3,])\n\n# find film clusters\ncl.m<-Mclust(Fa[1:6000,2:3])\ncl.m$parameters$mean\n\nplot(cl.m, Fa[1:6000,2:3], what=\"classification\", dimens=c(1,2), cex=0.1)\n",
+    "created" : 1428003268220.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1829666139",
+    "id" : "E9AFE288",
+    "lastKnownWriteTime" : 1435384931,
+    "path" : "~/Dropbox/user_gerd/programme/data_mining/R/FilmAnalysis/film_analysis.R",
+    "project_path" : "film_analysis.R",
+    "properties" : {
+    },
+    "relative_order" : 0,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

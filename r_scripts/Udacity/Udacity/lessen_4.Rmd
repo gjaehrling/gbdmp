@@ -1,0 +1,127 @@
+Lesson 4 (two variables)
+========================================================
+
+load the package and the data:
+```{r}
+library(ggplot2)
+pf <- read.csv("~/programme/data_mining/R/Udacity/pseudo_facebook.tsv", sep="\t", header = TRUE, row.names = 1)
+summary(pf)
+```
+
+scatter plot:
+```{r fig.width=7, fig.height=6}
+qplot(x=age, y=friend_count, data=pf)
+```
+
+similar plot created by ggplot
+```{r}
+ggplot(aes(x=age, y=friend_count), data=pf) + geom_point()
+ggplot(aes(x=age, y=friend_count), data=pf) + geom_point() + xlim(13,90)
+
+ggplot(aes(x=age, y=friend_count), data=pf) + 
+  geom_point(alpha = 1/20) + 
+  xlim(13,90)
+
+ggplot(aes(x=age, y=friend_count), data=pf) + 
+  geom_jitter(alpha = 1/20) + 
+  xlim(13,90) 
+
+ggplot(aes(x=age, y=friend_count), data=pf) + 
+  geom_point(alpha = 1/20) + 
+  xlim(13,90) + 
+  coord_trans(y = 'sqrt')
+
+ggplot(aes(x=age, y=friend_count), data=pf) + 
+  geom_point(alpha = 1/20, position = position_jitter(h=0)) + 
+  xlim(13,90) + 
+  coord_trans(y = 'sqrt')
+```
+
+friends initiated:
+```{r}
+ggplot(aes(x=age, y=friendships_initiated), data=pf) + 
+  geom_point(alpha = 1/20) + 
+  xlim(13,90) + 
+  coord_trans(y = 'sqrt')
+```
+
+Create table with median using package dplyr:
+```{r}
+install.packages('dplyr')
+library(dplyr)
+
+age_groups <- group_by(pf, age)
+pf.fc_by_age <- summarize(age_groups, 
+          friend_count_mean = mean(friend_count),
+          friend_count_median = median(friend_count),
+          n = n())
+
+pf.fc_by_age <- arrange(pf.fc_by_age, age)
+head(pf.fc_by_age)
+```
+
+Alternative using the chain of functions:
+```{r}
+pf.fc_by_age <- pf %.%
+  group_by(age) %.%
+  summarise(friend_count_mean = mean(friend_count),
+            friend_count_median = median(friend_count),
+            n = n()) %.%
+  arrange(age)
+
+head(pf.fc_by_age)
+```
+
+Plot the dependencies between age and mean friend count
+```{r}
+qplot(x=age, y=friend_count_mean, data = pf.fc_by_age)
+ggplot(aes(x=age,y=friend_count_mean), data=pf.fc_by_age, xlim=c(13,110)) + 
+  geom_line() 
+```
+
+Overlay of different plots:
+```{r}
+ggplot(aes(x=age, y=friend_count), data=pf) + 
+  xlim(13,90) +
+  geom_point(alpha =0.05,
+             position=position_jitter(h=0),
+             color = 'orange') +
+  coord_trans(y='sqrt') +
+  geom_line(stat = 'summary', fun.y = mean) +
+  geom_line(stat = 'summary', fun.y = quantile, probs = .1, linetype = 2, color = 'blue') + 
+  geom_line(stat = 'summary', fun.y = quantile, probs = .5, linetype = 1, color = 'blue') +
+  geom_line(stat = 'summary', fun.y = quantile, probs = .9, linetype = 2, color = 'blue')
+```
+
+Lesson zooming in using coord_cartesian:
+```{r}
+ggplot(aes(x=age, y=friend_count), data=pf) + 
+  coord_cartesian(xlim=c(13,90), ylim=c(0,1000)) +
+  geom_point(alpha =0.05,
+             position=position_jitter(h=0),
+             color = 'orange') +
+  geom_line(stat = 'summary', fun.y = mean) +
+  geom_line(stat = 'summary', fun.y = quantile, probs = .1, linetype = 2, color = 'blue') + 
+  geom_line(stat = 'summary', fun.y = quantile, probs = .5, linetype = 1, color = 'blue') +
+  geom_line(stat = 'summary', fun.y = quantile, probs = .9, linetype = 2, color = 'blue')
+```
+
+correlation of age and friend_count:
+```{r}
+cor.test(pf$age, pf$friend_count, method ="pearson")
+
+with(subset(pf, age <= 70), cor.test(age, friend_count))
+```
+
+Likes received vs. www_likes received:
+```{r}
+cor.test(pf$www_likes_received, pf$likes_received, method="pearson")
+ggplot(aes(x=www_likes_received, y=likes_received), data=pf) +
+    geom_line(stat = 'summary', fun.y = mean, color = "blue") +
+    geom_point(alpha =0.5) +
+    xlim(0, quantile(pf$www_likes_received, 0.95)) + 
+    ylim(0, quantile(pf$likes_received, 0.95)) +
+    geom_smooth(method = 'lm', color = "red")
+
+```
+

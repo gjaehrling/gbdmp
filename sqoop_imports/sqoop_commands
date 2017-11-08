@@ -1,0 +1,2 @@
+# simple import 
+sqoop import --connect jdbc:mysql://localhost/bestellungen --username root --password darmstadt --table zusammenfassung -m 1

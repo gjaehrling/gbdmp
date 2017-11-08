@@ -1,0 +1,59 @@
+package hadoop.WebServerAnalysis;
+
+import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapred.MapReduceBase;
+import org.apache.hadoop.mapred.Mapper;
+import org.apache.hadoop.mapred.OutputCollector;
+import org.apache.hadoop.mapred.Reporter;
+
+public class WebServerMapper extends MapReduceBase implements 
+Mapper <LongWritable, Text, Text, IntWritable>{
+
+	
+	private static final IntWritable one = new IntWritable(1);
+	
+	// define the number of fields in the input record that must be found:
+	public static final int NUM_FIELDS = 7; 
+	
+
+	public void map(LongWritable key, Text value,
+			OutputCollector<Text, IntWritable> output, Reporter reporter)
+			throws IOException {
+		
+		// Regular expression to parse the log:
+		String logEntryPattern = "^(\\S+) (\\S+) (\\S+) \\[([\\w:/]+\\s[+\\-]\\d{4})\\]" + " \"(.+?)\" (\\d{3}) (\\S+)";
+		
+		// Get Apache Web Log record as String:
+		String logEntryLine = value.toString();
+		
+		// Compile regular expression for parsing input:
+		Pattern p = Pattern.compile(logEntryPattern);
+		Matcher matcher = p.matcher(logEntryLine);
+		
+		// Validate we have a valid log record:
+		if(!matcher.matches() || NUM_FIELDS != matcher.groupCount()){
+			System.err.println("Bad log entry");
+			System.err.println(logEntryLine);
+			return;
+		}
+		
+		// Get the HTTP request information from log entry:
+		Integer httpCode = Integer.parseInt(matcher.group(6));
+		Text httpRequest = new Text(matcher.group(5));
+		
+		// Filter the requests that had a 300 request code or higher:
+		if(httpCode >= 300){
+			
+			// Output the HTTP error code and page request and 1 as the value:
+			// this will be used in the reducer to sum up the total occurrences of the same web request
+			// and error code returned from the server: 
+			output.collect(new Text(httpRequest), one);
+		}	
+	}
+}

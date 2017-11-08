@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" confirmationNeeded="false" name="Default">
+  <contextParameter comment="" name="hdfsHost" prompt="hdfsHost?" promptNeeded="false" type="id_String" value="localhost"/>
+  <contextParameter comment="" name="hdfsPort" prompt="hdfsPort?" promptNeeded="false" type="id_String" value="8020"/>
+  <contextParameter comment="" name="username" prompt="username?" promptNeeded="false" type="id_String" value="hadoop"/>
+  <contextParameter comment="" name="tweetFilePath" prompt="tweetFilePath?" promptNeeded="false" type="id_String" value="/Users/hadoop/Downloads/talend_for_big_data_files/tweets-"/>
+  <contextParameter comment="" name="hiveHost" prompt="hiveHost?" promptNeeded="false" type="id_String" value="localhost"/>
+  <contextParameter comment="" name="hivePort" prompt="hivePort?" promptNeeded="false" type="id_String" value="9083"/>
+  <contextParameter comment="" name="JTHost" prompt="JTHost?" promptNeeded="false" type="id_String" value="localhost"/>
+  <contextParameter comment="" name="JTPort" prompt="JTPort?" promptNeeded="false" type="id_String" value="9001"/>
+  <contextParameter comment="" name="resourceManagerHost" prompt="resourceManagerHost?" promptNeeded="false" type="id_String" value="192.168.2.117"/>
+  <contextParameter comment="" name="resourceManagerPort" prompt="resourceManagerPort?" promptNeeded="false" type="id_String" value="8032"/>
+</talendfile:ContextType>

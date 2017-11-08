@@ -1,0 +1,68 @@
+Lesson 5 Reshaping the data
+========================================================
+
+loading the data
+```{r}
+library(ggplot2)
+pf <- read.csv("~/programme/data_mining/R/Udacity/pseudo_facebook.tsv", sep="\t", header = TRUE, row.names = 1)
+summary(pf)
+```
+
+Third option for qualitative variables:
+```{r}
+library('dplyr')
+
+pf.fc_by_age_gender <- pf %.%
+  filter(!is.na(gender)) %.%
+  group_by(age, gender) %.%
+  summarize(mean_friend_count = mean(friend_count),
+            median_friend_count = median(friend_count),
+            n = n()) %.%
+  ungroup() %.%
+  arrange(age)
+
+head(pf.fc_by_age_gender)
+```
+
+Plotting third qualitative variable:
+```{r}
+ggplot(aes(x=age, y=median_friend_count), 
+       data=pf.fc_by_age_gender) +
+  geom_line(aes(color=gender))
+```
+
+Reshaping the data using the dcast function. Result will be a new data frame. The acast function will be used when the result shall be a list or an array. 
+```{r}
+install.packages('reshape2')
+library(reshape2)
+
+pf.fc_by_age_gender.wide <- dcast(pf.fc_by_age_gender,
+                                  age ~ gender,
+                                  value.var = 'median_friend_count')
+```
+
+
+Plot the ratio of the female to male median friend counts using the new data frame:
+```{r}
+ggplot(aes(x=age, y=(female / male)), data=pf.fc_by_age_gender.wide) +
+  geom_line() + 
+  geom_hline(yintercept = 1, alpha = 0.3, linetype = 2)
+```
+
+Adding a new variable to the data frame for time sind logged on to fb
+```{r}
+pf["year_joined"] <- NA
+pf$year_joined <- floor((2014*365 - pf$tenure) / 365 )
+
+summary(pf$year_joined)
+table(pf$year_joined)
+```
+
+cut the data into buckets using the cut function:
+```{r}
+pf$year_joined.bucket <- cut(pf$year_joined, 
+                             c(2004,2009,2011,2012,2014))
+head(pf$year_joined.bucket)
+table(pf$year_joined.bucket, useNA = 'ifany')
+```
+

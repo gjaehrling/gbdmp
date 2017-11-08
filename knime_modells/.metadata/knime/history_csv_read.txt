@@ -1,0 +1,2 @@
+/home/hadoop/Dropbox/general/data_sets/bank.csv
+/home/hadoop/Dropbox/general/data_sets/bank-full.csv

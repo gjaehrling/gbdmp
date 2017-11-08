@@ -1,0 +1,293 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n#Analyze World Development Indicators using SparkQL\n\nRead data from world-development-indicators-release-2016-01-28-06-31-53.zip\n### Data Structure\n\n- CountryName\n- CountryCode\n- IndiciatorName\n- IndicatorCode\n- Year\n- Value",
+      "dateUpdated": "Mar 23, 2016 9:49:17 AM",
+      "config": {
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false,
+        "colWidth": 12.0
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457813589359_201825521",
+      "id": "20160312-211309_1237389595",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch1\u003eAnalyze World Development Indicators using SparkQL\u003c/h1\u003e\n\u003cp\u003eRead data from world-development-indicators-release-2016-01-28-06-31-53.zip\u003c/p\u003e\n\u003ch3\u003eData Structure\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eCountryName\u003c/li\u003e\n\u003cli\u003eCountryCode\u003c/li\u003e\n\u003cli\u003eIndiciatorName\u003c/li\u003e\n\u003cli\u003eIndicatorCode\u003c/li\u003e\n\u003cli\u003eYear\u003c/li\u003e\n\u003cli\u003eValue\u003c/li\u003e\n\u003c/ul\u003e\n"
+      },
+      "dateCreated": "Mar 12, 2016 9:13:09 PM",
+      "dateStarted": "Mar 23, 2016 9:46:30 AM",
+      "dateFinished": "Mar 23, 2016 9:46:33 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sh\ncd /Users/hadoop/hadoop-1.2.1\nbin/hadoop fs -mkdir data\nbin/hadoop fs -copyFromLocal /Users/hadoop/Documents/programs/Spark-Masterclass-master/europe-indicators.csv data\nbin/hadoop fs -ls data",
+      "dateUpdated": "Mar 23, 2016 9:49:17 AM",
+      "config": {
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/sh",
+        "editorHide": false,
+        "colWidth": 12.0
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457813681411_-389210086",
+      "id": "20160312-211441_1311589974",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "Found 1 items\n-rw-r--r--   1 hadoop supergroup   61626644 2016-03-23 09:46 /user/hadoop/data/europe-indicators.csv\n"
+      },
+      "dateCreated": "Mar 12, 2016 9:14:41 PM",
+      "dateStarted": "Mar 23, 2016 9:46:31 AM",
+      "dateFinished": "Mar 23, 2016 9:46:47 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%dep\nz.reset()\nz.addRepo(\"Spark Packages Repo\").url(\"http://dl.bintray.com/spark-packages/maven\")\nz.load(\"com.databricks:spark-csv_2.10:1.3.0\")\nz.load(\"org.apache.spark:spark-streaming-kafka_2.10:1.6.0\")",
+      "dateUpdated": "Mar 23, 2016 9:49:17 AM",
+      "config": {
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala",
+        "colWidth": 12.0,
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1458641406791_324512775",
+      "id": "20160322-111006_1762956664",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "res0: org.apache.zeppelin.spark.dep.Dependency \u003d org.apache.zeppelin.spark.dep.Dependency@49a5ddd0\n"
+      },
+      "dateCreated": "Mar 22, 2016 11:10:06 AM",
+      "dateStarted": "Mar 23, 2016 9:46:31 AM",
+      "dateFinished": "Mar 23, 2016 9:46:59 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nfrom pyspark.sql.types import *\n\nschema \u003d StructType([ \\\n   StructField(\"CountryName\",   StringType(),  True), \\\n   StructField(\"CountryCode\",   StringType(),  True), \\\n   StructField(\"IndicatorName\", StringType(),  True), \\\n   StructField(\"IndicatorCode\", StringType(),  True), \\\n   StructField(\"Year\",          IntegerType(), True), \\\n   StructField(\"Value\",         DoubleType(),  True)  \\\n])\n\n    \nraw_data \u003d sqlContext.load(source\u003d\"com.databricks.spark.csv\", header\u003d\u0027true\u0027, path\u003d\u0027data/europe-indicators.csv\u0027, schema\u003dschema)\n\nprint \"numbers of records in data frame:\"\nprint(raw_data.count())\n\n#for x in raw_data.take(10): print x\n",
+      "dateUpdated": "Mar 23, 2016 9:49:17 AM",
+      "config": {
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala",
+        "colWidth": 12.0,
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457813884203_-1569929484",
+      "id": "20160312-211804_1053341868",
+      "result": {
+        "code": "ERROR",
+        "type": "TEXT",
+        "msg": "Py4JJavaError: An error occurred while calling o36.load.\n: java.lang.RuntimeException: Failed to load class for data source: com.databricks.spark.csv\n\tat scala.sys.package$.error(package.scala:27)\n\tat org.apache.spark.sql.sources.ResolvedDataSource$.lookupDataSource(ddl.scala:194)\n\tat org.apache.spark.sql.sources.ResolvedDataSource$.apply(ddl.scala:205)\n\tat org.apache.spark.sql.SQLContext.load(SQLContext.scala:727)\n\tat org.apache.spark.sql.SQLContext.load(SQLContext.scala:713)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:606)\n\tat py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:231)\n\tat py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:379)\n\tat py4j.Gateway.invoke(Gateway.java:259)\n\tat py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:133)\n\tat py4j.commands.CallCommand.execute(CallCommand.java:79)\n\tat py4j.GatewayConnection.run(GatewayConnection.java:207)\n\tat java.lang.Thread.run(Thread.java:745)\n\n(\u003cclass \u0027py4j.protocol.Py4JJavaError\u0027\u003e, Py4JJavaError(u\u0027An error occurred while calling o36.load.\\n\u0027, JavaObject id\u003do41), \u003ctraceback object at 0x1040d6758\u003e)"
+      },
+      "dateCreated": "Mar 12, 2016 9:18:04 PM",
+      "dateStarted": "Mar 23, 2016 9:46:37 AM",
+      "dateFinished": "Mar 23, 2016 9:47:06 AM",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nindicators_csv.printSchema()\n",
+      "dateUpdated": "Mar 23, 2016 9:49:17 AM",
+      "config": {
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala",
+        "colWidth": 12.0,
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457814105491_409709232",
+      "id": "20160312-212145_1125570150",
+      "result": {
+        "code": "ERROR",
+        "type": "TEXT",
+        "msg": "Traceback (most recent call last):\n  File \"/var/folders/8d/6b723xp94cg93y01wt1557340000gp/T//zeppelin_pyspark.py\", line 162, in \u003cmodule\u003e\n    eval(compiledCode)\n  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\nNameError: name \u0027indicators_csv\u0027 is not defined\n"
+      },
+      "dateCreated": "Mar 12, 2016 9:21:45 PM",
+      "dateStarted": "Mar 23, 2016 9:46:37 AM",
+      "dateFinished": "Mar 23, 2016 9:47:06 AM",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\n# check type of indicators_csv\nprint raw_data\n\n# only get the relevant countries and years:\neurope \u003d raw_data[raw_data.CountryCode.inSet([\u0027AUT\u0027, \u0027FRA\u0027, \u0027DEU\u0027, \u0027GRC\u0027, \u0027IRL\u0027, \u0027ITA\u0027, \u0027NLD\u0027, \u0027PRT\u0027, \u0027ESP\u0027, \u0027GBR\u0027])]\neurope \u003d europe[europe.Year.inSet([2007, 2008, 2009, 2010, 2011, 2012])]\neurope \u003d europe[europe.IndicatorCode.inSet(\"SL.UEM.1524.NE.Z\", \"GC.BAL.CASH.GD.ZS\", \"FP.CPI.TOTL.ZG\")]\n\neu \u003d europe.select(\u0027IndicatorCode\u0027, \u0027Value\u0027)\n\n# show the first 20 records:\neu.show()\nsqlContext.registerDataFrameAsTable(eu, \"eu\")\n\n",
+      "dateUpdated": "Mar 23, 2016 9:49:17 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1458574782389_-2027745580",
+      "id": "20160321-163942_69139818",
+      "result": {
+        "code": "ERROR",
+        "type": "TEXT",
+        "msg": "Traceback (most recent call last):\n  File \"/var/folders/8d/6b723xp94cg93y01wt1557340000gp/T//zeppelin_pyspark.py\", line 162, in \u003cmodule\u003e\n    eval(compiledCode)\n  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\nNameError: name \u0027raw_data\u0027 is not defined\n"
+      },
+      "dateCreated": "Mar 21, 2016 4:39:42 PM",
+      "dateStarted": "Mar 23, 2016 9:47:06 AM",
+      "dateFinished": "Mar 23, 2016 9:47:06 AM",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nfrom pyspark.mllib.clustering import KMeans\n\n#clusters \u003d KMeans.train(eu, 3, maxIterations\u003d10, runs\u003d10, initializationMode\u003d\"random\")\n",
+      "dateUpdated": "Mar 23, 2016 9:49:17 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1458655885840_-1699317788",
+      "id": "20160322-151125_277833494",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 22, 2016 3:11:25 PM",
+      "dateStarted": "Mar 23, 2016 9:47:06 AM",
+      "dateFinished": "Mar 23, 2016 9:47:07 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "dateUpdated": "Mar 23, 2016 9:49:17 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorHide": false,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1458644550561_-112660499",
+      "id": "20160322-120230_1253408222",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT"
+      },
+      "dateCreated": "Mar 22, 2016 12:02:30 PM",
+      "dateStarted": "Mar 23, 2016 9:47:07 AM",
+      "dateFinished": "Mar 23, 2016 9:47:07 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Lab5 Spark ML",
+  "id": "2BH5SDM7U",
+  "angularObjects": {
+    "2BCE6R8T2": [],
+    "2BDMU83T5": [],
+    "2BEMMQPJG": [],
+    "2BDW72X9E": [],
+    "2BF3AAW7U": [],
+    "2BEJ4D5SJ": [],
+    "2BF7MH2JM": [],
+    "2BE1TRU6B": [],
+    "2BE5CQ2W8": [],
+    "2BFUXNJ9R": [],
+    "2BCQ6J7ZP": [],
+    "2BCWJF462": [],
+    "2BFDNS2ZU": []
+  },
+  "config": {},
+  "info": {}
+}

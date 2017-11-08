@@ -1,0 +1,9 @@
+{
+    "path" : "~/programme/data_mining/R/SalesOrders/SalesOrders3",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

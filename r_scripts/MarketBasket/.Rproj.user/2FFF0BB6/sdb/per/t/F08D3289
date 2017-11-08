@@ -1,0 +1,23 @@
+{
+    "contents" : "",
+    "created" : 1368270039534.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F08D3289",
+    "lastKnownWriteTime" : 1,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "SalesData",
+        "contentUrl" : "content?title=SalesData&file=e85378f4404f4ebd92b14d07d7f9db56.htm",
+        "displayedObservations" : "1000",
+        "displayedVariables" : 3,
+        "totalObservations" : "54552",
+        "variables" : "2"
+    },
+    "relative_order" : 0,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

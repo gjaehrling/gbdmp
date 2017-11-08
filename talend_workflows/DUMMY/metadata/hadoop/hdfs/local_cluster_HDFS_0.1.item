@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendHDFS="http://www.talend.org/hdfs" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+  <TalendHDFS:HDFSConnection xmi:id="_E7WBUKS7EeWFWoYX_FO-Iw" name="local_cluster_HDFS" label="local_cluster_HDFS" dataPackage="_E7WBUaS7EeWFWoYX_FO-Iw" relativeHadoopClusterId="_IY4PUKPjEeWBkp6UYjgaEw" userName="hadoop" rowSeparator="\n" fieldSeparator="&quot;,&quot;" headerValue="1"/>
+  <orgomg.cwm.resource.relational:Schema xmi:id="_E7WBUaS7EeWFWoYX_FO-Iw" name="HDFS" dataManager="_E7WBUKS7EeWFWoYX_FO-Iw">
+    <ownedElement xsi:type="relational:TdTable" xmi:id="_E7WBUqS7EeWFWoYX_FO-Iw" name="block_1" id="_OLfioKPtEeWBkp6UYjgaEw" label="blocks">
+      <taggedValue xmi:id="_E7WBU6S7EeWFWoYX_FO-Iw" tag="Comment" value=""/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_E7WBVKS7EeWFWoYX_FO-Iw" label="Column0" length="5" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_E7WBVaS7EeWFWoYX_FO-Iw" label="Column1" length="5" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_E7WBVqS7EeWFWoYX_FO-Iw" label="Column2" length="17" precision="16" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_E7WBV6S7EeWFWoYX_FO-Iw" label="Column3" length="1" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_E7WBWKS7EeWFWoYX_FO-Iw" label="Column4" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_E7WBWaS7EeWFWoYX_FO-Iw" label="Column5" length="1" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_E7WBWqS7EeWFWoYX_FO-Iw" label="Column6" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_E7WBW6S7EeWFWoYX_FO-Iw" label="Column7" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_E7WBXKS7EeWFWoYX_FO-Iw" label="Column8" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_E7WBXaS7EeWFWoYX_FO-Iw" label="Column9" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_E7WBXqS7EeWFWoYX_FO-Iw" label="Column10" length="1" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_E7WBX6S7EeWFWoYX_FO-Iw" label="Column11" length="4" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <additionalProperties xmi:id="_E7WBYKS7EeWFWoYX_FO-Iw" key="HDFS_PATH" value="/user/hadoop/data/block_1.csv"/>
+      <additionalProperties xmi:id="_E7WBYaS7EeWFWoYX_FO-Iw" key="HDFS_FILE_TYPE" value="TEXT"/>
+    </ownedElement>
+  </orgomg.cwm.resource.relational:Schema>
+</xmi:XMI>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+   ===========================================================================
+
+   BDMP
+
+   ===========================================================================
+
+  $Id: file.xml 93 2016-07-02 19:14:27Z hadoop $
+
+   $Date: 2016-07-02 21:14:27 +0200 (Sat, 02 Jul 2016) $
+
+   $Rev: 93 $
+
+   $Author: hadoop $
+
+   $URL: https://svn.devlab.de.tmo/bdmp-e-t/svn/bdmp-e-t/trunk/bdmp/se-records/p04-programming/BDMP_oozie/src/main/oozie/workflow/etl/etl_main/wf_etl_main.xml
+
+   $
+
+   ===========================================================================
+
+   Beschreibung: <Beschreibung des Scripts>
+
+   ===========================================================================
+
+-->
+
+<workflow-app
+   xmlns="uri:oozie:workflow:0.5"
+   name="wf-check">
+   <global>
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+   </global>
+   <start to="py-check" />
+   <action name="py-check">
+      <python xmlns="uri:oozie:bdmp-python-action:0.1">
+         <job-tracker>${jobTracker}</job-tracker>
+         <name-node>${nameNode}</name-node>
+         <bdmp-scripts>${bdmpScripts}</bdmp-scripts>
+         <script>bdmp/com/meta/hivemodel/bdmphivemetastore.py</script>
+         <arg>--database=kfm</arg>
+         <arg>--action=listTables</arg>
+         <arg>-h,--version</arg>
+         <debug-sleep-begin>0</debug-sleep-begin>
+         <debug-sleep-end>0</debug-sleep-end>
+         <log-level>DEBUG</log-level>
+         <!--file>${bdmpHdfsScripts}/bdmp_oozie_python_action.sh</file-->
+         <!--capture-output /-->
+         <!--archive>bdmp-java.jar</archive-->
+      </python>
+      <ok to="end" />
+      <error to="fail" />
+   </action>
+   <kill name="fail">
+      <message>Python failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+   </kill>
+   <end name="end" />
+</workflow-app>

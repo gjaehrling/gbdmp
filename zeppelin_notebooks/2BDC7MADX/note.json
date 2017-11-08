@@ -1,0 +1,460 @@
+{
+  "paragraphs": [
+    {
+      "title": "Load Dependencies",
+      "text": "%dep\nz.reset()\nz.addRepo(\"Spark Packages Repo\").url(\"http://dl.bintray.com/spark-packages/maven\")\nz.load(\"com.databricks:spark-csv_2.10:1.3.0\")\nz.load(\"org.apache.spark:spark-streaming-kafka_2.10:1.6.0\")",
+      "dateUpdated": "Mar 12, 2016 2:52:37 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala",
+        "title": true,
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457785993854_1274681941",
+      "id": "20160312-133313_849874158",
+      "result": {
+        "code": "ERROR",
+        "type": "TEXT",
+        "msg": "Must be used before SparkInterpreter (%spark) initialized"
+      },
+      "dateCreated": "Mar 12, 2016 1:33:13 PM",
+      "dateStarted": "Mar 12, 2016 2:52:03 PM",
+      "dateFinished": "Mar 12, 2016 2:52:03 PM",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nprint(sc.version)",
+      "dateUpdated": "Mar 21, 2016 11:40:56 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457786052742_-1364017961",
+      "id": "20160312-133412_2106300442",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "1.3.1\n"
+      },
+      "dateCreated": "Mar 12, 2016 1:34:12 PM",
+      "dateStarted": "Mar 21, 2016 11:40:56 AM",
+      "dateFinished": "Mar 21, 2016 11:41:37 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nA little convenience function to\n\n- collect random samples of RDDs and DataFrames\n- print RDDs and DataFrames in table form without switching to %sql by leveraging Zeppelin Display capabilities\n",
+      "dateUpdated": "Mar 21, 2016 11:41:45 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457786386170_1253319892",
+      "id": "20160312-133946_981078290",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eA little convenience function to\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003ecollect random samples of RDDs and DataFrames\u003c/li\u003e\n\u003cli\u003eprint RDDs and DataFrames in table form without switching to %sql by leveraging Zeppelin Display capabilities\u003c/li\u003e\n\u003c/ul\u003e\n"
+      },
+      "dateCreated": "Mar 12, 2016 1:39:46 PM",
+      "dateStarted": "Mar 21, 2016 11:41:45 AM",
+      "dateFinished": "Mar 21, 2016 11:41:46 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndef pprint(data, num\u003d8, asTable\u003dFalse, columns\u003dNone, sampleRatio\u003dNone, seed\u003d42):\n\n    # If a sampleRatio is given, a random sample with given seed is selected\n    subset \u003d data.sample(False, fraction\u003dsampleRatio, seed\u003dseed) if sampleRatio else data\n\n    # If it is a DataFrame, convert rows to arras and extract headers\n    if \"rdd\" in dir(data): \n        columns \u003d subset.columns\n        subset \u003d subset.map(lambda row: row.asDict().values())\n\n    # If num is -1 all records should be collected - avoid for big data ...\n    array \u003d subset.collect() if num \u003d\u003d -1 else subset.take(num)\n\n    # If asTable is True, sql format with columns c0, c1, ... as output\n    # If columns is array of column names, sql format with given columns as output\n    if asTable or columns:\n        output \u003d \"\"\n        for d in array:\n            l \u003d len(d)\n            output +\u003d \"\\t\".join([str(x) for x in d]) + \"\\n\"\n        if columns:\n            header \u003d \"\\t\".join([h for h in columns]) + \"\\n\" \n        else:\n            header \u003d \"\\t\".join([\"c%0d\" %i for i in range(l) ]) + \"\\n\"\n        print \"%table \" + header + output\n    else:\n        for d in array:\n            print d",
+      "dateUpdated": "Mar 21, 2016 11:41:51 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457786203614_-682244555",
+      "id": "20160312-133643_697522515",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 12, 2016 1:36:43 PM",
+      "dateStarted": "Mar 21, 2016 11:41:51 AM",
+      "dateFinished": "Mar 21, 2016 11:41:51 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCreate simple RDD and sum up the rows:",
+      "dateUpdated": "Mar 15, 2016 5:14:23 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457786493188_-1681823842",
+      "id": "20160312-134133_477711987",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eCreate simple RDD and sum up the rows:\u003c/p\u003e\n"
+      },
+      "dateCreated": "Mar 12, 2016 1:41:33 PM",
+      "dateStarted": "Mar 15, 2016 5:14:23 PM",
+      "dateFinished": "Mar 15, 2016 5:14:23 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nimport random\n\ndata \u003d [ [random.randint(10,99) for col in range(4)] for row in range(10)]\n\nrdd \u003d sc.parallelize(data, 4)\n\npprint(rdd, -1)",
+      "dateUpdated": "Mar 21, 2016 11:41:59 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457786422024_461384062",
+      "id": "20160312-134022_1216559175",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "[42, 57, 21, 73]\n[14, 13, 10, 59]\n[12, 65, 60, 84]\n[62, 12, 71, 86]\n[96, 19, 84, 64]\n[70, 60, 46, 34]\n[27, 56, 68, 40]\n[90, 35, 47, 87]\n[40, 92, 35, 10]\n[11, 73, 98, 10]\n"
+      },
+      "dateCreated": "Mar 12, 2016 1:40:22 PM",
+      "dateStarted": "Mar 21, 2016 11:41:59 AM",
+      "dateFinished": "Mar 21, 2016 11:42:00 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nm \u003d rdd.map(lambda x: sum(x))\nprint(m.collect())\n\ns \u003d m.reduce(lambda x,y: x + y)\nprint \"total \u003d \", s",
+      "dateUpdated": "Mar 21, 2016 11:42:04 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457786482920_594350651",
+      "id": "20160312-134122_1052453527",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "[193, 96, 221, 231, 263, 210, 191, 259, 177, 192]\ntotal \u003d  2033\n"
+      },
+      "dateCreated": "Mar 12, 2016 1:41:22 PM",
+      "dateStarted": "Mar 21, 2016 11:42:04 AM",
+      "dateFinished": "Mar 21, 2016 11:42:07 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Load Iris dataset from HDFS and do some transformations: ",
+      "dateUpdated": "Mar 15, 2016 5:14:36 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457786543888_-811244350",
+      "id": "20160312-134223_299481597",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eLoad Iris dataset from HDFS and do some transformations:\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Mar 12, 2016 1:42:23 PM",
+      "dateStarted": "Mar 15, 2016 5:14:37 PM",
+      "dateFinished": "Mar 15, 2016 5:14:37 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sh\n\n# load the data to the hdfs file system:\n/Users/hadoop/hadoop-1.2.1/bin/hadoop fs -copyFromLocal /Users/hadoop/Documents/programs/Spark-Masterclass-master/iris.csv data",
+      "dateUpdated": "Mar 21, 2016 11:42:10 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/sh"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1458058500017_-1105515479",
+      "id": "20160315-171500_1450358200",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 15, 2016 5:15:00 PM",
+      "dateStarted": "Mar 21, 2016 11:42:10 AM",
+      "dateFinished": "Mar 21, 2016 11:42:14 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\n# function to split the dataset:\ndef split(rows):\n    parts \u003d rows.split(\u0027,\u0027)\n    return [float(v) for v in parts[1:5]] + [parts[5]]\n\nfile \u003d sc.textFile(\"hdfs:///user/hadoop/data/iris.csv\")\n\n# identify first line as the header line:\nheader \u003d file.first()\n\n# filter all lines that are not header:\niris \u003d file.filter(lambda x:x !\u003dheader).map(split)\n\n# filter empty lines:\niris \u003d iris.filter(lambda row: len(row)\u003e0)\n\nfor x in iris.take(10):\n    print x",
+      "dateUpdated": "Mar 21, 2016 11:42:58 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457787832019_1845118943",
+      "id": "20160312-140352_979915547",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "[5.1, 3.5, 1.4, 0.2, u\u0027\"setosa\"\u0027]\n[4.9, 3.0, 1.4, 0.2, u\u0027\"setosa\"\u0027]\n[4.7, 3.2, 1.3, 0.2, u\u0027\"setosa\"\u0027]\n[4.6, 3.1, 1.5, 0.2, u\u0027\"setosa\"\u0027]\n[5.0, 3.6, 1.4, 0.2, u\u0027\"setosa\"\u0027]\n[5.4, 3.9, 1.7, 0.4, u\u0027\"setosa\"\u0027]\n[4.6, 3.4, 1.4, 0.3, u\u0027\"setosa\"\u0027]\n[5.0, 3.4, 1.5, 0.2, u\u0027\"setosa\"\u0027]\n[4.4, 2.9, 1.4, 0.2, u\u0027\"setosa\"\u0027]\n[4.9, 3.1, 1.5, 0.1, u\u0027\"setosa\"\u0027]\n"
+      },
+      "dateCreated": "Mar 12, 2016 2:03:52 PM",
+      "dateStarted": "Mar 21, 2016 11:42:58 AM",
+      "dateFinished": "Mar 21, 2016 11:42:59 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\npprint(iris, sampleRatio\u003d0.1, num\u003d-1, columns\u003d[\"sepL\", \"sepW\", \"petL\", \"petW\", \"species\"])\n",
+      "dateUpdated": "Mar 21, 2016 11:43:02 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "sepL",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "sepW",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "sepL",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "sepW",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457787866963_-1335184817",
+      "id": "20160312-140426_792462036",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "sepL\tsepW\tpetL\tpetW\tspecies\n4.7\t3.2\t1.3\t0.2\t\"setosa\"\n4.9\t3.1\t1.5\t0.1\t\"setosa\"\n5.4\t3.9\t1.3\t0.4\t\"setosa\"\n5.1\t3.5\t1.4\t0.3\t\"setosa\"\n5.4\t3.4\t1.5\t0.4\t\"setosa\"\n4.9\t3.1\t1.5\t0.2\t\"setosa\"\n4.9\t2.4\t3.3\t1.0\t\"versicolor\"\n6.7\t3.1\t4.7\t1.5\t\"versicolor\"\n5.6\t2.7\t4.2\t1.3\t\"versicolor\"\n5.7\t3.0\t4.2\t1.2\t\"versicolor\"\n4.9\t2.5\t4.5\t1.7\t\"virginica\"\n6.5\t3.0\t5.5\t1.8\t\"virginica\"\n6.4\t2.8\t5.6\t2.1\t\"virginica\"\n7.9\t3.8\t6.4\t2.0\t\"virginica\"\n6.3\t2.8\t5.1\t1.5\t\"virginica\"\n6.7\t3.1\t5.6\t2.4\t\"virginica\"\n6.9\t3.1\t5.1\t2.3\t\"virginica\"\n\n"
+      },
+      "dateCreated": "Mar 12, 2016 2:04:26 PM",
+      "dateStarted": "Mar 21, 2016 11:43:02 AM",
+      "dateFinished": "Mar 21, 2016 11:43:02 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Calculate average sepal length Per class",
+      "text": "%pyspark\n\npairs \u003d iris.map(lambda p: (p[4], p[0]))\nresult \u003d pairs.groupByKey().mapValues(lambda r: sum(r)/len(r))\npprint(result)\n",
+      "dateUpdated": "Mar 21, 2016 11:43:15 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457789781970_1669198689",
+      "id": "20160312-143621_721080149",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "(u\u0027\"versicolor\"\u0027, 5.936)\n(u\u0027\"setosa\"\u0027, 5.005999999999999)\n(u\u0027\"virginica\"\u0027, 6.587999999999998)\n"
+      },
+      "dateCreated": "Mar 12, 2016 2:36:21 PM",
+      "dateStarted": "Mar 21, 2016 11:43:15 AM",
+      "dateFinished": "Mar 21, 2016 11:43:16 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457790200972_1270392513",
+      "id": "20160312-144320_975437010",
+      "dateCreated": "Mar 12, 2016 2:43:20 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Lab1 Iris Dataset",
+  "id": "2BDC7MADX",
+  "angularObjects": {
+    "2BCE6R8T2": [],
+    "2BDMU83T5": [],
+    "2BEMMQPJG": [],
+    "2BDW72X9E": [],
+    "2BF3AAW7U": [],
+    "2BEJ4D5SJ": [],
+    "2BF7MH2JM": [],
+    "2BE1TRU6B": [],
+    "2BE5CQ2W8": [],
+    "2BFUXNJ9R": [],
+    "2BCQ6J7ZP": [],
+    "2BCWJF462": [],
+    "2BFDNS2ZU": []
+  },
+  "config": {
+    "looknfeel": "default"
+  },
+  "info": {}
+}

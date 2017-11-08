@@ -1,0 +1,16 @@
+{
+    "contents" : "library(car)\nsummary(mtcars)\nhead(mtcars)\nfit<-lm(mpg~disp+hp+wt+drat, data=mtcars)\noutlierTest(fit)\nqqPlot(fit, main=\"QQ Plot\")\nleveragePlots(fit)\nav.Plots(fit)",
+    "created" : 1368273783587.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2205851933",
+    "id" : "86976759",
+    "lastKnownWriteTime" : 1368362903,
+    "path" : "~/programme/data_mining/R/SalesOrders/Dummy/Dummy.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

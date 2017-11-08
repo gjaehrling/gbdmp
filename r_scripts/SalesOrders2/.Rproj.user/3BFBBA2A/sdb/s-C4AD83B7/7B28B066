@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# load libraries:\nlibrary(tseries)\nlibrary(forecast)\n\n# load the data: \nSalesOrders2 <- read.csv(\"SalesOrders2.csv\", header = TRUE, sep = \"\\t\")\nSalesOrders2$DeliveryDate <- as.Date(SalesOrders2$DeliveryDate, format=\"%Y-%m-%d\") \nnames(SalesOrders2)\nhead(SalesOrders2, n=10)\nsummary(SalesOrders2)\nstr(SalesOrders2)\n\n# plot some data:\nPaymentDuration <- SalesOrders2$PaymentDuration\nstr(PaymentDuration)\n#plot(PaymentDuration, type=\"o\", col=\"blue\")\n\ndotchart(PaymentDuration,labels=row.names(SalesOrders2$PaymentDuration),cex=.6,\n         main=\"Payments per day\",\n         xlab=\"Transaction value\")\n\n# create time series: \nPrice.ts <- aggregate(x=SalesOrders2$TotalPrice, \n                      by=list(SalesOrders2$DeliveryDate), \n                      FUN=\"sum\")\nstr(Price.ts[1:3, ])\nts <- ts(t(Price.ts$x)) \nhist(ts, breaks=100, col=\"grey\", main=\"Distribution of order values\")\nplot(Price.ts$Group.1, Price.ts$x, type=\"o\", col=\"black\")\nabline(h=mean(Price.ts$x), col=\"red\")\n# alternative plot:\nplot(ts[1,],type=\"l\",col=\"black\") \nabline(h=mean(Price.ts$x), col=\"white\")\n\n# calculate forecast:\nauto.arima(Price.ts$x)\nfit <- arima(Price.ts$x, seasonal = list(order=c(0,1,0), period=80))\nfc <- forecast(fit)\nplot(fc, main=\"Forecast from ARIMA\")\nabline(h=mean(Price.ts$x), col=\"white\")\n# plot with limited x-axis:\nplot(fc, main=\"Forecast from ARIMA model (details)\", xlab=\"number of days\", ylab=\"odered value\",\n     xlim=c(800, 1000))\nabline(h=mean(Price.ts$x), col=\"red\")\n\n",
+    "created" : 1474110855953.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4124457662",
+    "id" : "7B28B066",
+    "lastKnownWriteTime" : 1471376235,
+    "last_content_update" : 1471376235,
+    "path" : "~/SVNWorkplace/SVNRepository/trunk/r_scripts/SalesOrders2/SalesOrdersForecast.R",
+    "project_path" : "SalesOrdersForecast.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

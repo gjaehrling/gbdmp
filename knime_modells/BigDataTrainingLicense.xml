@@ -1,0 +1,30 @@
+<Licenses>
+<License version="20160503">
+	<!-- Created on 2017-07-18 by koetter -->
+	<Field name="name" value="KNIME Big Data Connectors" />
+	<Field name="customer" value="Training Attendee" />
+	<Field name="company" value="KNIME GmbH" />
+	<Field name="maximum client users" value="1" />
+	<Field name="expiration date" value="2017-08-12" />
+	<Field name="start date" value="2017-07-18" />
+	<Field name="grace period" value="7" />
+	<Field name="warning period" value="7" />
+	<Field name="server usage" value="false" />
+	<Field name="comment" value="Big Data Training" />
+	<Signature value="6C4F03206EF88B3BBF6CAE47240BC66CDC610FC80A7062BE6283FCEF8607FE23FC9D8AC0B4666E5B9C3C245BBC4EF2A025C68874AC0D679211916A3E8F699255" />
+</License>
+<License version="20160503">
+	<!-- Created on 2017-07-18 by koetter -->
+	<Field name="name" value="KNIME Spark Executor" />
+	<Field name="customer" value="Training Attendee" />
+	<Field name="company" value="KNIME GmbH" />
+	<Field name="maximum client users" value="1" />
+	<Field name="expiration date" value="2017-08-12" />
+	<Field name="start date" value="2017-07-18" />
+	<Field name="grace period" value="7" />
+	<Field name="warning period" value="7" />
+	<Field name="server usage" value="false" />
+	<Field name="comment" value="Big Data Training" />
+	<Signature value="1D94F98FC2BA3E3CAAEF13B6F1C054947FD67E42FDB0A1AD6A9ABA1AB19C931634A60FC1E8A5D954007F5D00474E06C9208256D062DB5F936D27F998C450A8B1" />
+</License>
+</Licenses>

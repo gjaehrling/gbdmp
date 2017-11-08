@@ -1,0 +1,18 @@
+{
+    "contents" : "# load packages and load them to the workspeace\ninstall.packages(\"tseries\", dependencies=TRUE)\ninstall.packages(\"forecast\", dependencies=TRUE)\nlibrary(tseries)\nlibrary(forecast)\n\n# load the data and do a first check:\nweather <- read.csv(\"M4_not_cleaned.csv\", header=TRUE)\nnames(weather)\nhead(weather, n=10)\nsummary(weather)\nstr(weather)\n\n# cleaning the rows with NA values\nweather.clean <- na.omit(weather)\nweather.clean <- weather[complete.cases(weather), ]\nrow.names(weather.clean) <- NULL\nView(weather.clean)\n\n# plot the athmosphere pressure: \natm.prs <- weather.clean$AtmosphericPressure.mb\nstr(atm.prs)\nplot(atm.prs)\n\n# create time series: \natm.prs <- ts(weather.clean$AtmosphericPressure.mb, frequency=7)\n#atm.prs<- msts(weather.clean$AtmosphericPressure.mb, seasonal.periods=c(7,365.25))\nplot.ts(atm.prs)\n\nauto.arima(atm.prs)\nfit=arima(atm.prs,seasonal=list(order=c(0,1,0),period=500))\nplot(forecast(fit))\n",
+    "created" : 1436509189244.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2619208798",
+    "id" : "CAB7321F",
+    "lastKnownWriteTime" : 1436528600,
+    "path" : "~/Dropbox/user_gerd/programme/data_mining/R/WeatherData/forecastWeatherData.R",
+    "project_path" : "forecastWeatherData.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

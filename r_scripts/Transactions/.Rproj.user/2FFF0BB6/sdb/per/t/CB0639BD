@@ -1,0 +1,15 @@
+{
+    "contents" : "1001,Choclates\r1001,Pencil\r1001,Marker\r1002,Pencil\r1002,Choclates\r1003,Pencil\r1003,Coke\r1003,Eraser\r1004,Pencil\r1004,Choclates\r1004,Cookies\r1005,Marker\r1006,Pencil\r1006,Marker\r1007,Pencil\r1007,Choclates",
+    "created" : 1368292698129.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3697073211",
+    "id" : "CB0639BD",
+    "lastKnownWriteTime" : 1368292573,
+    "path" : "~/programme/data_mining/R/Transactions/SimpleTransactions.csv",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "text"
+}

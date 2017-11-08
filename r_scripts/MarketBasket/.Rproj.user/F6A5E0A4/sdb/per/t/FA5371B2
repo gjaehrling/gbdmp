@@ -1,0 +1,16 @@
+{
+    "contents" : "#Install the R package arules\n# install.packages(\"arules\");\n\n#load the arules package\nlibrary(\"arules\");\n\n# connect to MySQL database\n# con<-dbConnect(dbDriver(\"MySQL\"), user=\"root\", password=\"darmstadt\", dbname=\"bestellungen\")\n# list the tables in the database\n# dbListTables(con)\n\n# get results from query:\n# concatenating auftrag and position\n# res<-dbSendQuery(con, \"select concat(auftrag, position) as \\\"auftrag\\\", artikel, artikelbezeichnung from bestellung, artikel where artikel=artikelnr order by auftrag asc;\")\n# res<-dbSendQuery(con, \"select auftrag, artikel, artikelbezeichnung from bestellung, artikel where artikel=artikelnr order by auftrag asc;\")\n# res<-dbSendQuery(con, \"select kunde, artikel, artikelbezeichnung from auftrag, bestellung, artikel where auftnr=auftrag and artikel=artikelnr and kunde IS NOT NULL order by auftrag asc;\")\n# res<-dbSendQuery(con, \"select kunde, artikel from auftrag, bestellung, artikel where auftnr=auftrag and artikel=artikelnr and kunde IS NOT NULL order by auftrag asc;\")\n\n# SalesData<- fetch(res, n = -1)\n\n# show summary:\n# summary(SalesData)\n\n# show structure\n# str(SalesData)\n#SalesData$auftrag<-as.factor(SalesData$auftrag)\n# SalesData$kunde<-as.factor(SalesData$kunde)\n# SalesData$artikel<-as.factor(SalesData$artikel)\n# SalesData$artikelbezeichnung<-as.factor(SalesData$artikelbezeichnung)\n# str(SalesData)\n# View(SalesData)\n\nMarketBasket<-read.transactions(\"Orders2.csv\", rm.duplicates=TRUE, format=\"single\", sep=\";\", cols=c(1,2))\ninspect(MarketBasket)\nsummary(MarketBasket)\n\n# Market Basket\nbasket_rules <- apriori(MarketBasket,parameter = list(sup = 1.0, conf = 1.0,target=\"rules\"));\n\n# Check the generated rules using inspect\ninspect(basket_rules)\n\n# itemFrequencyPlot(MarketBasket)",
+    "created" : 1493124992028.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1664997614",
+    "id" : "FA5371B2",
+    "lastKnownWriteTime" : 1471376235,
+    "path" : "~/SVNWorkplace/SVNRepository/trunk/r_scripts/MarketBasket/MarketBasket.R",
+    "project_path" : "MarketBasket.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

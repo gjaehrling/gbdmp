@@ -1,0 +1,266 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n##Convert RDD to Data Frames:\nUsing the Iris dataset",
+      "dateUpdated": "Mar 21, 2016 3:50:09 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457791315397_1657447141",
+      "id": "20160312-150155_936164250",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eConvert RDD to Data Frames:\u003c/h2\u003e\n\u003cp\u003eUsing the Iris dataset\u003c/p\u003e\n"
+      },
+      "dateCreated": "Mar 12, 2016 3:01:55 PM",
+      "dateStarted": "Mar 21, 2016 3:50:09 PM",
+      "dateFinished": "Mar 21, 2016 3:50:09 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\n# split rows and convert to float:\ndef split_rows(x):\n    r \u003d x.split(\",\")\n    return [r[5]]+[float(f) for f in r[1:5]]\n\nfilename \u003d \"hdfs:///user/hadoop/data/iris.csv\"\n\nraw_data \u003d sc.textFile(filename)\nheader \u003d raw_data.first()\niris \u003d raw_data.filter(lambda row: row!\u003dheader)\\\n    .filter(lambda line: len(line)\u003e0)\\\n    .map(split_rows)\n\nsub \u003d iris.map(lambda row: (row[0], row[1]))\nres \u003d sub.groupByKey().mapValues(lambda row: sum(row)/len(row))\n\nfor x in iris.take(10):\n    print(x)\n\nprint res.collect()\n",
+      "dateUpdated": "Mar 21, 2016 3:50:09 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457791459778_-1708169316",
+      "id": "20160312-150419_965179986",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "[u\u0027\"setosa\"\u0027, 5.1, 3.5, 1.4, 0.2]\n[u\u0027\"setosa\"\u0027, 4.9, 3.0, 1.4, 0.2]\n[u\u0027\"setosa\"\u0027, 4.7, 3.2, 1.3, 0.2]\n[u\u0027\"setosa\"\u0027, 4.6, 3.1, 1.5, 0.2]\n[u\u0027\"setosa\"\u0027, 5.0, 3.6, 1.4, 0.2]\n[u\u0027\"setosa\"\u0027, 5.4, 3.9, 1.7, 0.4]\n[u\u0027\"setosa\"\u0027, 4.6, 3.4, 1.4, 0.3]\n[u\u0027\"setosa\"\u0027, 5.0, 3.4, 1.5, 0.2]\n[u\u0027\"setosa\"\u0027, 4.4, 2.9, 1.4, 0.2]\n[u\u0027\"setosa\"\u0027, 4.9, 3.1, 1.5, 0.1]\n[(u\u0027\"versicolor\"\u0027, 5.936), (u\u0027\"setosa\"\u0027, 5.005999999999999), (u\u0027\"virginica\"\u0027, 6.587999999999998)]\n"
+      },
+      "dateCreated": "Mar 12, 2016 3:04:19 PM",
+      "dateStarted": "Mar 21, 2016 3:50:09 PM",
+      "dateFinished": "Mar 21, 2016 3:50:09 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nfrom pyspark.sql.types import *\n\nschema \u003d StructType([ \\\n    StructField(\"Class\",       StringType(),  True), \\\n    StructField(\"sepalLength\", DoubleType(),  True), \\\n    StructField(\"sepalWidth\",  DoubleType(),  True), \\\n    StructField(\"PetalLength\", DoubleType(),  True), \\\n    StructField(\"PetalWidth\",  DoubleType(),  True)\n])\n\nirisDf \u003d sqlContext.createDataFrame(iris, schema\u003dschema)\n\nsqlContext.registerDataFrameAsTable(irisDf, \"Iris\")\n\nirisDf.show()\n",
+      "dateUpdated": "Mar 21, 2016 3:50:09 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457791718664_521803017",
+      "id": "20160312-150838_1680692577",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "Class    sepalLength sepalWidth PetalLength PetalWidth\n\"setosa\" 5.1         3.5        1.4         0.2       \n\"setosa\" 4.9         3.0        1.4         0.2       \n\"setosa\" 4.7         3.2        1.3         0.2       \n\"setosa\" 4.6         3.1        1.5         0.2       \n\"setosa\" 5.0         3.6        1.4         0.2       \n\"setosa\" 5.4         3.9        1.7         0.4       \n\"setosa\" 4.6         3.4        1.4         0.3       \n\"setosa\" 5.0         3.4        1.5         0.2       \n\"setosa\" 4.4         2.9        1.4         0.2       \n\"setosa\" 4.9         3.1        1.5         0.1       \n\"setosa\" 5.4         3.7        1.5         0.2       \n\"setosa\" 4.8         3.4        1.6         0.2       \n\"setosa\" 4.8         3.0        1.4         0.1       \n\"setosa\" 4.3         3.0        1.1         0.1       \n\"setosa\" 5.8         4.0        1.2         0.2       \n\"setosa\" 5.7         4.4        1.5         0.4       \n\"setosa\" 5.4         3.9        1.3         0.4       \n\"setosa\" 5.1         3.5        1.4         0.3       \n\"setosa\" 5.7         3.8        1.7         0.3       \n\"setosa\" 5.1         3.8        1.5         0.3       \n"
+      },
+      "dateCreated": "Mar 12, 2016 3:08:38 PM",
+      "dateStarted": "Mar 21, 2016 3:50:09 PM",
+      "dateFinished": "Mar 21, 2016 3:50:09 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nselect Class, avg(sepalLength) as avgSL\nfrom Iris\ngroup by Class",
+      "dateUpdated": "Mar 21, 2016 3:50:09 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "pieChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "Class",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "avgSL",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "Class",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "avgSL",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457795981822_1099609900",
+      "id": "20160312-161941_2089459178",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "Class\tavgSL\n\"versicolor\"\t5.935999999999999\n\"setosa\"\t5.005999999999999\n\"virginica\"\t6.587999999999998\n"
+      },
+      "dateCreated": "Mar 12, 2016 4:19:41 PM",
+      "dateStarted": "Mar 21, 2016 3:50:09 PM",
+      "dateFinished": "Mar 21, 2016 3:50:14 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql \nselect Class, avg(sepalWidth) as avgSW\nfrom Iris\ngroup by Class",
+      "dateUpdated": "Mar 21, 2016 3:54:29 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "pieChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "Class",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "avgSW",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "Class",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "avgSW",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1457796989213_486926019",
+      "id": "20160312-163629_645912942",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "Class\tavgSW\n\"versicolor\"\t2.77\n\"setosa\"\t3.428000000000001\n\"virginica\"\t2.9739999999999998\n"
+      },
+      "dateCreated": "Mar 12, 2016 4:36:29 PM",
+      "dateStarted": "Mar 21, 2016 3:54:29 PM",
+      "dateFinished": "Mar 21, 2016 3:54:31 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "dateUpdated": "Mar 21, 2016 3:50:09 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1458571799740_132411533",
+      "id": "20160321-154959_1642399029",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT"
+      },
+      "dateCreated": "Mar 21, 2016 3:49:59 PM",
+      "dateStarted": "Mar 21, 2016 3:50:15 PM",
+      "dateFinished": "Mar 21, 2016 3:50:17 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Lab3 Iris Data Frames",
+  "id": "2BFDXDYKW",
+  "angularObjects": {
+    "2BCE6R8T2": [],
+    "2BDMU83T5": [],
+    "2BEMMQPJG": [],
+    "2BDW72X9E": [],
+    "2BF3AAW7U": [],
+    "2BEJ4D5SJ": [],
+    "2BF7MH2JM": [],
+    "2BE1TRU6B": [],
+    "2BE5CQ2W8": [],
+    "2BFUXNJ9R": [],
+    "2BCQ6J7ZP": [],
+    "2BCWJF462": [],
+    "2BFDNS2ZU": []
+  },
+  "config": {
+    "looknfeel": "default"
+  },
+  "info": {}
+}

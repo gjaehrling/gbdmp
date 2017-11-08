@@ -1,0 +1,15 @@
+# flume-ng agent --conf-file flume_exec_source.conf --name agent -Dflume.root.logger=INFO,console
+agent.sources=s1
+agent.channels=c1
+agent.sinks=k1
+
+agent.sources.s1.type=exec
+agent.sources.s1.command=tail -f /var/log/oozie/oozie-cmf-oozie-OOZIE_SERVER-hadoop.cloudera.log.out
+agent.sources.s1.batchSize=1
+agent.sources.s1.channels=c1
+
+agent.channels.c1.type=memory
+
+agent.sinks.k1.type=logger
+agent.sinks.k1.channel=c1
+

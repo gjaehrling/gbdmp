@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<met:KNIMEMetaInfo xmlns:met="http://www.knime.org/2.9/metainfo">
+  <met:element form="text" name="Author">knime_admin</met:element>
+  <met:element form="date" name="Creation Date">10/7/2015</met:element>
+  <met:element form="multiline" name="Comments">Mix and Match Spark Nodes with other KNIME Nodes
+
+This workflow mixes existing KNIME nodes with the new Spark nodes to find the optimal parameters for a k-means clustering using the hillclimbing approach.</met:element>
+</met:KNIMEMetaInfo>

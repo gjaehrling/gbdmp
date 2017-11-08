@@ -1,0 +1,10 @@
+# create collection with solrclt: 
+
+# 1. create local copy of configuration files from zookeeper: 
+solrctl --zk localhost:2181/solr instancedir --create accessCollection ./accessCollection
+
+# 2. 
+solrctl --solr http://localhost:8983/solr collection --create accessCollection
+
+# 3. 
+sudo solrctl collection --create accessCollection

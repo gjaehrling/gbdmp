@@ -1,0 +1,17 @@
+{
+    "contents" : "Lesson 5 Reshaping the data\n========================================================\n\nloading the data\n```{r}\nlibrary(ggplot2)\npf <- read.csv(\"~/programme/data_mining/R/Udacity/pseudo_facebook.tsv\", sep=\"\\t\", header = TRUE, row.names = 1)\nsummary(pf)\n```\n\nThird option for qualitative variables:\n```{r}\nlibrary('dplyr')\n\npf.fc_by_age_gender <- pf %.%\n  filter(!is.na(gender)) %.%\n  group_by(age, gender) %.%\n  summarize(mean_friend_count = mean(friend_count),\n            median_friend_count = median(friend_count),\n            n = n()) %.%\n  ungroup() %.%\n  arrange(age)\n\nhead(pf.fc_by_age_gender)\n```\n\nPlotting third qualitative variable:\n```{r}\nggplot(aes(x=age, y=median_friend_count), \n       data=pf.fc_by_age_gender) +\n  geom_line(aes(color=gender))\n```\n\nReshaping the data using the dcast function. Result will be a new data frame. The acast function will be used when the result shall be a list or an array. \n```{r}\ninstall.packages('reshape2')\nlibrary(reshape2)\n\npf.fc_by_age_gender.wide <- dcast(pf.fc_by_age_gender,\n                                  age ~ gender,\n                                  value.var = 'median_friend_count')\n```\n\n\nPlot the ratio of the female to male median friend counts using the new data frame:\n```{r}\nggplot(aes(x=age, y=(female / male)), data=pf.fc_by_age_gender.wide) +\n  geom_line() + \n  geom_hline(yintercept = 1, alpha = 0.3, linetype = 2)\n```\n\nAdding a new variable to the data frame for time sind logged on to fb\n```{r}\npf[\"year_joined\"] <- NA\npf$year_joined <- floor((2014*365 - pf$tenure) / 365 )\n\nsummary(pf$year_joined)\ntable(pf$year_joined)\n```\n\ncut the data into buckets using the cut function:\n```{r}\npf$year_joined.bucket <- cut(pf$year_joined, \n                             c(2004,2009,2011,2012,2014))\nhead(pf$year_joined.bucket)\ntable(pf$year_joined.bucket, useNA = 'ifany')\n```\n\n",
+    "created" : 1403168594511.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2628063613",
+    "id" : "20FE9BF4",
+    "lastKnownWriteTime" : 1403185650,
+    "path" : "~/programme/data_mining/R/Udacity/Udacity/lesson_5_reshaping_data.Rmd",
+    "project_path" : "lesson_5_reshaping_data.Rmd",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}

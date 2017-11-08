@@ -1,0 +1,8 @@
+knime://knime.workflow/iris.csv
+knime://knime.workflow/data.tst
+knime://knime.workflow/data.all
+file:/home/hadoop/Dropbox/general/data_sets/bank-full.csv
+knime://knime.workflow/data/ContractData.csv
+knime://knime.workflow/data.trn
+knime://knime.workflow/data/ss13pme.csv
+knime://knime.workflow/data/data.all

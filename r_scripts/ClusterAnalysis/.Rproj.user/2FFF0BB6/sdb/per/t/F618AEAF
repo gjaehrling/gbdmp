@@ -1,0 +1,21 @@
+{
+    "contents" : "",
+    "created" : 1368364874742.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F618AEAF",
+    "lastKnownWriteTime" : 7308604914264011873,
+    "path" : null,
+    "properties" : {
+        "caption" : "Shop_Cluster",
+        "contentUrl" : "content?title=Shop_Cluster&file=94805233ca0a496b8740144ea31fd912.htm",
+        "displayedObservations" : 689,
+        "displayedVariables" : 6,
+        "totalObservations" : 689,
+        "variables" : 6
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

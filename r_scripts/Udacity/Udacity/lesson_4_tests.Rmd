@@ -1,0 +1,128 @@
+Lesson 4 tests
+========================================================
+
+1. scatterplot of price vs x
+```{r}
+summary(diamonds)
+names(diamonds)
+
+cor.test(diamonds$price, diamonds$x, method = 'pearson')
+cor.test(diamonds$price, diamonds$y, method = 'pearson')
+cor.test(diamonds$price, diamonds$z, method = 'pearson')
+
+ggplot(aes(x=x, y=price), 
+       data=diamonds) +
+    geom_point(alpha = 0.5)
+
+ggplot(aes(x=price, y=x), 
+       data=diamonds) +
+    geom_point(alpha = 0.5) + 
+    geom_smooth()
+```
+
+2. Create a simple scatter plot of price vs depth.
+```{r}
+cor.test(diamonds$price, diamonds$depth, method="pearson")
+
+ggplot(aes(x=depth, y=price), 
+       data=diamonds) +
+    geom_point()
+
+ggplot(aes(x=depth, y=price), 
+       data=diamonds) +
+    geom_point(alpha = 0.01) +
+    scale_x_continuous(limits = c(54, 70), breaks=seq(54,70,2))
+```
+
+3. Create a scatterplot of price vs carat and omit the top 1% of price and carat
+```{r}
+diamonds.subset <- subset(diamonds, carat < quantile(carat, 0.99) & price < quantile(price, 0.99))
+
+ggplot(aes(x=price, y=carat), 
+       data=diamonds.subset) +
+    geom_point(alpha = 0.1) 
+```
+
+4. Create a scatterplot of price vs. volume (x * y * z).
+Create a new variable for volume in the diamonds data frame.
+```{r}
+library("gridExtra")
+
+diamonds.extended <- diamonds
+diamonds.extended["volume"] <- NA
+diamonds.extended$volume <- diamonds.extended$x * diamonds.extended$y *
+ diamonds.extended$z
+
+cor.test(diamonds.extended$volume, diamonds.extended$price, method="pearson")
+
+p1 <- ggplot(aes(x=price, y=volume), 
+      data=diamonds.extended) +
+      geom_point() 
+
+p2 <- ggplot(aes(x=price, y=volume), 
+       data=diamonds.extended) +
+      scale_y_continuous(limits = c(0, 1000)) +
+    geom_point(alpha = 0.5) 
+
+p3 <- ggplot(aes(x=price, y=volume), 
+       data=diamonds.extended) +
+      scale_y_continuous(limits = c(0, 750)) +
+    geom_point(alpha = 0.1) +
+    geom_smooth()
+
+grid.arrange(p1, p2, p3, ncol=1)
+```
+
+5. Correlation of a subset
+Excluding diamonds of 0 volume and with volume higher or equal than 800  
+```{r}
+diamonds.extended.subset <- subset(diamonds.extended, volume > 0 & volume < 800)
+
+cor.test(diamonds.extended.subset$volume, diamonds.extended.subset$price, method="pearson")
+
+ggplot(aes(x=price, y=volume), 
+    data=diamonds.extended.subset) +
+    scale_y_continuous(limits = c(0, 750)) +
+    geom_point(alpha = 0.1) +
+    scale_x_sqrt() + 
+    geom_smooth(method="lm")
+
+```
+
+6. Create a new data frame which should contain the following variables in this order.
+(1) mean_price
+(2) median_price
+(3) min_price
+(4) max_price
+(5) n
+```{r}
+library(dplyr)
+
+diamond_groups <- group_by(diamonds, clarity)
+diamonds.new <- summarize(diamond_groups, 
+          mean_price = mean(price),
+          median_price = median(price),
+          min_price = min(price, na.rm = TRUE),
+          max_price = max(price, na.rm = TRUE),
+          n = n())
+```
+
+7. creating bar plots to verify the data:
+```{r}
+library(gridExtra)
+
+diamonds_by_clarity <- group_by(diamonds, clarity)
+diamonds_mp_by_clarity <- summarise(diamonds_by_clarity, mean_price = mean(price))
+
+diamonds_by_color <- group_by(diamonds, color)
+diamonds_mp_by_color <- summarise(diamonds_by_color, mean_price = mean(price))
+
+p1 <- ggplot(aes(x=clarity, y=mean_price),data=diamonds_mp_by_clarity) +
+  geom_bar()
+
+p2 <- ggplot(aes(x=color, y=mean_price),data=diamonds_mp_by_color) +
+  geom_bar()
+
+grid.arrange(p1, p2, ncol=1)
+```
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+<property><name>oozie.HadoopAccessorService.created</name><value>true</value><source>programatically</source></property>
+<property><name>BDMP_ENVVAR_GLOBAL_BDMP_SVN_SERVER__comment__</name><value>'SVN-Server (incl. Port)'</value><source>programatically</source></property>
+<property><name>BDMP_ENVVAR_BDMP_CONFIG_EXT</name><value>TEST</value><source>programatically</source></property>
+<property><name>dfs.namenode.decommission.nodes.per.interval</name><value>5</value><source>hdfs-default.xml</source></property>
+<property><name>BDMP_ENVVAR_BDMP_DATA_ROOT</name><value>/svc/tmv1720/bdmp_data</value><source>programatically</source></property>
+<property><name>mapreduce.job.committer.setup.cleanup.needed</name><value>true</value><source>mapred-default.xml</source></property>
+<property><name>BDMP_ENVVAR_BDMP_HDFS_HOME</name><value>/bdmp</value><source>programatically</source></property>
+<property><name>dfs.https.address</name><value>tmv1719.devlab.de.tmo:50470</value></property>
+<property><name>dfs.datanode.cache.revocation.polling.ms</name><value>500</value><source>hdfs-default.xml</source></property>
+<property><name>mapreduce.job.end-notification.retry.attempts</name><value>0</value><source>mapred-default.xml</source></property>
+</configuration>
