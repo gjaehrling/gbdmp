@@ -1,0 +1,1 @@
+bin/spark-submit --class "ExampleCaseClass" --master local[*] /Users/hadoop/Documents/programs/scala/ExampleCaseClass/target/scala-2.10/examplecaseclasses_2.10-1.0.jar

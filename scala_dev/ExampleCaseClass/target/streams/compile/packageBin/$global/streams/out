@@ -1,0 +1,25 @@
+[0m[[0minfo[0m] [0mPackaging /Users/hadoop/Documents/programs/scala/ExampleCaseClass/target/scala-2.10/examplecaseclasses_2.10-1.0.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	ExampleCaseClass$$anonfun$3.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/ExampleCaseClass/target/scala-2.10/classes/ExampleCaseClass$$anonfun$3.class[0m
+[0m[[0mdebug[0m] [0m	ExampleCaseClass$Register$4$.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/ExampleCaseClass/target/scala-2.10/classes/ExampleCaseClass$Register$4$.class[0m
+[0m[[0mdebug[0m] [0m	ExampleCaseClass$Click$4$.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/ExampleCaseClass/target/scala-2.10/classes/ExampleCaseClass$Click$4$.class[0m
+[0m[[0mdebug[0m] [0m	ExampleCaseClass$$anonfun$4.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/ExampleCaseClass/target/scala-2.10/classes/ExampleCaseClass$$anonfun$4.class[0m
+[0m[[0mdebug[0m] [0m	ExampleCaseClass$Register$3.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/ExampleCaseClass/target/scala-2.10/classes/ExampleCaseClass$Register$3.class[0m
+[0m[[0mdebug[0m] [0m	ExampleCaseClass$.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/ExampleCaseClass/target/scala-2.10/classes/ExampleCaseClass$.class[0m
+[0m[[0mdebug[0m] [0m	ExampleCaseClass$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/ExampleCaseClass/target/scala-2.10/classes/ExampleCaseClass$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	ExampleCaseClass$Click$3.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/ExampleCaseClass/target/scala-2.10/classes/ExampleCaseClass$Click$3.class[0m
+[0m[[0mdebug[0m] [0m	ExampleCaseClass.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/ExampleCaseClass/target/scala-2.10/classes/ExampleCaseClass.class[0m
+[0m[[0mdebug[0m] [0m	ExampleCaseClass$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/ExampleCaseClass/target/scala-2.10/classes/ExampleCaseClass$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	ExampleCaseClass$$anonfun$main$1.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/hadoop/Documents/programs/scala/ExampleCaseClass/target/scala-2.10/classes/ExampleCaseClass$$anonfun$main$1.class[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m
